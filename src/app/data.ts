@@ -1,0 +1,279 @@
+/**
+ * data.ts
+ * ───────────────────────────────────────────────────────────────────────────
+ * Single source of truth for all dashboard analytics.
+ *
+ * HOW LIVE DATA WORKS
+ * ───────────────────
+ * The dashboard loads `public/analytics.json` on every page load.
+ * To push today's numbers, simply edit (or replace) that file — no code change
+ * needed.  The JSON is fetched via `useAnalytics()` hook below and wired into
+ * DashboardProvider so every tab receives the same fresh dataset.
+ *
+ * To automate daily updates see `scripts/update-analytics.js`.
+ * ───────────────────────────────────────────────────────────────────────────
+ */
+
+import { useState, useEffect } from "react";
+
+// ─── Type definitions ────────────────────────────────────────────────────────
+
+export type Segment = {
+  id: string;
+  name: string;
+  region: string;
+  members: number;
+  engagement: number;
+  trend: "up" | "down" | "flat";
+  status: "Thriving" | "Steady" | "At risk";
+};
+
+export type KpiValue = {
+  value: string;
+  trend: "up" | "down" | "flat";
+  delta: string;
+};
+
+export type AnalyticsData = {
+  _meta: { lastUpdated: string; updatedBy: string; note: string };
+  growthTrend: { month: string; members: number; active: number; sharepoint: number }[];
+  slackGrowth: { month: string; newMembers: number; returning: number; inactive: number }[];
+  cohorts: { cohort: string; w1: number; w2: number; w3: number; w4: number }[];
+  segments: Segment[];
+  sharepointResources: {
+    id: string; title: string; type: string; owner: string;
+    views: number; downloads: number; freshness: string; month: string;
+  }[];
+  sharepointTrend: { month: string; views: number; unique: number }[];
+  icaTopics: {
+    id: string; topic: string; queries: number;
+    success: number; trend: string; status: string;
+  }[];
+  icaUsage: { month: string; queries: number; success: number }[];
+  events: { id: string; title: string; date: string; attendance: number; feedback: number }[];
+  eventEngagement: { month: string; pre: number; post: number }[];
+  timeline: { id: string; date: string; label: string; kind: string }[];
+  kpis: {
+    overview: Record<string, KpiValue>;
+    slack: Record<string, KpiValue>;
+    sharepoint: Record<string, KpiValue>;
+    ica: Record<string, KpiValue>;
+    events: Record<string, KpiValue>;
+  };
+  communityHealth: {
+    score: string;
+    status: string;
+    signals: { label: string; value: number; status: string }[];
+  };
+  sharepointFreshness: { label: string; pct: number; status: string }[];
+  upcomingEvents: { title: string; date: string }[];
+};
+
+// ─── Static fallback (used until the JSON fetch resolves) ────────────────────
+
+export const FALLBACK: AnalyticsData = {
+  _meta: { lastUpdated: "—", updatedBy: "—", note: "" },
+  growthTrend: [
+    { month: "Jan", members: 3820, active: 1180, sharepoint: 5400 },
+    { month: "Feb", members: 4120, active: 1290, sharepoint: 5980 },
+    { month: "Mar", members: 4510, active: 1440, sharepoint: 6720 },
+    { month: "Apr", members: 4980, active: 1610, sharepoint: 7350 },
+    { month: "May", members: 5340, active: 1720, sharepoint: 8010 },
+    { month: "Jun", members: 5910, active: 1980, sharepoint: 8890 },
+    { month: "Jul", members: 6480, active: 2210, sharepoint: 9620 },
+  ],
+  slackGrowth: [
+    { month: "Jan", newMembers: 340, returning: 220, inactive: 90 },
+    { month: "Feb", newMembers: 300, returning: 260, inactive: 110 },
+    { month: "Mar", newMembers: 390, returning: 280, inactive: 130 },
+    { month: "Apr", newMembers: 470, returning: 320, inactive: 120 },
+    { month: "May", newMembers: 360, returning: 350, inactive: 150 },
+    { month: "Jun", newMembers: 570, returning: 410, inactive: 140 },
+    { month: "Jul", newMembers: 570, returning: 460, inactive: 160 },
+  ],
+  cohorts: [
+    { cohort: "Joined Jan", w1: 82, w2: 61, w3: 48, w4: 41 },
+    { cohort: "Joined Feb", w1: 79, w2: 58, w3: 45, w4: 39 },
+    { cohort: "Joined Mar", w1: 85, w2: 66, w3: 52, w4: 44 },
+    { cohort: "Joined Apr", w1: 88, w2: 70, w3: 57, w4: 49 },
+    { cohort: "Joined May", w1: 84, w2: 63, w3: 50, w4: 43 },
+  ],
+  segments: [
+    { id: "s1", name: "Product Builders",  region: "EMEA", members: 1240, engagement: 74, trend: "up",   status: "Thriving" },
+    { id: "s2", name: "Data & AI Guild",   region: "AMER", members: 980,  engagement: 68, trend: "up",   status: "Thriving" },
+    { id: "s3", name: "Design Circle",     region: "APAC", members: 640,  engagement: 52, trend: "flat", status: "Steady"   },
+    { id: "s4", name: "Ops Network",       region: "EMEA", members: 520,  engagement: 41, trend: "down", status: "At risk"  },
+    { id: "s5", name: "New Grads",         region: "AMER", members: 780,  engagement: 63, trend: "up",   status: "Steady"   },
+    { id: "s6", name: "Partner Community", region: "APAC", members: 410,  engagement: 38, trend: "down", status: "At risk"  },
+    { id: "s7", name: "Leadership Forum",  region: "AMER", members: 290,  engagement: 71, trend: "up",   status: "Thriving" },
+    { id: "s8", name: "Support Champions", region: "EMEA", members: 350,  engagement: 55, trend: "flat", status: "Steady"   },
+  ],
+  sharepointResources: [
+    { id: "r1", title: "Onboarding Playbook 2026", type: "Guide",    owner: "M. Chen",  views: 4820, downloads: 1210, freshness: "Fresh", month: "Jul" },
+    { id: "r2", title: "Community Health Metrics", type: "Report",   owner: "A. Silva", views: 3610, downloads: 890,  freshness: "Fresh", month: "Jul" },
+    { id: "r3", title: "Event Planning Template",  type: "Template", owner: "K. Osei",  views: 2940, downloads: 1440, freshness: "Aging", month: "May" },
+    { id: "r4", title: "Brand Voice Guidelines",   type: "Guide",    owner: "L. Park",  views: 2130, downloads: 560,  freshness: "Stale", month: "Feb" },
+    { id: "r5", title: "Quarterly Growth Deck",    type: "Report",   owner: "M. Chen",  views: 1980, downloads: 720,  freshness: "Fresh", month: "Jun" },
+    { id: "r6", title: "Moderation Handbook",      type: "Guide",    owner: "R. Idris", views: 1540, downloads: 430,  freshness: "Aging", month: "Apr" },
+  ],
+  sharepointTrend: [
+    { month: "Feb", views: 6100, unique: 2400 },
+    { month: "Mar", views: 6720, unique: 2680 },
+    { month: "Apr", views: 7350, unique: 2910 },
+    { month: "May", views: 8010, unique: 3120 },
+    { month: "Jun", views: 8890, unique: 3480 },
+    { month: "Jul", views: 9620, unique: 3810 },
+  ],
+  icaTopics: [
+    { id: "t1", topic: "Membership & access",   queries: 1840, success: 92, trend: "up",   status: "Healthy"    },
+    { id: "t2", topic: "Event registration",    queries: 1320, success: 88, trend: "up",   status: "Healthy"    },
+    { id: "t3", topic: "SharePoint navigation", queries: 980,  success: 74, trend: "flat", status: "Monitor"    },
+    { id: "t4", topic: "Billing & invoices",    queries: 620,  success: 61, trend: "down", status: "Needs work" },
+    { id: "t5", topic: "Content submission",    queries: 540,  success: 69, trend: "flat", status: "Monitor"    },
+  ],
+  icaUsage: [
+    { month: "Feb", queries: 3200, success: 2560 },
+    { month: "Mar", queries: 3600, success: 2952 },
+    { month: "Apr", queries: 4100, success: 3444 },
+    { month: "May", queries: 4400, success: 3740 },
+    { month: "Jun", queries: 5000, success: 4350 },
+    { month: "Jul", queries: 5600, success: 4984 },
+  ],
+  events: [
+    { id: "e1", title: "Community Kickoff 2026", date: "Feb 2026", attendance: 640,  feedback: 4.6 },
+    { id: "e2", title: "Data & AI Summit",       date: "Apr 2026", attendance: 880,  feedback: 4.8 },
+    { id: "e3", title: "Design Systems Jam",     date: "May 2026", attendance: 520,  feedback: 4.4 },
+    { id: "e4", title: "Mid-year Town Hall",     date: "Jun 2026", attendance: 1240, feedback: 4.7 },
+    { id: "e5", title: "Builder Awards",         date: "Jul 2026", attendance: 760,  feedback: 4.9 },
+  ],
+  eventEngagement: [
+    { month: "Feb", pre: 62, post: 78 },
+    { month: "Apr", pre: 70, post: 88 },
+    { month: "May", pre: 58, post: 74 },
+    { month: "Jun", pre: 74, post: 92 },
+    { month: "Jul", pre: 68, post: 90 },
+  ],
+  timeline: [
+    { id: "tl1", date: "Jan 2026", label: "Reached 4,000 members",               kind: "Milestone" },
+    { id: "tl2", date: "Feb 2026", label: "Community Kickoff — 640 attendees",    kind: "Event"     },
+    { id: "tl3", date: "Apr 2026", label: "Launched ICA Agent v2",                kind: "Launch"    },
+    { id: "tl4", date: "Jun 2026", label: "Crossed 5,900 members",                kind: "Milestone" },
+    { id: "tl5", date: "Jul 2026", label: "Builder Awards — record 4.9 feedback", kind: "Event"     },
+  ],
+  kpis: {
+    overview: {
+      totalMembers:       { value: "6,480",    trend: "up",   delta: "+8.9%" },
+      monthlyGrowth:      { value: "+570",     trend: "up",   delta: "+3.2%" },
+      activeContributors: { value: "2,210",    trend: "up",   delta: "+11%"  },
+      sharepointViews:    { value: "9,620",    trend: "up",   delta: "+8.2%" },
+      icaAgentUsage:      { value: "5,600",    trend: "up",   delta: "+12%"  },
+      engagementScore:    { value: "72 / 100", trend: "flat", delta: "±0"    },
+    },
+    slack: {
+      newMembers:         { value: "570",   trend: "up",   delta: "+18%" },
+      returningMembers:   { value: "460",   trend: "up",   delta: "+12%" },
+      inactiveMembers:    { value: "160",   trend: "down", delta: "-6%"  },
+      activeContributors: { value: "2,210", trend: "up",   delta: "+11%" },
+      engagementRate:     { value: "34%",   trend: "flat", delta: "±0"   },
+    },
+    sharepoint: {
+      pageViews:          { value: "9,620",  trend: "up",   delta: "+8.2%" },
+      uniqueViewers:      { value: "3,810",  trend: "up",   delta: "+9.5%" },
+      downloads:          { value: "4,250",  trend: "up",   delta: "+6.1%" },
+      avgEngagement:      { value: "3m 12s", trend: "flat", delta: "±0"    },
+      resourceFreshness:  { value: "68%",    trend: "down", delta: "-4%"   },
+      activeResources:    { value: "142",    trend: "up",   delta: "+5"    },
+    },
+    ica: {
+      agentUsage:    { value: "5,600", trend: "up",   delta: "+12%" },
+      queries:       { value: "5,600", trend: "up",   delta: "+12%" },
+      successRate:   { value: "89%",   trend: "up",   delta: "+3%"  },
+      fallbackRate:  { value: "11%",   trend: "down", delta: "-3%"  },
+      repeatUsage:   { value: "46%",   trend: "up",   delta: "+5%"  },
+      commonTopics:  { value: "12",    trend: "flat", delta: "±0"   },
+    },
+    events: {
+      eventAttendance:     { value: "4,040",   trend: "up", delta: "+14%"   },
+      repeatAttendees:     { value: "1,760",   trend: "up", delta: "+9%"    },
+      feedbackScore:       { value: "4.7 / 5", trend: "up", delta: "+0.2"   },
+      postEventEngagement: { value: "+31%",    trend: "up", delta: "+6%"    },
+      topSession:          { value: "4.9 / 5", trend: "up", delta: "Awards" },
+    },
+  },
+  communityHealth: {
+    score: "78 / 100",
+    status: "Thriving",
+    signals: [
+      { label: "Participation",  value: 82, status: "Healthy"  },
+      { label: "Responsiveness", value: 74, status: "Monitor"  },
+      { label: "Retention",      value: 69, status: "Monitor"  },
+    ],
+  },
+  sharepointFreshness: [
+    { label: "Fresh", pct: 68, status: "Healthy"    },
+    { label: "Aging", pct: 22, status: "Monitor"    },
+    { label: "Stale", pct: 10, status: "Needs work" },
+  ],
+  upcomingEvents: [
+    { title: "Autumn Builders Meetup", date: "Sep 2026" },
+    { title: "Data & AI Summit v2",    date: "Oct 2026" },
+    { title: "Year-end Town Hall",     date: "Dec 2026" },
+  ],
+};
+
+// ─── useAnalytics hook ───────────────────────────────────────────────────────
+// Fetches /analytics.json on mount; falls back to FALLBACK while loading
+// or if the network request fails.
+
+export type AnalyticsStatus = "loading" | "ready" | "error";
+
+export function useAnalytics(): { data: AnalyticsData; status: AnalyticsStatus; lastUpdated: string } {
+  const [data, setData] = useState<AnalyticsData>(FALLBACK);
+  const [status, setStatus] = useState<AnalyticsStatus>("loading");
+
+  useEffect(() => {
+    // Cache-bust with today's date so the browser always fetches the latest file.
+    const today = new Date().toISOString().slice(0, 10);
+    fetch(`/analytics.json?v=${today}`)
+      .then((r) => {
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        return r.json() as Promise<AnalyticsData>;
+      })
+      .then((json) => {
+        setData(json);
+        setStatus("ready");
+      })
+      .catch(() => {
+        // Keep FALLBACK data; surface error state so the header can show it.
+        setStatus("error");
+      });
+  }, []);
+
+  return { data, status, lastUpdated: data._meta?.lastUpdated ?? "—" };
+}
+
+// ─── Static filter option labels (never change at runtime) ───────────────────
+
+export const filterOptions = {
+  region:    ["All regions", "AMER", "EMEA", "APAC"],
+  segment:   ["All segments", "Product Builders", "Data & AI Guild", "Design Circle", "Ops Network"],
+  channel:   ["All channels", "Slack", "SharePoint", "ICA Agent", "Events"],
+  content:   ["All content", "Guide", "Report", "Template", "Discussion"],
+  dateRange: ["Last 7 days", "Last 30 days", "Last 90 days", "Year to date"],
+};
+
+// ─── Legacy named exports (kept for backward compatibility with any imports) ──
+
+export const {
+  growthTrend,
+  slackGrowth,
+  cohorts,
+  segments,
+  sharepointResources,
+  sharepointTrend,
+  icaTopics,
+  icaUsage,
+  events,
+  eventEngagement,
+  timeline,
+} = FALLBACK;
