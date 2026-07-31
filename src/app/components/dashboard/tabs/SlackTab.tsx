@@ -109,38 +109,29 @@ export function SlackTab() {
             <UserCircle2 size={16} className="text-[var(--gc-ibm-blue)]" />
             <div>
               <h2 className="text-[var(--gc-graphite)]">Member personas</h2>
-              <p className="text-[13px] text-[var(--gc-grey)]">{totalPersonaMembers.toLocaleString()} members · source: 7.23 Member Download + New Members list</p>
+              <p className="text-[13px] text-[var(--gc-grey)]">{totalPersonaMembers.toLocaleString()} members · source: 7.23 Member Download</p>
             </div>
           </div>
           <div className="grid gap-2.5 sm:grid-cols-2 xl:grid-cols-3">
-            {personas.map((p, i) => {
-              const isUnassigned = p.persona === "Not yet assigned";
-              return (
-                <div key={p.persona} className="space-y-1.5">
-                  <div className="flex items-center justify-between text-[13px]">
-                    <span className={cn("truncate pr-2", isUnassigned ? "italic text-[var(--gc-grey)]" : "text-[var(--gc-graphite-soft)]")}>
-                      {p.persona}
-                    </span>
-                    <span className="shrink-0 tabular-nums text-[var(--gc-grey)]">
-                      {p.count.toLocaleString()} <span className="text-[11px]">({p.pct}%)</span>
-                    </span>
-                  </div>
-                  <div className="h-2 w-full overflow-hidden rounded-full bg-[var(--gc-offwhite)]">
-                    <div
-                      className="h-full rounded-full"
-                      style={{
-                        width: `${p.pct}%`,
-                        background: isUnassigned ? "var(--gc-grey-light,#c1c7cd)" : PERSONA_COLORS[i % PERSONA_COLORS.length],
-                        opacity: isUnassigned ? 0.45 : 1,
-                      }}
-                    />
-                  </div>
+            {personas.map((p, i) => (
+              <div key={p.persona} className="space-y-1.5">
+                <div className="flex items-center justify-between text-[13px]">
+                  <span className="truncate pr-2 text-[var(--gc-graphite-soft)]">{p.persona}</span>
+                  <span className="shrink-0 tabular-nums text-[var(--gc-grey)]">
+                    {p.count.toLocaleString()} <span className="text-[11px]">({p.pct}%)</span>
+                  </span>
                 </div>
-              );
-            })}
+                <div className="h-2 w-full overflow-hidden rounded-full bg-[var(--gc-offwhite)]">
+                  <div
+                    className="h-full rounded-full"
+                    style={{ width: `${p.pct}%`, background: PERSONA_COLORS[i % PERSONA_COLORS.length] }}
+                  />
+                </div>
+              </div>
+            ))}
           </div>
           <p className="mt-1 text-[11px] text-[var(--gc-grey)]">
-            Personas sourced from IBM W3 BluePages via member download export. "Not yet assigned" = 77 members from the Jul 13 new members list not yet in the download file.
+            Personas sourced from IBM W3 BluePages via member download export.
           </p>
         </Card>
       )}
