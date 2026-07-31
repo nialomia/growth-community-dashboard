@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FileText, FileBarChart, LayoutTemplate, Download, ArrowUpRight } from "lucide-react";
+import { FileText, FileBarChart, LayoutTemplate, ArrowUpRight } from "lucide-react";
 import { Card } from "../../ui/card";
 import {
   Select,
@@ -42,17 +42,16 @@ export function SharePointTab() {
     <div className="space-y-5">
       <SectionHeading title="SharePoint analytics" description="How Resources Are Discovered, Used, and Maintained Across the Growth Community" />
 
-      <div className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-5">
         <KpiCard label="Page views"          {...kpi.pageViews}         accent="blue"   />
         <KpiCard label="Unique viewers"      {...kpi.uniqueViewers}     accent="green"  />
-        <KpiCard label="Downloads"           {...kpi.downloads}         accent="purple" />
         <KpiCard label="Avg. engagement"     {...kpi.avgEngagement}     accent="grey"   />
         <KpiCard label="Resource freshness"  {...kpi.resourceFreshness} accent="blue"   />
         <KpiCard label="Active resources"    {...kpi.activeResources}   accent="green"  />
       </div>
 
       <Card className="gap-3 rounded-md border-[var(--border)] p-4 shadow-none">
-        <SectionHeading title="Views & unique viewers" description="Since Jul 14" />
+        <SectionHeading title="Views & unique viewers" description="Jul 21 – Jul 28" />
         <TrendLineChart
           data={sharepointTrend}
           series={[
@@ -115,9 +114,6 @@ export function SharePointTab() {
                     <p className="inline-flex items-center gap-1 tabular-nums text-[14px] text-[var(--gc-graphite)]">
                       {r.views.toLocaleString()} <ArrowUpRight size={13} className="text-[var(--gc-grey)]" />
                     </p>
-                    <div className="mt-0.5 flex items-center justify-end gap-1 text-[12px] text-[var(--gc-grey)]">
-                      <Download size={12} /> {r.downloads.toLocaleString()}
-                    </div>
                   </div>
                   <StatusPill status={freshnessStatus[r.freshness]} />
                 </div>
