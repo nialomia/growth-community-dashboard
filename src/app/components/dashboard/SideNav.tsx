@@ -4,6 +4,7 @@ import {
   FileText,
   Bot,
   Video,
+  BookOpen,
   LucideIcon,
 } from "lucide-react";
 import { cn } from "../ui/utils";
@@ -13,7 +14,8 @@ export type TabKey =
   | "slack"
   | "sharepoint"
   | "ica"
-  | "meeting";
+  | "meeting"
+  | "dictionary";
 
 export type GccSubKey = "july-meetings" | "july-new-members";
 
@@ -23,6 +25,7 @@ export const TABS: { key: TabKey; label: string; icon: LucideIcon }[] = [
   { key: "sharepoint",  label: "SharePoint Analytics",  icon: FileText },
   { key: "ica",         label: "ICA Agent Analytics",   icon: Bot },
   { key: "meeting",     label: "GCC Call Attendance",   icon: Video },
+  { key: "dictionary",  label: "Data Dictionary",       icon: BookOpen },
 ];
 
 const GCC_SUB_TABS: { key: GccSubKey; label: string }[] = [

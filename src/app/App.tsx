@@ -9,6 +9,7 @@ import { SlackTab } from "./components/dashboard/tabs/SlackTab";
 import { SharePointTab } from "./components/dashboard/tabs/SharePointTab";
 import { IcaTab } from "./components/dashboard/tabs/IcaTab";
 import { MeetingTab } from "./components/dashboard/tabs/MeetingTab";
+import { DataDictionaryTab } from "./components/dashboard/tabs/DataDictionaryTab";
 
 export default function App() {
   const [tab, setTab] = useState<TabKey>("overview");
@@ -28,6 +29,7 @@ export default function App() {
               {tab === "sharepoint"  && <SharePointTab />}
               {tab === "ica"         && <IcaTab />}
               {tab === "meeting"     && <MeetingTab gccSub={gccSub} onGccSub={setGccSub} />}
+              {tab === "dictionary"  && <DataDictionaryTab />}
             </main>
           </div>
         </div>
