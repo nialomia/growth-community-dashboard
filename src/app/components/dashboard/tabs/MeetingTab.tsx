@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CheckCircle2, XCircle, Clock, Users, CalendarDays, Zap, Search, X, Star, BarChart2 } from "lucide-react";
+import { CheckCircle2, XCircle, Clock, Users, CalendarDays, Zap, Search, X, Star } from "lucide-react";
 import { Card } from "../../ui/card";
 import { Input } from "../../ui/input";
 import { Button } from "../../ui/button";
@@ -7,6 +7,7 @@ import { KpiCard, SectionHeading, InsightCard } from "../primitives";
 import { useDashboard } from "../../../dashboard-context";
 import { cn } from "../../ui/utils";
 import type { GccSubKey } from "../../dashboard/SideNav";
+import { GccOverviewTab } from "./GccOverviewTab";
 
 type Filter = "all" | "attended" | "absent";
 
@@ -88,16 +89,8 @@ export function MeetingTab({
         ))}
       </div>
 
-      {/* ── July (3 meetings) placeholder ─────────────────────────── */}
-      {gccSub === "july-meetings" && (
-        <Card className="flex flex-col items-center justify-center gap-3 rounded-md border-[var(--border)] p-12 shadow-none text-center">
-          <BarChart2 size={36} className="text-[var(--gc-grey)]" />
-          <p className="text-[var(--gc-graphite)]" style={{ fontWeight: 500 }}>TBD analytics</p>
-          <p className="max-w-xs text-[13px] text-[var(--gc-grey)]">
-            Aggregated metrics across all 3 July GCC calls will appear here once data is available.
-          </p>
-        </Card>
-      )}
+      {/* ── July (3 meetings) ─────────────────────────────────────── */}
+      {gccSub === "july-meetings" && <GccOverviewTab />}
 
       {/* ── July New Members content ───────────────────────────────── */}
       {gccSub === "july-new-members" && <>

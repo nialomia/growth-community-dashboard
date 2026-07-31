@@ -251,5 +251,63 @@
       { "id": "nm34", "name": "Joyce Huang",            "email": "Joyce.Huang2@ibm.com",             "joinedSlack": "Jul 28", "attended": false },
       { "id": "nm35", "name": "Nicole Ruedge",          "email": "nicole.ruedge@ibm.com",            "joinedSlack": "Jul 28", "attended": false }
     ]
+  },
+
+  "gccCallOverview": {
+    "calls": [
+      {
+        "date": "Jul 14",
+        "fullDate": "July 14, 2026",
+        "attendees": 62,
+        "duration": "46m 14s",
+        "avgAttendanceTime": "29m 27s"
+      },
+      {
+        "date": "Jul 21",
+        "fullDate": "July 21, 2026",
+        "attendees": 56,
+        "duration": "1h 1m 40s",
+        "avgAttendanceTime": "34m 35s"
+      },
+      {
+        "date": "Jul 28",
+        "fullDate": "July 28, 2026",
+        "attendees": 44,
+        "duration": "1h 33m 57s",
+        "avgAttendanceTime": "31m 38s"
+      }
+    ],
+    "summary": {
+      "totalUnique": 117,
+      "avgAttendees": 54,
+      "attendedAll3": 13,
+      "attendedExactly2": 19,
+      "attendedExactly1": 85
+    },
+    "crossCallBreakdown": [
+      { "label": "All 3 calls",   "count": 13  },
+      { "label": "Jul 14 + 21",   "count": 9   },
+      { "label": "Jul 14 + 28",   "count": 5   },
+      { "label": "Jul 21 + 28",   "count": 5   },
+      { "label": "Jul 14 only",   "count": 35  },
+      { "label": "Jul 21 only",   "count": 29  },
+      { "label": "Jul 28 only",   "count": 21  }
+    ],
+    "attendanceTrend": [
+      { "date": "Jul 14", "attendees": 62 },
+      { "date": "Jul 21", "attendees": 56 },
+      { "date": "Jul 28", "attendees": 44 }
+    ],
+    "coreAttendees": [
+      "Kristen Yerardi", "Jasmine Westbrooks", "Nicole Keyes", "Greg Bender",
+      "Liz Barker", "Evangelina Rajendran", "Ben Lopez", "Rithvik Siddam",
+      "Grace Lee", "Arthi Vijayaraghavan", "Imad Nasr", "Olusegun Sidiku", "Otilia Mihai"
+    ],
+    "jul14Attendees": [
+      "Kristen Yerardi","Jasmine Westbrooks","Nicole Keyes","WILL CHAMBERS","Arleen Alcaraz-Cano","ALEXANDER INGLE","Madhur Vashisht","Jeanne Yuen","Greg Bender","Nolan Vaughan","Tony Wolfram","Sreelakshmi G","Mike Lamb","Alison Peacock","John Livingston","Rafael Godoi Vasques","Chikezie Okoli","BRIAN MCGRATH","Ana Carolina Peres Pecchia","BRAD ELLER","Swetha R","LIZ BARKER","Evangelina Rajendran","Michael Tracy","Ben Lopez","Rithvik Siddam","Scott Poole","Grace Lee","Rushali Jaiswal","Ravi Barnwal","Jean-Marc van der Kolk","Arthi Vijayaraghavan","Inna Shevchenko","Chris Lautemann","Rodrigo Barros","Arya Ajayakumar","Manish Siddamsetty","Priyanka De","Imad Nasr","Shelby Fink","Shawn Koid","DAVE HUBER","Krystal Lin","Tony Graziano","KAREN GOSCIMINSKI","Eileen Allen","Mark Castle","Emily Lucitt-O'Connor","Aanchal Kumar","JT Thomas","Sasha Fedkevich","Samina Khan","Olusegun Sidiku","Kim Woodbury","Gauri Mathur","Bill Sanders","Chidera Onyia","Deva Dash","Danielle Kar","Otilia Mihai","Ester Monroy Gatell","Sangeetha V"
+    ],
+    "jul21Attendees": [
+      "Kristen Yerardi","CHRIS ZALOUMIS","Nicole Keyes","Nia Lomia","Jasmine Westbrooks","Shelby Fink","CAESAR MIERZEJEK","Alison Peacock","Rithvik Siddam","Nick Hillary","Emily Kim","GAVIN REYNOLDS","Greg Bender","JOHN CULLETON","Grace Lee","Amanda Neal","Imad Nasr","Olusegun Sidiku","Ana Camelia Mitrut","Krystal Lin","Jen Strybos","Ben Lopez","JJ Cherian","Manish Siddamsetty","Sreelakshmi G","Otilia Mihai","BRAD ELLER","Robert Slocum","JOHN Lundgren","Synclair Gonzalez-Clark","Corinne Leopold","Sanjay Joshi","Marc Christian Weber","Natthaphol Khantikulanon","Stephen Kenna","Chris Lautemann","Lily Olive","Jillian Quiller","Ansanta Newton","Danielle Kar","Brayden Wisniewski","Arthi Vijayaraghavan","Michael Zhang","Daniil Kholin","Christina Grady","Suzanne Permanna","Shruti Johari","Sudipta Datta","Monica Ilie","LIZ BARKER","Evangelina Rajendran","sridhar Manoharan","Chikezie Okoli","Bridget Ndege","George Foster","Juhi Gupta"
+    ]
   }
 }

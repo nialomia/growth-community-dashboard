@@ -64,6 +64,30 @@ export type MeetingAttendanceData = {
   newMembers: NewMember[];
 };
 
+export type GccCall = {
+  date: string;
+  fullDate: string;
+  attendees: number;
+  duration: string;
+  avgAttendanceTime: string;
+};
+
+export type GccCallOverview = {
+  calls: GccCall[];
+  summary: {
+    totalUnique: number;
+    avgAttendees: number;
+    attendedAll3: number;
+    attendedExactly2: number;
+    attendedExactly1: number;
+  };
+  crossCallBreakdown: { label: string; count: number }[];
+  attendanceTrend: { date: string; attendees: number }[];
+  coreAttendees: string[];
+  jul14Attendees: string[];
+  jul21Attendees: string[];
+};
+
 export type AnalyticsData = {
   _meta: { lastUpdated: string; updatedBy: string; note: string };
   growthTrend: { month: string; members: number; active: number; sharepoint: number }[];
@@ -98,6 +122,7 @@ export type AnalyticsData = {
   sharepointFreshness: { label: string; pct: number; status: string }[];
   upcomingEvents: { title: string; date: string }[];
   meetingAttendance?: MeetingAttendanceData;
+  gccCallOverview?: GccCallOverview;
 };
 
 // ─── Static fallback (used until the JSON fetch resolves) ────────────────────
