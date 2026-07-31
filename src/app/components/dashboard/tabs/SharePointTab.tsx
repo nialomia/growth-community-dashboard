@@ -51,14 +51,13 @@ export function SharePointTab() {
       </div>
 
       <Card className="gap-3 rounded-md border-[var(--border)] p-4 shadow-none">
-        <SectionHeading title="Views & unique viewers" description="Jul 21 – Jul 28" />
+        <SectionHeading title="Views & unique viewers" description="Jul 8–28, weekly" />
         <TrendLineChart
           data={sharepointTrend}
           series={[
             { key: "views",  name: "Page views",     color: "blue"   },
-            { key: "unique", name: "Unique viewers",  color: "purple" },
+            { key: "unique", name: "Unique viewers (sum of daily)",  color: "purple" },
           ]}
-          yFormatter={(v) => `${(v / 1000).toFixed(0)}k`}
         />
       </Card>
 
@@ -95,7 +94,7 @@ export function SharePointTab() {
           <p className="py-6 text-center text-[13px] text-[var(--gc-grey)]">No resources match these filters.</p>
         ) : (
           <div className="grid gap-2.5 md:grid-cols-2">
-            {ranked.slice(0, 3).map((r, i) => {
+            {ranked.slice(0, 5).map((r, i) => {
               const Icon = typeIcon[r.type] ?? FileText;
               return (
                 <div key={r.id} className="flex items-center gap-3 rounded-md border border-[var(--border)] p-3">
@@ -129,27 +128,27 @@ export function SharePointTab() {
           <div className="grid gap-2.5 md:grid-cols-2">
             <InsightCard
               tone="positive"
-              title="Jul 28 call doc is the #1 resource"
-              summary="Growth Community - 2026 July 28 leads with 11 views and is the most downloaded resource this period."
-              explanation="The most recent call document consistently attracts the most traffic, suggesting members return to SharePoint specifically after each call. Pin the latest call doc to the site home page and share the link in the Slack recap post to maximise views."
-            />
-            <InsightCard
-              tone="positive"
-              title="Traffic grew 496% from Jun to Jul"
-              summary="Page views jumped from 378 in June to 2,255 in July — the site is gaining strong momentum."
-              explanation="The July spike aligns with the GCC calls and showcase sessions. To sustain this growth, maintain a regular posting cadence after each call and promote the SharePoint link consistently in Slack and during the weekly call itself."
+              title="Themed Conversation Leader Kit is the #1 resource"
+              summary="The Jul 28 Leader Kit logged 69 visits — nearly 3× the next most-visited document."
+              explanation="The Themed Conversation Leader Kit (Jul 28) had 69 visits from 4 unique viewers, far outpacing the homepage (26 visits). This suggests members are returning repeatedly to use this resource actively. Keep it pinned prominently and create future call kits in the same format."
             />
             <InsightCard
               tone="warning"
-              title="Only 38 unique viewers all time"
-              summary="Total audience reach is still very limited — the site has 801 Slack members but only 38 have visited SharePoint."
-              explanation="Less than 5% of the Slack community has discovered the SharePoint site. Add the site link to the Slack channel description, include it in the new member welcome message, and reference it in ICA agent responses when members ask about resources or past calls."
+              title="Only 38 unique viewers all time across 2,862 visits"
+              summary="High repeat visit rate — the same 38 people are driving almost all traffic."
+              explanation="With 2,862 total visits and only 38 unique viewers all time, each viewer averages ~75 visits. This signals the site is useful to its existing audience but has very low discovery. Adding the SharePoint link to the Slack channel header and new member welcome message is the highest-impact action to expand reach."
             />
             <InsightCard
               tone="info"
-              title="Call recordings need better labelling"
-              summary="3 of the top 6 resources are call recordings or duplicates from July 21 — consolidation would improve navigation."
-              explanation="The 2025–26 Call Index is the right place to centralise all recordings, but it only has 3 views. Promote the index doc as the single destination for past calls rather than linking individual recordings. Archive or merge the duplicate July 21 entries to reduce clutter."
+              title="94% of visits come from desktop"
+              summary="2,704 of 2,862 total visits were from desktop — mobile and tablet usage is negligible."
+              explanation="The SharePoint site is essentially desktop-only right now. This is typical for an internal knowledge site, but worth noting if content is ever shared during mobile-heavy contexts like Slack on mobile. No action needed unless mobile engagement becomes a goal."
+            />
+            <InsightCard
+              tone="positive"
+              title="20 active resources — strong content library"
+              summary="The site has 20 tracked documents, 18 of which are Fresh (updated within 30 days)."
+              explanation="The 90% freshness rate reflects strong content hygiene. The two non-fresh items are the 2025 Call Index (Aging) and a Jan 2025 PPM board update (Stale). Consider archiving the stale item or adding a note that it's for historical reference only."
             />
           </div>
         </Card>
