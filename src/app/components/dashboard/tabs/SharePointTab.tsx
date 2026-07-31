@@ -143,28 +143,28 @@ export function SharePointTab() {
           <SectionHeading title="Content insights" description="Where to act next" />
           <div className="grid gap-2.5 md:grid-cols-2">
             <InsightCard
-              tone="warning"
-              title="Refresh: Brand Voice Guidelines"
-              summary="Stale since February with declining views."
-              explanation="Views dropped 22% over 3 months and it hasn't been updated in 5. Refreshing tone examples and re-linking from onboarding should lift discovery."
-            />
-            <InsightCard
-              tone="info"
-              title="Archive: Moderation Handbook"
-              summary="Aging content with low downloads relative to views."
-              explanation="High view-to-download ratio suggests readers aren't finding it actionable. Consider consolidating into the Onboarding Playbook."
+              tone="positive"
+              title="Jul 28 call doc is the #1 resource"
+              summary="Growth Community - 2026 July 28 leads with 11 views and is the most downloaded resource this period."
+              explanation="The most recent call document consistently attracts the most traffic, suggesting members return to SharePoint specifically after each call. Pin the latest call doc to the site home page and share the link in the Slack recap post to maximise views."
             />
             <InsightCard
               tone="positive"
-              title="Promote: Onboarding Playbook"
-              summary="Top performer and fresh — expand its reach."
-              explanation="Feature it in the Slack welcome flow and next community call to capitalise on strong engagement."
+              title="Traffic grew 496% from Jun to Jul"
+              summary="Page views jumped from 378 in June to 2,255 in July — the site is gaining strong momentum."
+              explanation="The July spike aligns with the GCC calls and showcase sessions. To sustain this growth, maintain a regular posting cadence after each call and promote the SharePoint link consistently in Slack and during the weekly call itself."
+            />
+            <InsightCard
+              tone="warning"
+              title="Only 38 unique viewers all time"
+              summary="Total audience reach is still very limited — the site has 801 Slack members but only 38 have visited SharePoint."
+              explanation="Less than 5% of the Slack community has discovered the SharePoint site. Add the site link to the Slack channel description, include it in the new member welcome message, and reference it in ICA agent responses when members ask about resources or past calls."
             />
             <InsightCard
               tone="info"
-              title="Freshness dipping overall"
-              summary="Only 68% of resources are marked fresh."
-              explanation="Set a quarterly review cadence for Guides and Reports to keep the freshness score above 75%."
+              title="Call recordings need better labelling"
+              summary="3 of the top 6 resources are call recordings or duplicates from July 21 — consolidation would improve navigation."
+              explanation="The 2025–26 Call Index is the right place to centralise all recordings, but it only has 3 views. Promote the index doc as the single destination for past calls rather than linking individual recordings. Archive or merge the duplicate July 21 entries to reduce clutter."
             />
           </div>
         </Card>

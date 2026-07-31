@@ -8,7 +8,7 @@ import { OverviewTab } from "./components/dashboard/tabs/OverviewTab";
 import { SlackTab } from "./components/dashboard/tabs/SlackTab";
 import { SharePointTab } from "./components/dashboard/tabs/SharePointTab";
 import { IcaTab } from "./components/dashboard/tabs/IcaTab";
-import { EventsTab } from "./components/dashboard/tabs/EventsTab";
+import { MeetingTab } from "./components/dashboard/tabs/MeetingTab";
 
 export default function App() {
   const [tab, setTab] = useState<TabKey>("overview");
@@ -22,11 +22,11 @@ export default function App() {
           <div className="min-w-0 flex-1">
             <FilterBar />
             <main className="mx-auto max-w-[1400px] p-4 md:p-6">
-              {tab === "overview" && <OverviewTab onDrill={setTab} />}
-              {tab === "slack" && <SlackTab />}
-              {tab === "sharepoint" && <SharePointTab />}
-              {tab === "ica" && <IcaTab />}
-              {tab === "events" && <EventsTab />}
+              {tab === "overview"    && <OverviewTab onDrill={setTab} />}
+              {tab === "slack"       && <SlackTab />}
+              {tab === "sharepoint"  && <SharePointTab />}
+              {tab === "ica"         && <IcaTab />}
+              {tab === "meeting"     && <MeetingTab />}
             </main>
           </div>
         </div>

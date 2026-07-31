@@ -3,7 +3,7 @@ import {
   Users,
   FileText,
   Bot,
-  CalendarDays,
+  Video,
   LucideIcon,
 } from "lucide-react";
 import { cn } from "../ui/utils";
@@ -13,14 +13,14 @@ export type TabKey =
   | "slack"
   | "sharepoint"
   | "ica"
-  | "events";
+  | "meeting";
 
 export const TABS: { key: TabKey; label: string; icon: LucideIcon }[] = [
-  { key: "overview", label: "Overview", icon: LayoutDashboard },
-  { key: "slack", label: "Slack Member Growth", icon: Users },
-  { key: "sharepoint", label: "SharePoint Analytics", icon: FileText },
-  { key: "ica", label: "ICA Agent Analytics", icon: Bot },
-  { key: "events", label: "Events & Engagement", icon: CalendarDays },
+  { key: "overview",    label: "Overview",              icon: LayoutDashboard },
+  { key: "slack",       label: "Slack Member Growth",   icon: Users },
+  { key: "sharepoint",  label: "SharePoint Analytics",  icon: FileText },
+  { key: "ica",         label: "ICA Agent Analytics",   icon: Bot },
+  { key: "meeting",     label: "GCC Call Attendance",   icon: Video },
 ];
 
 export function SideNav({

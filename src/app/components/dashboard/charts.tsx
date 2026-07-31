@@ -9,6 +9,7 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
+  Cell,
 } from "recharts";
 import { useDashboard } from "../../dashboard-context";
 
@@ -119,6 +120,36 @@ export function SimpleBarChart({
             radius={[3, 3, 0, 0]}
             isAnimationActive={!lowData}
           />
+        ))}
+      </BarChart>
+    </ResponsiveContainer>
+  );
+}
+
+/* Grouped bar chart with multiple series side-by-side. */
+export function GroupedBarChart({
+  data,
+  series,
+  height = 240,
+  yFormatter,
+}: {
+  data: any[];
+  series: Series[];
+  height?: number;
+  yFormatter?: (v: number) => string;
+}) {
+  const { lowData } = useDashboard();
+  const shown = lowData ? series.slice(0, 1) : series;
+  return (
+    <ResponsiveContainer width="100%" height={lowData ? Math.min(height, 180) : height}>
+      <BarChart data={data} margin={{ top: 8, right: 8, left: -8, bottom: 0 }}>
+        {!lowData && <CartesianGrid key="grid" strokeDasharray="3 3" stroke="#eef1f4" vertical={false} />}
+        <XAxis key="x" dataKey={Object.keys(data[0])[0]} tick={axisStyle} tickLine={false} axisLine={{ stroke: "#dde1e6" }} />
+        <YAxis key="y" tick={axisStyle} tickLine={false} axisLine={false} width={44} tickFormatter={yFormatter} />
+        <Tooltip key="tt" content={<ChartTooltip />} cursor={{ fill: "rgba(15,98,254,0.05)" }} />
+        {!lowData && <Legend key="lg" wrapperStyle={{ fontSize: 12 }} />}
+        {shown.map((s) => (
+          <Bar key={s.key} dataKey={s.key} name={s.name} fill={palette[s.color]} radius={[3, 3, 0, 0]} isAnimationActive={!lowData} />
         ))}
       </BarChart>
     </ResponsiveContainer>

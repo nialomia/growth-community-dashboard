@@ -35,12 +35,12 @@ export function FilterBar() {
             <SelectTrigger
               aria-label={c.label}
               className={cn(
-                "h-8 w-auto justify-start gap-1.5 rounded-full border-dashed text-[13px]",
+                "h-8 w-fit min-w-0 max-w-[200px] justify-start gap-1.5 rounded-full border-dashed text-[13px]",
                 isActive &&
                   "border-solid border-[var(--gc-ibm-blue)] bg-[var(--gc-ibm-blue-soft)] text-[var(--gc-ibm-blue)]",
               )}
             >
-              <span className="text-[var(--gc-grey)]">{c.label}:</span>
+              <span className="shrink-0 text-[var(--gc-grey)]">{c.label}:</span>
               <SelectValue />
             </SelectTrigger>
             <SelectContent>

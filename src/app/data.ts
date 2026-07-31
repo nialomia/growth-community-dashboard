@@ -34,6 +34,36 @@ export type KpiValue = {
   delta: string;
 };
 
+export type NewMember = {
+  id: string;
+  name: string;
+  email: string;
+  joinedSlack: string;
+  attended: boolean;
+  joinTime?: string;
+  engagementActions?: number;
+};
+
+export type Attendee = {
+  name: string;
+  joinTime: string;
+  engagementActions: number;
+  isNewMember: boolean;
+};
+
+export type MeetingAttendanceData = {
+  meetingTitle: string;
+  meetingDate: string;
+  meetingDuration: string;
+  totalAttendees: number;
+  avgAttendanceTime: string;
+  newMemberCount: number;
+  newMembersAttended: number;
+  newMembersAbsent: number;
+  allAttendees?: Attendee[];
+  newMembers: NewMember[];
+};
+
 export type AnalyticsData = {
   _meta: { lastUpdated: string; updatedBy: string; note: string };
   growthTrend: { month: string; members: number; active: number; sharepoint: number }[];
@@ -67,6 +97,7 @@ export type AnalyticsData = {
   };
   sharepointFreshness: { label: string; pct: number; status: string }[];
   upcomingEvents: { title: string; date: string }[];
+  meetingAttendance?: MeetingAttendanceData;
 };
 
 // ─── Static fallback (used until the JSON fetch resolves) ────────────────────
@@ -219,6 +250,53 @@ export const FALLBACK: AnalyticsData = {
     { title: "Data & AI Summit v2",    date: "Oct 2026" },
     { title: "Year-end Town Hall",     date: "Dec 2026" },
   ],
+  meetingAttendance: {
+    meetingTitle: "Growth Community Call (GCC)",
+    meetingDate: "Jul 28, 2026",
+    meetingDuration: "1h 33m 57s",
+    totalAttendees: 47,
+    avgAttendanceTime: "31m 38s",
+    newMemberCount: 35,
+    newMembersAttended: 4,
+    newMembersAbsent: 31,
+    newMembers: [
+      { id: "nm1",  name: "Dipali Darji",          email: "ddarji@us.ibm.com",               joinedSlack: "Jul 10", attended: true,  joinTime: "11:29 AM", engagementActions: 2 },
+      { id: "nm2",  name: "Brayden Wisniewski",     email: "brayden@ibm.com",                 joinedSlack: "Jul 10", attended: true,  joinTime: "11:30 AM", engagementActions: 4 },
+      { id: "nm3",  name: "Kuber Saraswat",         email: "Kuber@ibm.com",                   joinedSlack: "Jul 10", attended: true,  joinTime: "11:36 AM", engagementActions: 7 },
+      { id: "nm4",  name: "Sri Muralidharan",       email: "smuralid@in.ibm.com",             joinedSlack: "Jul 10", attended: true,  joinTime: "11:32 AM", engagementActions: 0 },
+      { id: "nm5",  name: "Hi Patel",               email: "hipatel@ibm.com",                 joinedSlack: "Jul 10", attended: false },
+      { id: "nm6",  name: "Paolo Bocci",            email: "paolo.bocci@ibm.com",             joinedSlack: "Jul 10", attended: false },
+      { id: "nm7",  name: "Marjorie (CA)",          email: "marjorie@ca.ibm.com",             joinedSlack: "Jul 10", attended: false },
+      { id: "nm8",  name: "Eric Lam",               email: "Eric.Lam1@ibm.com",               joinedSlack: "Jul 10", attended: false },
+      { id: "nm9",  name: "Abhilasha Prdnt",        email: "Abhilasha.Prdnt1@ibm.com",        joinedSlack: "Jul 10", attended: false },
+      { id: "nm10", name: "Murugesan Karunakaran",  email: "murugesan.karunakaran@in.ibm.com",joinedSlack: "Jul 10", attended: false },
+      { id: "nm11", name: "Shalini Bade",           email: "Shalini.Bade@ibm.com",            joinedSlack: "Jul 10", attended: false },
+      { id: "nm12", name: "Kelton",                 email: "kelton@ibm.com",                  joinedSlack: "Jul 10", attended: false },
+      { id: "nm13", name: "Alista",                 email: "alista@ibm.com",                  joinedSlack: "Jul 10", attended: false },
+      { id: "nm14", name: "Joshua Kim",             email: "Joshua.Kim3@ibm.com",             joinedSlack: "Jul 10", attended: false },
+      { id: "nm15", name: "Shobhit Gupta",          email: "Shobhit.Gupta10@ibm.com",         joinedSlack: "Jul 10", attended: false },
+      { id: "nm16", name: "Jenna Jae Lee",          email: "jennajaelee@ibm.com",             joinedSlack: "Jul 13", attended: false },
+      { id: "nm17", name: "Nandini V",              email: "nandiniv@ibm.com",                joinedSlack: "Jul 13", attended: false },
+      { id: "nm18", name: "Kasey Hogan",            email: "Kasey.L.Hog@ibm.com",             joinedSlack: "Jul 13", attended: false },
+      { id: "nm19", name: "Andreina Dyer",          email: "andreina.dyer@ibm.com",           joinedSlack: "Jul 13", attended: false },
+      { id: "nm20", name: "Sampath Dechu",          email: "sampath.dechu@ibm.com",           joinedSlack: "Jul 27", attended: false },
+      { id: "nm21", name: "Ketan Deshmukh",         email: "Ketan.Deshmukh@ibm.com",          joinedSlack: "Jul 27", attended: false },
+      { id: "nm22", name: "Thomas Yang",            email: "thomas.yang@ibm.com",             joinedSlack: "Jul 27", attended: false },
+      { id: "nm23", name: "Ramona Sartip",          email: "ramona.sartip@ibm.com",           joinedSlack: "Jul 27", attended: false },
+      { id: "nm24", name: "JT Thomas",              email: "JT.Thomas@ibm.com",               joinedSlack: "Jul 27", attended: false },
+      { id: "nm25", name: "Nate Myer",              email: "natemyer@ibm.com",                joinedSlack: "Jul 27", attended: false },
+      { id: "nm26", name: "Manish Siddamsetty",     email: "Manish.Siddamsetty@ibm.com",      joinedSlack: "Jul 27", attended: false },
+      { id: "nm27", name: "Ajay AI",                email: "Ajay.AI@ibm.com",                 joinedSlack: "Jul 27", attended: false },
+      { id: "nm28", name: "Brian Cop",              email: "briancop@uk.ibm.com",             joinedSlack: "Jul 27", attended: false },
+      { id: "nm29", name: "J Cal",                  email: "jcal@ibm.com",                    joinedSlack: "Jul 27", attended: false },
+      { id: "nm30", name: "Avi Karunakaran",        email: "aviakaruman@ibm.com",             joinedSlack: "Jul 27", attended: false },
+      { id: "nm31", name: "Gauri Dasgupta",         email: "gauri.dasgupta1@ibm.com",         joinedSlack: "Jul 27", attended: false },
+      { id: "nm32", name: "Melita Saville",         email: "melita_saville@ibm.com",          joinedSlack: "Jul 27", attended: false },
+      { id: "nm33", name: "Sadhana Rao",            email: "Sadhana.Rao1@ibm.com",            joinedSlack: "Jul 27", attended: false },
+      { id: "nm34", name: "Joyce Huang",            email: "Joyce.Huang2@ibm.com",            joinedSlack: "Jul 28", attended: false },
+      { id: "nm35", name: "Nicole Ruedge",          email: "nicole.ruedge@ibm.com",           joinedSlack: "Jul 28", attended: false },
+    ],
+  },
 };
 
 // ─── useAnalytics hook ───────────────────────────────────────────────────────

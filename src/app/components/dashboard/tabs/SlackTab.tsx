@@ -1,231 +1,155 @@
-import { useMemo, useState } from "react";
-import { Search, ChevronLeft, ChevronRight, HeartPulse } from "lucide-react";
+import { useState } from "react";
+import { Users } from "lucide-react";
 import { Card } from "../../ui/card";
-import { Input } from "../../ui/input";
-import { Button } from "../../ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../../ui/select";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "../../ui/table";
-import { KpiCard, SectionHeading, StatusPill, TrendArrow, InsightCard } from "../primitives";
-import { TrendLineChart, SimpleBarChart } from "../charts";
-import { StatefulCard } from "../StatefulCard";
-import { useDashboard } from "../../../dashboard-context";
+import { KpiCard, SectionHeading, InsightCard } from "../primitives";
+import { SimpleBarChart } from "../charts";
 
-const PAGE_SIZE = 4;
+// ── Real data from list 1.xlsx (Jul 10, 702 members) and list 2.xlsx (Jul 28, 801 members) ──
+const SNAPSHOT = [
+  { date: "Jul 10", total: 702 },
+  { date: "Jul 28", total: 801 },
+];
+
+const REGION_DATA = [
+  { region: "AMER", members: 430, pct: 54 },
+  { region: "APAC", members: 209, pct: 26 },
+  { region: "EMEA", members: 160, pct: 20 },
+];
+
+const JUL10     = 702;
+const JUL28     = 801;
+const NET       = 99;
+const NEW       = 108;
+const REMOVED   = 9;
+const GROWTH_PCT = "14.1";
 
 export function SlackTab() {
-  const { lowData, analytics } = useDashboard();
-  const kpi = analytics.kpis.slack;
-  const { slackGrowth, cohorts, segments, communityHealth } = analytics;
-
-  const [query, setQuery] = useState("");
-  const [region, setRegion] = useState("All");
-  const [page, setPage] = useState(0);
-
-  const filtered = useMemo(() => {
-    return segments.filter(
-      (s) =>
-        s.name.toLowerCase().includes(query.toLowerCase()) &&
-        (region === "All" || s.region === region),
-    );
-  }, [query, region, segments]);
-
-  const pages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
-  const current = Math.min(page, pages - 1);
-  const rows = filtered.slice(current * PAGE_SIZE, current * PAGE_SIZE + PAGE_SIZE);
-
   return (
     <div className="space-y-5">
-      <SectionHeading title="Slack member growth" description="How the community is joining, staying and contributing." />
+      <SectionHeading
+        title="Slack member growth"
+        description="Based on member list snapshots: Jul 10 (702 members) and Jul 28 (801 members)."
+      />
 
-      <div className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-5">
-        <KpiCard label="New members"        {...kpi.newMembers}         accent="green"  />
-        <KpiCard label="Returning members"  {...kpi.returningMembers}   accent="blue"   />
-        <KpiCard label="Inactive members"   {...kpi.inactiveMembers}    accent="grey"   />
-        <KpiCard label="Active contributors"{...kpi.activeContributors} accent="purple" />
-        <KpiCard label="Engagement rate"    {...kpi.engagementRate}     accent="blue"   />
+      {/* KPIs — only what the data supports */}
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+        <KpiCard
+          label="Total members (Jul 28)"
+          value={JUL28.toLocaleString()}
+          trend="up"
+          delta={`+${GROWTH_PCT}%`}
+          accent="blue"
+        />
+        <KpiCard
+          label="Net growth (18 days)"
+          value={`+${NET}`}
+          trend="up"
+          delta="Jul 10 → Jul 28"
+          accent="green"
+        />
+        <KpiCard
+          label="New members added"
+          value={NEW.toLocaleString()}
+          trend="up"
+          delta="since Jul 10"
+          accent="purple"
+        />
+        <KpiCard
+          label="Members removed"
+          value={REMOVED.toLocaleString()}
+          trend="down"
+          delta="list cleanup"
+          accent="grey"
+        />
       </div>
 
+      {/* Snapshot bar chart + region breakdown */}
       <div className="grid gap-4 lg:grid-cols-3">
         <Card className="gap-3 rounded-md border-[var(--border)] p-4 shadow-none lg:col-span-2">
-          <SectionHeading title="Member movement over time" description="New, returning and inactive members" />
-          <TrendLineChart
-            data={slackGrowth}
-            series={[
-              { key: "newMembers", name: "New",      color: "green" },
-              { key: "returning",  name: "Returning", color: "blue"  },
-              { key: "inactive",   name: "Inactive",  color: "grey"  },
-            ]}
+          <SectionHeading
+            title="Member count snapshots"
+            description="Two data points: Jul 10 and Jul 28"
+          />
+          <SimpleBarChart
+            data={SNAPSHOT}
+            series={[{ key: "total", name: "Total members", color: "blue" }]}
+            height={220}
           />
         </Card>
 
-        {/* Community health indicator */}
         <Card className="gap-3 rounded-md border-[var(--border)] p-4 shadow-none">
           <div className="flex items-center gap-2">
-            <HeartPulse size={16} className="text-[var(--gc-green)]" />
-            <h3 className="text-[var(--gc-graphite)]">Community health</h3>
+            <Users size={16} className="text-[var(--gc-ibm-blue)]" />
+            <h3 className="text-[var(--gc-graphite)]">Region breakdown</h3>
           </div>
-          <div className="flex items-center gap-3">
-            <StatusPill status={communityHealth.status} />
-            <span className="tabular-nums text-[var(--gc-graphite)]" style={{ fontSize: 22, fontWeight: 600 }}>
-              {communityHealth.score}
-            </span>
-          </div>
-          <div className="space-y-2">
-            {communityHealth.signals.map((m) => (
-              <div key={m.label}>
+          <p className="text-[12px] text-[var(--gc-grey)]">Verified via W3 BluePages · Jul 28 · 801 members</p>
+          <div className="space-y-3 mt-2">
+            {REGION_DATA.map((r) => (
+              <div key={r.region}>
                 <div className="flex items-center justify-between text-[13px]">
-                  <span className="text-[var(--gc-graphite-soft)]">{m.label}</span>
-                  <StatusPill status={m.status} />
+                  <span className="text-[var(--gc-graphite-soft)]">{r.region}</span>
+                  <span className="tabular-nums text-[var(--gc-grey)]">
+                    {r.members.toLocaleString()} · {r.pct}%
+                  </span>
                 </div>
                 <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-[var(--gc-offwhite)]">
-                  <div className="h-full rounded-full bg-[var(--gc-green)]" style={{ width: `${m.value}%` }} />
+                  <div
+                    className="h-full rounded-full"
+                    style={{
+                      width: `${r.pct}%`,
+                      background:
+                        r.region === "AMER" ? "var(--gc-ibm-blue)"
+                        : r.region === "EMEA" ? "var(--gc-green)"
+                        : "var(--gc-purple)",
+                    }}
+                  />
                 </div>
               </div>
             ))}
           </div>
+          <div className="mt-3 space-y-0.5">
+            {[
+              { flag: "🇺🇸", country: "United States", n: 222 },
+              { flag: "🇮🇳", country: "India",          n: 169 },
+              { flag: "🇮🇪", country: "Ireland",        n: 47  },
+              { flag: "🇨🇦", country: "Canada",         n: 27  },
+              { flag: "🇬🇧", country: "UK",             n: 8   },
+            ].map(c => (
+              <div key={c.country} className="flex items-center justify-between text-[12px] text-[var(--gc-grey)]">
+                <span>{c.flag} {c.country}</span>
+                <span className="tabular-nums">{c.n}</span>
+              </div>
+            ))}
+            <p className="pt-1 text-[11px] text-[var(--gc-grey)]">+ other countries · all via W3 BluePages lookup</p>
+          </div>
         </Card>
       </div>
 
-      {/* Cohort analysis */}
-      <Card className="gap-3 rounded-md border-[var(--border)] p-4 shadow-none">
-        <SectionHeading title="Cohort retention" description="% of each joining cohort still active, by week" />
-        {lowData ? (
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Cohort</TableHead>
-                <TableHead className="text-right">W1</TableHead>
-                <TableHead className="text-right">W2</TableHead>
-                <TableHead className="text-right">W3</TableHead>
-                <TableHead className="text-right">W4</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {cohorts.map((c) => (
-                <TableRow key={c.cohort}>
-                  <TableCell>{c.cohort}</TableCell>
-                  <TableCell className="text-right tabular-nums">{c.w1}%</TableCell>
-                  <TableCell className="text-right tabular-nums">{c.w2}%</TableCell>
-                  <TableCell className="text-right tabular-nums">{c.w3}%</TableCell>
-                  <TableCell className="text-right tabular-nums">{c.w4}%</TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        ) : (
-          <SimpleBarChart
-            data={cohorts}
-            series={[
-              { key: "w1", name: "Week 1", color: "blue"   },
-              { key: "w2", name: "Week 2", color: "green"  },
-              { key: "w3", name: "Week 3", color: "purple" },
-              { key: "w4", name: "Week 4", color: "grey"   },
-            ]}
-            height={220}
-          />
-        )}
+      {/* Insights */}
+      <div className="grid gap-4 lg:grid-cols-2">
+        <InsightCard
+          tone="positive"
+          title="Strong growth over 18 days"
+          summary={`+${NET} net members (+${GROWTH_PCT}%) between Jul 10 and Jul 28.`}
+          explanation={`108 new members joined while 9 were removed (likely a list cleanup). At this pace (~5.5 new members/day) the community would reach ~900 members by end of August.`}
+        />
+        <InsightCard
+          tone="info"
+          title="Global but AMER-led community"
+          summary="AMER 54% · APAC 26% · EMEA 20% — verified via W3 BluePages for all 801 members."
+          explanation="Top countries: United States (222), India (169), Ireland (47), Canada (27), UK (8), Germany (7), Romania (7). APAC is stronger than the email domain alone suggested — India accounts for most of that. EMEA is well represented with Ireland as the #3 country overall."
+        />
+      </div>
+
+      {/* Data availability note */}
+      <Card className="gap-2 rounded-md border-[var(--gc-ibm-blue-soft)] bg-[var(--gc-ibm-blue-soft)]/30 p-4 shadow-none">
+        <p className="text-[13px] text-[var(--gc-graphite-soft)]">
+          <span style={{ fontWeight: 500 }}>Data availability — </span>
+          engagement metrics (active contributors, retention cohorts, engagement rate) are not yet
+          available from the member lists provided. These sections will be enabled once Slack
+          activity data is shared.
+        </p>
       </Card>
-
-      <div className="grid gap-4 lg:grid-cols-3">
-        {/* Segment table */}
-        <Card className="gap-3 rounded-md border-[var(--border)] p-4 shadow-none lg:col-span-2">
-          <SectionHeading title="Member segments" />
-          <div className="flex flex-wrap items-center gap-2">
-            <div className="relative">
-              <Search size={14} className="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 text-[var(--gc-grey)]" />
-              <Input
-                value={query}
-                onChange={(e) => { setQuery(e.target.value); setPage(0); }}
-                aria-label="Search segments"
-                placeholder="Search segments…"
-                className="h-8 w-48 pl-8"
-              />
-            </div>
-            <Select value={region} onValueChange={(v) => { setRegion(v); setPage(0); }}>
-              <SelectTrigger className="h-8 w-[130px]" aria-label="Filter by region">
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                {["All", "AMER", "EMEA", "APAC"].map((r) => (
-                  <SelectItem key={r} value={r}>{r === "All" ? "All regions" : r}</SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
-
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Segment</TableHead>
-                <TableHead>Region</TableHead>
-                <TableHead className="text-right">Members</TableHead>
-                <TableHead className="text-right">Engagement</TableHead>
-                <TableHead>Status</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {rows.length === 0 ? (
-                <TableRow>
-                  <TableCell colSpan={5} className="py-6 text-center text-[13px] text-[var(--gc-grey)]">
-                    No segments match your search.
-                  </TableCell>
-                </TableRow>
-              ) : (
-                rows.map((s) => (
-                  <TableRow key={s.id}>
-                    <TableCell style={{ fontWeight: 500 }}>{s.name}</TableCell>
-                    <TableCell className="text-[var(--gc-grey)]">{s.region}</TableCell>
-                    <TableCell className="text-right tabular-nums">{s.members.toLocaleString()}</TableCell>
-                    <TableCell className="text-right">
-                      <span className="inline-flex items-center justify-end gap-1.5 tabular-nums">
-                        {s.engagement}%
-                        <TrendArrow trend={s.trend as any} value="" />
-                      </span>
-                    </TableCell>
-                    <TableCell><StatusPill status={s.status} /></TableCell>
-                  </TableRow>
-                ))
-              )}
-            </TableBody>
-          </Table>
-
-          <div className="flex items-center justify-between text-[13px] text-[var(--gc-grey)]">
-            <span>{filtered.length} segments</span>
-            <div className="flex items-center gap-1">
-              <Button variant="outline" className="h-7 w-7 p-0" disabled={current === 0} onClick={() => setPage(current - 1)} aria-label="Previous page">
-                <ChevronLeft size={15} />
-              </Button>
-              <span className="px-1 tabular-nums">{current + 1} / {pages}</span>
-              <Button variant="outline" className="h-7 w-7 p-0" disabled={current >= pages - 1} onClick={() => setPage(current + 1)} aria-label="Next page">
-                <ChevronRight size={15} />
-              </Button>
-            </div>
-          </div>
-        </Card>
-
-        <div className="space-y-4">
-          <StatefulCard />
-          <InsightCard
-            tone="warning"
-            title="Inactive members creeping up"
-            summary="Inactive count rose to 160 this month."
-            explanation="Most inactivity is concentrated in members who joined 8+ weeks ago and never posted. A welcome-back prompt in week 3 historically recovers ~18%."
-          />
-        </div>
-      </div>
     </div>
   );
 }

@@ -17,9 +17,9 @@ const efficiencySignals = [
 ];
 
 const actions = [
-  "Re-engage the Ops Network segment with a targeted Slack campaign.",
-  "Refresh 2 stale SharePoint guides flagged below.",
-  "Promote the Builder Awards recap to sustain post-event momentum.",
+  "Share the Jul 28 call doc link in Slack — it's the #1 viewed resource and drives repeat visits.",
+  "Send a welcome message to the 31 new members who joined but missed the GCC call, with the next call date and recording link.",
+  "Promote the SharePoint site in the Slack channel description — only 38 of 801 members have visited.",
 ];
 
 export function OverviewTab({ onDrill }: { onDrill: (t: any) => void }) {
@@ -35,12 +35,12 @@ export function OverviewTab({ onDrill }: { onDrill: (t: any) => void }) {
 
       {/* KPI grid */}
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-3 xl:grid-cols-6">
-        <KpiCard label="Total members"        {...kpi.totalMembers}       accent="blue"   onDrill={() => onDrill("slack")} />
-        <KpiCard label="Monthly growth"       {...kpi.monthlyGrowth}      accent="green"  onDrill={() => onDrill("slack")} />
-        <KpiCard label="Active contributors"  {...kpi.activeContributors} accent="purple" onDrill={() => onDrill("slack")} />
-        <KpiCard label="SharePoint views"     {...kpi.sharepointViews}    accent="blue"   onDrill={() => onDrill("sharepoint")} />
-        <KpiCard label="ICA agent usage"      {...kpi.icaAgentUsage}      accent="purple" onDrill={() => onDrill("ica")} />
-        <KpiCard label="Engagement score"     {...kpi.engagementScore}    accent="grey"   onDrill={() => onDrill("events")} />
+        <KpiCard label="Slack members"        value="801"   trend="up"   delta="+99 since Jul 10" accent="blue"   onDrill={() => onDrill("slack")} />
+        <KpiCard label="New members (18 days)" value="+99"  trend="up"   delta="+14.1%"           accent="green"  onDrill={() => onDrill("slack")} />
+        <KpiCard label="GCC call attendance"  value="11%"   trend="down" delta="4 of 35 new mbrs" accent="grey"   onDrill={() => onDrill("meeting")} />
+        <KpiCard label="SharePoint views"     value="2,862" trend="up"   delta="+496% vs Jun"     accent="blue"   onDrill={() => onDrill("sharepoint")} />
+        <KpiCard label="Unique SP viewers"    value="38"    trend="up"   delta="All time"          accent="purple" onDrill={() => onDrill("sharepoint")} />
+        <KpiCard label="Resource freshness"   value="83%"   trend="up"   delta="5 of 6 fresh"     accent="green"  onDrill={() => onDrill("sharepoint")} />
       </div>
 
       <div className="grid gap-4 lg:grid-cols-3">
@@ -66,15 +66,15 @@ export function OverviewTab({ onDrill }: { onDrill: (t: any) => void }) {
           <div className="space-y-2.5">
             <InsightCard
               tone="positive"
-              title="Growth is accelerating"
-              summary="Members grew 8.9% this month, the strongest rate of 2026."
-              explanation="Net new members (+570) outpaced churn. AMER and EMEA drove 78% of the gain, largely from the Data & AI Guild and New Grads segments."
+              title="Strong Slack growth — 14.1% in 18 days"
+              summary="801 members as of Jul 28, up from 702 on Jul 10. AMER leads at 54%."
+              explanation="99 net new members joined in 18 days (108 added, 9 removed). At ~5.5 members/day the community is on track to reach ~900 by end of August. Top countries: US (222), India (169), Ireland (47)."
             />
             <InsightCard
               tone="warning"
-              title="Two segments cooling"
-              summary="Ops Network and Partner Community engagement is trending down."
-              explanation="Weekly active rate fell below 45% for both. Consider a re-engagement nudge and reviewing the content mix relevant to these audiences."
+              title="Only 11% of new members attended the GCC call"
+              summary="4 of 35 new Slack members attended the Jul 28 call — 31 missed it."
+              explanation="New members joining Jul 27–28 had no time to learn about the call. A same-day welcome message with the next call date and calendar link would significantly improve first-call attendance."
             />
           </div>
         </Card>

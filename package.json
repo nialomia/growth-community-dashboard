@@ -6,7 +6,8 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite",
-    "update-data": "node scripts/update-analytics.js"
+    "update-data": "node scripts/update-analytics.js",
+    "sync-slack": "node scripts/sync-slack.js"
   },
   "dependencies": {
     "react": "18.3.1",
