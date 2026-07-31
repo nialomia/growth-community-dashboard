@@ -176,6 +176,22 @@
     { "title": "Year-end Town Hall",     "date": "Dec 2026" }
   ],
 
+  "memberPersonas": [
+    { "persona": "Product Manager",         "count": 271, "pct": 31.1 },
+    { "persona": "Product Designer",        "count": 128, "pct": 14.7 },
+    { "persona": "Other",                   "count": 97,  "pct": 11.1 },
+    { "persona": "Product Marketing Mgr",   "count": 96,  "pct": 11.0 },
+    { "persona": "Not yet assigned",        "count": 77,  "pct": 8.8  },
+    { "persona": "Sales",                   "count": 70,  "pct": 8.0  },
+    { "persona": "Engineer",                "count": 33,  "pct": 3.8  },
+    { "persona": "Content Designer",        "count": 28,  "pct": 3.2  },
+    { "persona": "Data Scientist / Analyst","count": 27,  "pct": 3.1  },
+    { "persona": "UX Researcher",           "count": 17,  "pct": 1.9  },
+    { "persona": "Engineering Manager",     "count": 17,  "pct": 1.9  },
+    { "persona": "Customer Success",        "count": 10,  "pct": 1.1  },
+    { "persona": "System / Non-Member",     "count": 1,   "pct": 0.1  }
+  ],
+
   "meetingAttendance": {
     "meetingTitle": "Growth Community Call (GCC)",
     "meetingDate": "Jul 28, 2026",

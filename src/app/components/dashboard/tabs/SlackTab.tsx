@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { Users } from "lucide-react";
+import { Users, UserCircle2 } from "lucide-react";
 import { Card } from "../../ui/card";
 import { KpiCard, SectionHeading, InsightCard } from "../primitives";
 import { SimpleBarChart } from "../charts";
+import { useDashboard } from "../../../dashboard-context";
+import { cn } from "../../ui/utils";
 
 // ── Real data from list 1.xlsx (Jul 10, 702 members) and list 2.xlsx (Jul 28, 801 members) ──
 const SNAPSHOT = [
@@ -23,7 +25,27 @@ const NEW       = 108;
 const REMOVED   = 9;
 const GROWTH_PCT = "14.1";
 
+const PERSONA_COLORS = [
+  "var(--gc-ibm-blue)",
+  "var(--gc-green)",
+  "var(--gc-purple)",
+  "var(--gc-amber)",
+  "#0e9f6e",
+  "#e74c3c",
+  "#8b5cf6",
+  "#f59e0b",
+  "#10b981",
+  "#6366f1",
+  "#ec4899",
+  "#14b8a6",
+  "var(--gc-grey)",
+];
+
 export function SlackTab() {
+  const { analytics } = useDashboard();
+  const personas = analytics.memberPersonas ?? [];
+  const totalPersonaMembers = personas.reduce((s, p) => s + p.count, 0);
+
   return (
     <div className="space-y-5">
       <SectionHeading
@@ -67,25 +89,68 @@ export function SlackTab() {
         />
       </div>
 
-      {/* Snapshot bar chart + region breakdown */}
-      <div className="grid gap-4 lg:grid-cols-3">
-        <Card className="gap-3 rounded-md border-[var(--border)] p-4 shadow-none lg:col-span-2">
-          <SectionHeading
-            title="Member count snapshots"
-            description="Two data points: Jul 10 and Jul 28"
-          />
-          <SimpleBarChart
-            data={SNAPSHOT}
-            series={[{ key: "total", name: "Total members", color: "blue" }]}
-            height={220}
-          />
-        </Card>
+      {/* Snapshot bar chart */}
+      <Card className="gap-3 rounded-md border-[var(--border)] p-4 shadow-none">
+        <SectionHeading
+          title="Member count snapshots"
+          description="Two data points: Jul 10 and Jul 28"
+        />
+        <SimpleBarChart
+          data={SNAPSHOT}
+          series={[{ key: "total", name: "Total members", color: "blue" }]}
+          height={220}
+        />
+      </Card>
 
+      {/* Persona breakdown */}
+      {personas.length > 0 && (
         <Card className="gap-3 rounded-md border-[var(--border)] p-4 shadow-none">
-          <div className="flex items-center gap-2">
-            <Users size={16} className="text-[var(--gc-ibm-blue)]" />
-            <h3 className="text-[var(--gc-graphite)]">Region breakdown</h3>
+          <div className="flex items-center gap-2 mb-1">
+            <UserCircle2 size={16} className="text-[var(--gc-ibm-blue)]" />
+            <div>
+              <h2 className="text-[var(--gc-graphite)]">Member personas</h2>
+              <p className="text-[13px] text-[var(--gc-grey)]">{totalPersonaMembers.toLocaleString()} members · source: 7.23 Member Download + New Members list</p>
+            </div>
           </div>
+          <div className="grid gap-2.5 sm:grid-cols-2 xl:grid-cols-3">
+            {personas.map((p, i) => {
+              const isUnassigned = p.persona === "Not yet assigned";
+              return (
+                <div key={p.persona} className="space-y-1.5">
+                  <div className="flex items-center justify-between text-[13px]">
+                    <span className={cn("truncate pr-2", isUnassigned ? "italic text-[var(--gc-grey)]" : "text-[var(--gc-graphite-soft)]")}>
+                      {p.persona}
+                    </span>
+                    <span className="shrink-0 tabular-nums text-[var(--gc-grey)]">
+                      {p.count.toLocaleString()} <span className="text-[11px]">({p.pct}%)</span>
+                    </span>
+                  </div>
+                  <div className="h-2 w-full overflow-hidden rounded-full bg-[var(--gc-offwhite)]">
+                    <div
+                      className="h-full rounded-full"
+                      style={{
+                        width: `${p.pct}%`,
+                        background: isUnassigned ? "var(--gc-grey-light,#c1c7cd)" : PERSONA_COLORS[i % PERSONA_COLORS.length],
+                        opacity: isUnassigned ? 0.45 : 1,
+                      }}
+                    />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <p className="mt-1 text-[11px] text-[var(--gc-grey)]">
+            Personas sourced from IBM W3 BluePages via member download export. "Not yet assigned" = 77 members from the Jul 13 new members list not yet in the download file.
+          </p>
+        </Card>
+      )}
+
+      {/* Region breakdown */}
+      <Card className="gap-3 rounded-md border-[var(--border)] p-4 shadow-none">
+        <div className="flex items-center gap-2">
+          <Users size={16} className="text-[var(--gc-ibm-blue)]" />
+          <h3 className="text-[var(--gc-graphite)]">Region breakdown</h3>
+        </div>
           <p className="text-[12px] text-[var(--gc-grey)]">Verified via W3 BluePages · Jul 28 · 801 members</p>
           <div className="space-y-3 mt-2">
             {REGION_DATA.map((r) => (
@@ -126,8 +191,7 @@ export function SlackTab() {
             ))}
             <p className="pt-1 text-[11px] text-[var(--gc-grey)]">+ other countries · all via W3 BluePages lookup</p>
           </div>
-        </Card>
-      </div>
+      </Card>
 
       {/* Insights */}
       <div className="grid gap-4 lg:grid-cols-2">

@@ -123,6 +123,7 @@ export type AnalyticsData = {
   upcomingEvents: { title: string; date: string }[];
   meetingAttendance?: MeetingAttendanceData;
   gccCallOverview?: GccCallOverview;
+  memberPersonas?: { persona: string; count: number; pct: number }[];
 };
 
 // ─── Static fallback (used until the JSON fetch resolves) ────────────────────
