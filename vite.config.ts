@@ -17,7 +17,11 @@ function figmaAssetResolver() {
 }
 
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/growth-community-dashboard/' : '/',
+  base: process.env.DEPLOY_TARGET === 'ibm'
+    ? '/Nia-Lomia/growth-community-dashboard/'
+    : process.env.NODE_ENV === 'production'
+    ? '/growth-community-dashboard/'
+    : '/',
   plugins: [
     figmaAssetResolver(),
     // The React and Tailwind plugins are both required for Make, even if

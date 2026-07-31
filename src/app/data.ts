@@ -140,20 +140,17 @@ export const FALLBACK: AnalyticsData = {
     { id: "s8", name: "Support Champions", region: "EMEA", members: 350,  engagement: 55, trend: "flat", status: "Steady"   },
   ],
   sharepointResources: [
-    { id: "r1", title: "Onboarding Playbook 2026", type: "Guide",    owner: "M. Chen",  views: 4820, downloads: 1210, freshness: "Fresh", month: "Jul" },
-    { id: "r2", title: "Community Health Metrics", type: "Report",   owner: "A. Silva", views: 3610, downloads: 890,  freshness: "Fresh", month: "Jul" },
-    { id: "r3", title: "Event Planning Template",  type: "Template", owner: "K. Osei",  views: 2940, downloads: 1440, freshness: "Aging", month: "May" },
-    { id: "r4", title: "Brand Voice Guidelines",   type: "Guide",    owner: "L. Park",  views: 2130, downloads: 560,  freshness: "Stale", month: "Feb" },
-    { id: "r5", title: "Quarterly Growth Deck",    type: "Report",   owner: "M. Chen",  views: 1980, downloads: 720,  freshness: "Fresh", month: "Jun" },
-    { id: "r6", title: "Moderation Handbook",      type: "Guide",    owner: "R. Idris", views: 1540, downloads: 430,  freshness: "Aging", month: "Apr" },
+    { id: "r1", title: "Growth Community - 2026 July 28",                        type: "Document", owner: "Growth Community", views: 11, downloads: 1, freshness: "Fresh", month: "Jul" },
+    { id: "r2", title: "Growth Community Call - 2026 July 21",                   type: "Document", owner: "Growth Community", views: 6,  downloads: 2, freshness: "Fresh", month: "Jul" },
+    { id: "r3", title: "Growth Community Call-Meeting Recording - July 21 2026", type: "Document", owner: "Growth Community", views: 5,  downloads: 5, freshness: "Fresh", month: "Jul" },
+    { id: "r4", title: "2025-26 Growth Community Call Index",                    type: "Document", owner: "Growth Community", views: 3,  downloads: 1, freshness: "Fresh", month: "Jul" },
+    { id: "r5", title: "2025 Growth Community Call Index",                       type: "Document", owner: "Growth Community", views: 1,  downloads: 1, freshness: "Aging", month: "Jun" },
   ],
   sharepointTrend: [
-    { month: "Feb", views: 6100, unique: 2400 },
-    { month: "Mar", views: 6720, unique: 2680 },
-    { month: "Apr", views: 7350, unique: 2910 },
-    { month: "May", views: 8010, unique: 3120 },
-    { month: "Jun", views: 8890, unique: 3480 },
-    { month: "Jul", views: 9620, unique: 3810 },
+    { month: "Apr", views: 0,    unique: 0   },
+    { month: "May", views: 229,  unique: 18  },
+    { month: "Jun", views: 378,  unique: 26  },
+    { month: "Jul", views: 2255, unique: 108 },
   ],
   icaTopics: [
     { id: "t1", topic: "Membership & access",   queries: 1840, success: 92, trend: "up",   status: "Healthy"    },
@@ -311,8 +308,9 @@ export function useAnalytics(): { data: AnalyticsData; status: AnalyticsStatus; 
 
   useEffect(() => {
     // Cache-bust with today's date so the browser always fetches the latest file.
+    // Use a relative URL so it works under any base path (GitHub Pages subpath, IBM Pages, etc.)
     const today = new Date().toISOString().slice(0, 10);
-    fetch(`/analytics.json?v=${today}`)
+    fetch(`analytics.json?v=${today}`)
       .then((r) => {
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
         return r.json() as Promise<AnalyticsData>;

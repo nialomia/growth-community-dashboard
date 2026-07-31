@@ -45,12 +45,11 @@
   ],
 
   "sharepointResources": [
-    { "id": "r1", "title": "Growth Community Call-Meeting Recording - July 21 2026", "type": "Document", "owner": "Growth Community", "views": 5,  "downloads": 5, "freshness": "Fresh", "month": "Jul" },
+    { "id": "r1", "title": "Growth Community - 2026 July 28",                        "type": "Document", "owner": "Growth Community", "views": 11, "downloads": 1, "freshness": "Fresh", "month": "Jul" },
     { "id": "r2", "title": "Growth Community Call - 2026 July 21",                   "type": "Document", "owner": "Growth Community", "views": 6,  "downloads": 2, "freshness": "Fresh", "month": "Jul" },
-    { "id": "r3", "title": "Growth Community - 2026 July 28",                        "type": "Document", "owner": "Growth Community", "views": 11, "downloads": 1, "freshness": "Fresh", "month": "Jul" },
+    { "id": "r3", "title": "Growth Community Call-Meeting Recording - July 21 2026", "type": "Document", "owner": "Growth Community", "views": 5,  "downloads": 5, "freshness": "Fresh", "month": "Jul" },
     { "id": "r4", "title": "2025-26 Growth Community Call Index",                    "type": "Document", "owner": "Growth Community", "views": 3,  "downloads": 1, "freshness": "Fresh", "month": "Jul" },
-    { "id": "r5", "title": "2025 Growth Community Call Index",                       "type": "Document", "owner": "Growth Community", "views": 1,  "downloads": 1, "freshness": "Aging", "month": "Jun" },
-    { "id": "r6", "title": "Growth Community Call - 2026 July 21 (2)",               "type": "Document", "owner": "Growth Community", "views": 3,  "downloads": 1, "freshness": "Fresh", "month": "Jul" }
+    { "id": "r5", "title": "2025 Growth Community Call Index",                       "type": "Document", "owner": "Growth Community", "views": 1,  "downloads": 1, "freshness": "Aging", "month": "Jun" }
   ],
 
   "sharepointTrend": [
