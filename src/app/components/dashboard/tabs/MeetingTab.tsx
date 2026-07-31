@@ -1,15 +1,22 @@
 import { useState } from "react";
-import { CheckCircle2, XCircle, Clock, Users, CalendarDays, Zap, Search, X, Star } from "lucide-react";
+import { CheckCircle2, XCircle, Clock, Users, CalendarDays, Zap, Search, X, Star, BarChart2 } from "lucide-react";
 import { Card } from "../../ui/card";
 import { Input } from "../../ui/input";
 import { Button } from "../../ui/button";
 import { KpiCard, SectionHeading, InsightCard } from "../primitives";
 import { useDashboard } from "../../../dashboard-context";
 import { cn } from "../../ui/utils";
+import type { GccSubKey } from "../../dashboard/SideNav";
 
 type Filter = "all" | "attended" | "absent";
 
-export function MeetingTab() {
+export function MeetingTab({
+  gccSub,
+  onGccSub,
+}: {
+  gccSub: GccSubKey;
+  onGccSub: (s: GccSubKey) => void;
+}) {
   const { analytics } = useDashboard();
   const ma = analytics.meetingAttendance;
   const [filter, setFilter] = useState<Filter>("all");
@@ -49,12 +56,51 @@ export function MeetingTab() {
     { key: "absent",   label: "Not attended",  count: ma.newMembersAbsent },
   ];
 
+  const GCC_SUB_LABELS: Record<GccSubKey, string> = {
+    "july-meetings":    "July (3 meetings)",
+    "july-new-members": "July New Members",
+  };
+
   return (
     <div className="space-y-5">
       <SectionHeading
         title="GCC call attendance by new members"
         description={`${ma.meetingTitle} · ${ma.meetingDate} · ${ma.meetingDuration}`}
       />
+
+      {/* Mobile-only sub-tab pills (desktop uses SideNav) */}
+      <div className="flex gap-1.5 md:hidden" role="tablist" aria-label="GCC overview sub-tabs">
+        {(["july-meetings", "july-new-members"] as GccSubKey[]).map((k) => (
+          <button
+            key={k}
+            role="tab"
+            aria-selected={gccSub === k}
+            onClick={() => onGccSub(k)}
+            className={cn(
+              "rounded-full border px-3 py-1 text-[12px] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)]",
+              gccSub === k
+                ? "border-[var(--gc-ibm-blue)] bg-[var(--gc-ibm-blue-soft)] text-[var(--gc-ibm-blue)]"
+                : "border-[var(--border)] text-[var(--gc-grey)] hover:bg-[var(--gc-offwhite)]",
+            )}
+          >
+            {GCC_SUB_LABELS[k]}
+          </button>
+        ))}
+      </div>
+
+      {/* ── July (3 meetings) placeholder ─────────────────────────── */}
+      {gccSub === "july-meetings" && (
+        <Card className="flex flex-col items-center justify-center gap-3 rounded-md border-[var(--border)] p-12 shadow-none text-center">
+          <BarChart2 size={36} className="text-[var(--gc-grey)]" />
+          <p className="text-[var(--gc-graphite)]" style={{ fontWeight: 500 }}>TBD analytics</p>
+          <p className="max-w-xs text-[13px] text-[var(--gc-grey)]">
+            Aggregated metrics across all 3 July GCC calls will appear here once data is available.
+          </p>
+        </Card>
+      )}
+
+      {/* ── July New Members content ───────────────────────────────── */}
+      {gccSub === "july-new-members" && <>
 
       {/* KPIs */}
       <div className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-5">
@@ -389,6 +435,7 @@ export function MeetingTab() {
           explanation="Joyce Huang and Nicole Ruedge joined Slack on Jul 28 itself, making it nearly impossible for them to have known about the call. These members are strong candidates for a personalised follow-up pointing them to the next GCC session and the recording."
         />
       </div>
+      </>}
     </div>
   );
 }
