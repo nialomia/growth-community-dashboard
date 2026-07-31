@@ -140,17 +140,15 @@ export const FALLBACK: AnalyticsData = {
     { id: "s8", name: "Support Champions", region: "EMEA", members: 350,  engagement: 55, trend: "flat", status: "Steady"   },
   ],
   sharepointResources: [
-    { id: "r1", title: "Growth Community - 2026 July 28",                        type: "Document", owner: "Growth Community", views: 11, downloads: 1, freshness: "Fresh", month: "Jul" },
+    { id: "r1", title: "Growth Community Call-Meeting Recording - July 21 2026", type: "Document", owner: "Growth Community", views: 5,  downloads: 5, freshness: "Fresh", month: "Jul" },
     { id: "r2", title: "Growth Community Call - 2026 July 21",                   type: "Document", owner: "Growth Community", views: 6,  downloads: 2, freshness: "Fresh", month: "Jul" },
-    { id: "r3", title: "Growth Community Call-Meeting Recording - July 21 2026", type: "Document", owner: "Growth Community", views: 5,  downloads: 5, freshness: "Fresh", month: "Jul" },
-    { id: "r4", title: "2025-26 Growth Community Call Index",                    type: "Document", owner: "Growth Community", views: 3,  downloads: 1, freshness: "Fresh", month: "Jul" },
-    { id: "r5", title: "2025 Growth Community Call Index",                       type: "Document", owner: "Growth Community", views: 1,  downloads: 1, freshness: "Aging", month: "Jun" },
+    { id: "r3", title: "Growth Community - 2026 July 28",                        type: "Document", owner: "Growth Community", views: 11, downloads: 1, freshness: "Fresh", month: "Jul" },
+    { id: "r6", title: "Growth Community Call - 2026 July 21 (2)",               type: "Document", owner: "Growth Community", views: 3,  downloads: 1, freshness: "Fresh", month: "Jul" },
   ],
   sharepointTrend: [
-    { month: "Apr", views: 0,    unique: 0   },
-    { month: "May", views: 229,  unique: 18  },
-    { month: "Jun", views: 378,  unique: 26  },
-    { month: "Jul", views: 2255, unique: 108 },
+    { month: "Jul 14", views: 0,    unique: 0   },
+    { month: "Jul 21", views: 607,  unique: 24  },
+    { month: "Jul 28", views: 1648, unique: 84  },
   ],
   icaTopics: [
     { id: "t1", topic: "Membership & access",   queries: 1840, success: 92, trend: "up",   status: "Healthy"    },

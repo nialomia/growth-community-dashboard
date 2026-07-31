@@ -9,7 +9,7 @@ import {
   SelectValue,
 } from "../../ui/select";
 import { KpiCard, SectionHeading, StatusPill, InsightCard } from "../primitives";
-import { SimpleBarChart, TrendLineChart } from "../charts";
+import { TrendLineChart } from "../charts";
 import { filterOptions } from "../../../data";
 import { useDashboard } from "../../../dashboard-context";
 
@@ -40,7 +40,7 @@ export function SharePointTab() {
 
   return (
     <div className="space-y-5">
-      <SectionHeading title="SharePoint analytics" description="How community resources are discovered and used." />
+      <SectionHeading title="SharePoint analytics" description="How Resources Are Discovered, Used, and Maintained Across the Growth Community" />
 
       <div className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
         <KpiCard label="Page views"          {...kpi.pageViews}         accent="blue"   />
@@ -51,28 +51,17 @@ export function SharePointTab() {
         <KpiCard label="Active resources"    {...kpi.activeResources}   accent="green"  />
       </div>
 
-      <div className="grid gap-4 lg:grid-cols-3">
-        <Card className="gap-3 rounded-md border-[var(--border)] p-4 shadow-none lg:col-span-2">
-          <SectionHeading title="Views & unique viewers" description="Last 6 months" />
-          <TrendLineChart
-            data={sharepointTrend}
-            series={[
-              { key: "views",  name: "Page views",     color: "blue"   },
-              { key: "unique", name: "Unique viewers",  color: "purple" },
-            ]}
-            yFormatter={(v) => `${(v / 1000).toFixed(0)}k`}
-          />
-        </Card>
-
-        <Card className="gap-3 rounded-md border-[var(--border)] p-4 shadow-none">
-          <SectionHeading title="Downloads by resource" />
-          <SimpleBarChart
-            data={ranked.slice(0, 5).map((r) => ({ name: r.title.split(" ")[0], downloads: r.downloads }))}
-            series={[{ key: "downloads", name: "Downloads", color: "green" }]}
-            height={220}
-          />
-        </Card>
-      </div>
+      <Card className="gap-3 rounded-md border-[var(--border)] p-4 shadow-none">
+        <SectionHeading title="Views & unique viewers" description="Since Jul 14" />
+        <TrendLineChart
+          data={sharepointTrend}
+          series={[
+            { key: "views",  name: "Page views",     color: "blue"   },
+            { key: "unique", name: "Unique viewers",  color: "purple" },
+          ]}
+          yFormatter={(v) => `${(v / 1000).toFixed(0)}k`}
+        />
+      </Card>
 
       <Card className="gap-3 rounded-md border-[var(--border)] p-4 shadow-none">
         <SectionHeading
@@ -107,7 +96,7 @@ export function SharePointTab() {
           <p className="py-6 text-center text-[13px] text-[var(--gc-grey)]">No resources match these filters.</p>
         ) : (
           <div className="grid gap-2.5 md:grid-cols-2">
-            {ranked.map((r, i) => {
+            {ranked.slice(0, 3).map((r, i) => {
               const Icon = typeIcon[r.type] ?? FileText;
               return (
                 <div key={r.id} className="flex items-center gap-3 rounded-md border border-[var(--border)] p-3">
