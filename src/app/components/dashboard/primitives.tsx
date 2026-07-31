@@ -105,6 +105,7 @@ export function KpiCard({
   accent = "blue",
   onDrill,
   compact = false,
+  definition,
 }: {
   label: string;
   value: string;
@@ -113,6 +114,7 @@ export function KpiCard({
   accent?: "blue" | "green" | "purple" | "grey";
   onDrill?: () => void;
   compact?: boolean;
+  definition?: string;
 }) {
   const accentBar = {
     blue: "bg-[var(--gc-ibm-blue)]",
@@ -140,7 +142,28 @@ export function KpiCard({
       )}
     >
       <span className={cn("absolute left-0 top-0 h-full w-[3px]", accentBar)} aria-hidden />
-      <p className="text-[13px] text-[var(--gc-grey)]">{label}</p>
+      <div className="flex items-center justify-between gap-1">
+        <p className="text-[13px] text-[var(--gc-grey)]">{label}</p>
+        {definition && (
+          <TooltipProvider delayDuration={100}>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <button
+                  type="button"
+                  className="shrink-0 text-[var(--gc-grey)] opacity-50 hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)] rounded"
+                  aria-label={`Definition: ${label}`}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <Info size={12} />
+                </button>
+              </TooltipTrigger>
+              <TooltipContent className="max-w-[260px] text-[12px] leading-relaxed">
+                {definition}
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        )}
+      </div>
       <p
         className={cn(
           "mt-1 tabular-nums text-[var(--gc-graphite)]",

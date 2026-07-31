@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Search, Database, Calculator, FileSpreadsheet, FileText, Users, Video, Bot, LayoutDashboard } from "lucide-react";
+import { Search, Database, Calculator, FileSpreadsheet, FileText, Users, Video, Bot, LayoutDashboard, BookOpen } from "lucide-react";
 import { Card } from "../../ui/card";
 import { Input } from "../../ui/input";
 import { SectionHeading } from "../primitives";

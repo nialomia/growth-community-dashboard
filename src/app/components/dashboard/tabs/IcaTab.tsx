@@ -35,12 +35,12 @@ export function IcaTab() {
       <SectionHeading title="ICA agent analytics" description="Adoption, resolution quality and improvement opportunities." />
 
       <div className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
-        <KpiCard label="Agent usage"     {...kpi.agentUsage}   accent="purple" />
-        <KpiCard label="Queries"         {...kpi.queries}      accent="blue"   />
-        <KpiCard label="Success rate"    {...kpi.successRate}  accent="green"  />
-        <KpiCard label="Fallback rate"   {...kpi.fallbackRate} accent="grey"   />
-        <KpiCard label="Repeat usage"    {...kpi.repeatUsage}  accent="blue"   />
-        <KpiCard label="Common topics"   {...kpi.commonTopics} accent="purple" />
+        <KpiCard label="Agent usage"   {...kpi.agentUsage}   accent="purple" definition="Total number of user interactions with the ICA (Intelligent Community Assistant) agent in the period." />
+        <KpiCard label="Queries"       {...kpi.queries}      accent="blue"   definition="Count of distinct queries submitted to the ICA agent. One conversation may contain multiple queries." />
+        <KpiCard label="Success rate"  {...kpi.successRate}  accent="green"  definition="Percentage of queries resolved without the user escalating or giving negative feedback. Calculated as successful queries ÷ total queries." />
+        <KpiCard label="Fallback rate" {...kpi.fallbackRate} accent="grey"   definition="Percentage of queries the agent could not answer and fell back to a default or escalation response. Equals 100% minus success rate." />
+        <KpiCard label="Repeat usage"  {...kpi.repeatUsage}  accent="blue"   definition="Percentage of users who returned to use the ICA agent more than once in the period, indicating ongoing utility." />
+        <KpiCard label="Common topics" {...kpi.commonTopics} accent="purple" definition="Number of distinct intent/topic categories active in the period, derived from the ICA agent's intent classification logs." />
       </div>
 
       <div className="grid gap-4 lg:grid-cols-3">

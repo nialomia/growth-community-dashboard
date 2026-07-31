@@ -35,12 +35,12 @@ export function OverviewTab({ onDrill }: { onDrill: (t: any) => void }) {
 
       {/* KPI grid */}
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-3 xl:grid-cols-6">
-        <KpiCard label="Slack members"        value="801"   trend="up"   delta="+99 since Jul 10" accent="blue"   onDrill={() => onDrill("slack")} />
-        <KpiCard label="New members (18 days)" value="+99"  trend="up"   delta="+14.1%"           accent="green"  onDrill={() => onDrill("slack")} />
-        <KpiCard label="GCC call attendance"  value="11%"   trend="down" delta="4 of 35 new mbrs" accent="grey"   onDrill={() => onDrill("meeting")} />
-        <KpiCard label="SharePoint views"     value="2,862" trend="up"   delta="+496% vs Jun"     accent="blue"   onDrill={() => onDrill("sharepoint")} />
-        <KpiCard label="Unique SP viewers"    value="38"    trend="up"   delta="All time"          accent="purple" onDrill={() => onDrill("sharepoint")} />
-        <KpiCard label="Resource freshness"   value="83%"   trend="up"   delta="5 of 6 fresh"     accent="green"  onDrill={() => onDrill("sharepoint")} />
+        <KpiCard label="Slack members"         value="801"   trend="up"   delta="+99 since Jul 10" accent="blue"   onDrill={() => onDrill("slack")}       definition="Total active members in the Growth Community Slack workspace as of Jul 28. Source: Slack member export CSV." />
+        <KpiCard label="New members (18 days)" value="+99"   trend="up"   delta="+14.1%"           accent="green"  onDrill={() => onDrill("slack")}       definition="Net new members Jul 10–Jul 28: 108 added minus 9 removed = +99 (14.1% growth). Source: diff of two Slack exports." />
+        <KpiCard label="GCC call attendance"   value="11%"   trend="down" delta="4 of 35 new mbrs" accent="grey"   onDrill={() => onDrill("meeting")}     definition="% of new Slack members (Jul 10–28) who attended the Jul 28 GCC call. 4 of 35 = 11%. Source: Teams attendance report cross-referenced with Slack export." />
+        <KpiCard label="SharePoint views"      value="2,862" trend="up"   delta="All time"          accent="blue"   onDrill={() => onDrill("sharepoint")}  definition="Total all-time site visits on the Growth Community SharePoint site. Source: Overall Traffic sheet, SiteAnalyticsData_28-Jul,2026.xlsx." />
+        <KpiCard label="Unique SP viewers"     value="38"    trend="up"   delta="All time"          accent="purple" onDrill={() => onDrill("sharepoint")}  definition="Distinct authenticated users who have ever visited the SharePoint site. Source: Overall Traffic sheet — all-time unique viewers row." />
+        <KpiCard label="Resource freshness"    value="90%"   trend="up"   delta="18 of 20 fresh"   accent="green"  onDrill={() => onDrill("sharepoint")}  definition="% of tracked SharePoint documents updated within the last 30 days. 18 of 20 resources classified as Fresh. Source: Popular Content sheet." />
       </div>
 
       <div className="grid gap-4 lg:grid-cols-3">

@@ -43,11 +43,11 @@ export function SharePointTab() {
       <SectionHeading title="SharePoint analytics" description="How Resources Are Discovered, Used, and Maintained Across the Growth Community" />
 
       <div className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-5">
-        <KpiCard label="Page views"          {...kpi.pageViews}         accent="blue"   />
-        <KpiCard label="Unique viewers"      {...kpi.uniqueViewers}     accent="green"  />
-        <KpiCard label="Avg. engagement"     {...kpi.avgEngagement}     accent="grey"   />
-        <KpiCard label="Resource freshness"  {...kpi.resourceFreshness} accent="blue"   />
-        <KpiCard label="Active resources"    {...kpi.activeResources}   accent="green"  />
+        <KpiCard label="Page views"         {...kpi.pageViews}         accent="blue"   definition="Total site visits recorded on the Growth Community SharePoint site all time (2,862). Source: Overall Traffic sheet — Site visits column." />
+        <KpiCard label="Unique viewers"     {...kpi.uniqueViewers}     accent="green"  definition="Distinct authenticated users who visited at least one page, all time. One person visiting 10 pages = 1 unique viewer. Source: Overall Traffic sheet." />
+        <KpiCard label="Avg. engagement"    {...kpi.avgEngagement}     accent="grey"   definition="Share of total visits coming from desktop devices. 2,704 of 2,862 visits (94%) were desktop. Source: Usage by Device sheet." />
+        <KpiCard label="Resource freshness" {...kpi.resourceFreshness} accent="blue"   definition="Percentage of tracked documents classified as Fresh (created or updated within 30 days). 18 of 20 resources = 90%. Source: Popular Content sheet." />
+        <KpiCard label="Active resources"   {...kpi.activeResources}   accent="green"  definition="Total number of documents tracked in the Popular Content sheet of the SharePoint analytics export. Source: SiteAnalyticsData_28-Jul,2026.xlsx." />
       </div>
 
       <Card className="gap-3 rounded-md border-[var(--border)] p-4 shadow-none">

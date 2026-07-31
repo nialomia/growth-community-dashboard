@@ -103,6 +103,7 @@ export function MeetingTab({
           trend="up"
           delta="Jul 10 – Jul 28"
           accent="blue"
+          definition="Members who joined the Growth Community Slack workspace between Jul 10 and Jul 28. Source: Slack member export CSV, filtered by join date."
         />
         <KpiCard
           label="Attended GCC call"
@@ -110,6 +111,7 @@ export function MeetingTab({
           trend="flat"
           delta={`${attendancePct}% of new members`}
           accent="green"
+          definition="New members (Jul 10–28) who appeared in the Jul 28 Teams attendance report. Cross-referenced by name match. Source: Teams attendance report + Slack export."
         />
         <KpiCard
           label="Did not attend"
@@ -117,6 +119,7 @@ export function MeetingTab({
           trend="down"
           delta={`${absentPct}% of new members`}
           accent="grey"
+          definition="New members whose name was not found in the Jul 28 Teams attendance report. = Total new members minus those who attended."
         />
         <div
           role="button"
@@ -132,6 +135,7 @@ export function MeetingTab({
             trend="up"
             delta={`${ma.meetingDate} · tap to view`}
             accent="purple"
+            definition="Total unique participants who joined the Jul 28 GCC Teams call. Source: Teams attendance report — 2. Participants section."
           />
         </div>
         <KpiCard
@@ -140,6 +144,7 @@ export function MeetingTab({
           trend="flat"
           delta={`of ${ma.meetingDuration}`}
           accent="blue"
+          definition="Average time each participant spent in the call. Taken directly from the Summary section of the Teams attendance report."
         />
       </div>
 

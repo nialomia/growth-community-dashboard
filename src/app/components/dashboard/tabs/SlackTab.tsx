@@ -39,6 +39,7 @@ export function SlackTab() {
           trend="up"
           delta={`+${GROWTH_PCT}%`}
           accent="blue"
+          definition="Current headcount of the Growth Community Slack workspace as of Jul 28, 2026. Source: Slack member export CSV."
         />
         <KpiCard
           label="Net growth (18 days)"
@@ -46,6 +47,7 @@ export function SlackTab() {
           trend="up"
           delta="Jul 10 → Jul 28"
           accent="green"
+          definition="Net new members added Jul 10–Jul 28: 108 gross adds minus 9 removed/deactivated = +99. Source: diff of two Slack CSV exports."
         />
         <KpiCard
           label="New members added"
@@ -53,6 +55,7 @@ export function SlackTab() {
           trend="up"
           delta="since Jul 10"
           accent="purple"
+          definition="Gross number of new members who joined Jul 10–Jul 28. Calculated as members in the Jul 28 export who were absent from the Jul 10 export."
         />
         <KpiCard
           label="Members removed"
@@ -60,6 +63,7 @@ export function SlackTab() {
           trend="down"
           delta="list cleanup"
           accent="grey"
+          definition="Members who left or were deactivated between Jul 10 and Jul 28. Net growth = new added minus removed."
         />
       </div>
 
