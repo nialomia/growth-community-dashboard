@@ -1,0 +1,144 @@
+name: Update dashboard data
+
+# ── When this runs ──────────────────────────────────────────────────────────
+# 1. Scheduled: every Monday at 08:00 UTC (Slack member count auto-sync)
+# 2. Manual:    "Run workflow" button in GitHub Actions UI
+#               - choose what to sync (slack / full)
+#               - optionally paste a JSON patch to apply inline
+on:
+  schedule:
+    - cron: "0 8 * * 1"   # Monday 08:00 UTC
+
+  workflow_dispatch:
+    inputs:
+      sync_target:
+        description: "What to sync"
+        required: true
+        default: slack
+        type: choice
+        options:
+          - slack          # Slack member count only (default)
+          - stamp-only     # Just refresh the _meta.lastUpdated date
+      json_patch:
+        description: |
+          Optional JSON patch to apply on top of the sync.
+          Example: {"kpis":{"sharepoint":{"pageViews":{"value":"3,800","trend":"up","delta":"+5%"}}}}
+        required: false
+        default: ""
+
+# ── Permissions needed to push the data commit ──────────────────────────────
+permissions:
+  contents: write   # push analytics.json update
+  pages: write      # deploy to GitHub Pages
+  id-token: write   # OIDC token for Pages deployment
+
+concurrency:
+  group: update-dashboard
+  cancel-in-progress: false   # never cancel a data update mid-flight
+
+jobs:
+  # ── Step 1: Sync data and commit ─────────────────────────────────────────
+  sync-and-commit:
+    name: Sync data → commit analytics.json
+    runs-on: ubuntu-latest
+
+    outputs:
+      committed: ${{ steps.commit.outputs.committed }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # Use a PAT so the push can trigger the Pages deploy workflow.
+          # If you don't have a PAT, the built-in token works but won't
+          # re-trigger other workflows.
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      # ── Slack sync (when target = slack or on schedule) ─────────────────
+      - name: Sync Slack member data
+        if: >
+          github.event_name == 'schedule' ||
+          (github.event_name == 'workflow_dispatch' &&
+           github.event.inputs.sync_target == 'slack')
+        env:
+          SLACK_BOT_TOKEN:  ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
+        run: node scripts/sync-slack.js
+
+      # ── Stamp-only (just refresh the date) ──────────────────────────────
+      - name: Refresh date stamp only
+        if: >
+          github.event_name == 'workflow_dispatch' &&
+          github.event.inputs.sync_target == 'stamp-only'
+        run: node scripts/update-analytics.js
+
+      # ── Optional JSON patch (from workflow_dispatch input) ───────────────
+      - name: Apply JSON patch
+        if: >
+          github.event_name == 'workflow_dispatch' &&
+          github.event.inputs.json_patch != ''
+        run: |
+          node scripts/update-analytics.js --patch '${{ github.event.inputs.json_patch }}'
+
+      # ── Commit any changes ───────────────────────────────────────────────
+      - name: Commit updated analytics.json
+        id: commit
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/analytics.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            echo "committed=false" >> "$GITHUB_OUTPUT"
+          else
+            DATE=$(date -u '+%Y-%m-%d %H:%M UTC')
+            git commit -m "data: auto-update analytics.json — ${DATE} [skip ci]"
+            git push
+            echo "committed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+  # ── Step 2: Rebuild and deploy to GitHub Pages ───────────────────────────
+  build-and-deploy:
+    name: Build → deploy to GitHub Pages
+    needs: sync-and-commit
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout (with latest data commit)
+        uses: actions/checkout@v4
+        with:
+          ref: main   # always get the freshest commit (including the data update)
+
+      - name: Set up Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Build site
+        run: npm run build
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

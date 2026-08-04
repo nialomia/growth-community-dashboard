@@ -6,8 +6,11 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite",
-    "update-data": "node scripts/update-analytics.js",
-    "sync-slack": "node scripts/sync-slack.js"
+    "update-data":        "node scripts/update-analytics.js",
+    "sync-slack":         "node scripts/sync-slack.js",
+    "process-sharepoint": "node scripts/process-sharepoint.js",
+    "add-gcc-call":       "node scripts/add-gcc-call.js",
+    "process-members":    "node scripts/process-members.js"
   },
   "dependencies": {
     "react": "18.3.1",
