@@ -6,46 +6,22 @@
   },
   "growthTrend": [
     {
-      "month": "Jan",
-      "members": 3820,
-      "active": 1180,
-      "sharepoint": 5400
+      "month": "Jun 11",
+      "members": 697,
+      "active": 0,
+      "sharepoint": 0
     },
     {
-      "month": "Feb",
-      "members": 4120,
-      "active": 1290,
-      "sharepoint": 5980
+      "month": "Jul 13",
+      "members": 778,
+      "active": 0,
+      "sharepoint": 0
     },
     {
-      "month": "Mar",
-      "members": 4510,
-      "active": 1440,
-      "sharepoint": 6720
-    },
-    {
-      "month": "Apr",
-      "members": 4980,
-      "active": 1610,
-      "sharepoint": 7350
-    },
-    {
-      "month": "May",
-      "members": 5340,
-      "active": 1720,
-      "sharepoint": 8010
-    },
-    {
-      "month": "Jun",
-      "members": 5910,
-      "active": 1980,
-      "sharepoint": 8890
-    },
-    {
-      "month": "Jul",
-      "members": 6480,
-      "active": 2210,
-      "sharepoint": 9620
+      "month": "Aug 4",
+      "members": 805,
+      "active": 0,
+      "sharepoint": 0
     }
   ],
   "slackGrowth": [

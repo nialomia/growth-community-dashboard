@@ -48,15 +48,14 @@ export function OverviewTab({ onDrill }: { onDrill: (t: any) => void }) {
         <Card className="gap-3 rounded-md border-[var(--border)] p-4 shadow-none lg:col-span-2">
           <SectionHeading
             title="Community growth trend"
-            description={lowData ? "Simplified for low-data mode" : "Members and active contributors, last 7 months"}
+            description={lowData ? "Simplified for low-data mode" : "Member count snapshots · Jun 11, Jul 13, Aug 4"}
           />
           <TrendLineChart
             data={analytics.growthTrend}
             series={[
               { key: "members", name: "Members", color: "blue" },
-              { key: "active", name: "Active contributors", color: "green" },
             ]}
-            yFormatter={(v) => `${(v / 1000).toFixed(0)}k`}
+            yFormatter={(v) => String(v)}
           />
         </Card>
 
