@@ -116,9 +116,9 @@ export function SharePointTab() {
       <div className="grid gap-3 md:grid-cols-2">
         <InsightCard
           tone="positive"
-          title="Maximo Showcase is now the #1 member resource"
-          summary="The Maximo deck logged 90 visits from 6 unique viewers in the last 7 days — by far the most-viewed document."
-          explanation="The Maximo 2Q26 Showcase deck surged to 90 visits this week, overtaking the Jul 28 call deck (42 visits) and the homepage (36). This suggests members are actively referencing it for research or presentations. Keep it easily accessible and consider linking it from the Slack channel."
+          title="Jul 28 call deck is the #1 member resource"
+          summary="The Growth Community Jul 28 deck logged 42 visits from 8 unique viewers — the most-viewed document this week."
+          explanation="The Jul 28 call deck (42 visits) and the homepage (36 visits) are the two most-used member-facing resources. The call recording also has 7 unique viewers — members are actively going back to review call content. Consider linking both from the Slack channel description."
         />
         <InsightCard
           tone="warning"
