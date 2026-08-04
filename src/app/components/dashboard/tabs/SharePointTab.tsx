@@ -34,16 +34,16 @@ export function SharePointTab() {
 
   return (
     <div className="space-y-5">
-      <SectionHeading title="SharePoint analytics" description="How Resources Are Discovered, Used, and Maintained Across the Growth Community" />
+      <SectionHeading title="SharePoint analytics" description="How resources are discovered and used across the Growth Community" />
 
       <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
-        <KpiCard label="Page views"      {...kpi.pageViews}     accent="blue"  definition="Total site visits recorded on the Growth Community SharePoint site all time (2,862). Source: Overall Traffic sheet — Site visits column." />
-        <KpiCard label="Unique viewers"  {...kpi.uniqueViewers} accent="green" definition="Distinct authenticated users who visited at least one page, all time. One person visiting 10 pages = 1 unique viewer. Source: Overall Traffic sheet." />
-        <KpiCard label="Avg. engagement" {...kpi.avgEngagement} accent="grey"  definition="Share of total visits coming from desktop devices. 2,704 of 2,862 visits (94%) were desktop. Source: Usage by Device sheet." />
+        <KpiCard label="Page views"      {...kpi.pageViews}     accent="blue"  definition="Total all-time site visits on the Growth Community SharePoint. Source: Overall Traffic sheet — SiteAnalyticsData_4-Aug,2026.xlsx." />
+        <KpiCard label="Unique viewers"  {...kpi.uniqueViewers} accent="green" definition="Distinct authenticated users who visited at least once, all time (55). Source: Overall Traffic sheet — all-time row." />
+        <KpiCard label="Avg. engagement" {...kpi.avgEngagement} accent="grey"  definition="Share of total all-time visits from desktop devices. 3,366 of 3,603 visits (93%) were desktop. Source: Usage by Device sheet." />
       </div>
 
       <Card className="gap-3 rounded-md border-[var(--border)] p-4 shadow-none">
-        <SectionHeading title="Views & unique viewers" description="Jul 8–28, weekly" />
+        <SectionHeading title="Views & unique viewers" description="Jul 8 – Aug 4, weekly" />
         <TrendLineChart
           data={sharepointTrend}
           series={[
@@ -116,21 +116,21 @@ export function SharePointTab() {
       <div className="grid gap-3 md:grid-cols-2">
         <InsightCard
           tone="positive"
-          title="Themed Conversation Leader Kit is the #1 member resource"
-          summary="The Jul 28 Leader Kit logged 69 visits — the most-viewed member-facing document on the site."
-          explanation="The Themed Conversation Leader Kit (Jul 28) had 69 visits, far outpacing the Maximo Showcase deck (32) and the homepage (26). Members are returning repeatedly to use this resource. Keep it pinned prominently and publish future call kits in the same format."
+          title="Maximo Showcase is now the #1 member resource"
+          summary="The Maximo deck logged 90 visits from 6 unique viewers in the last 7 days — by far the most-viewed document."
+          explanation="The Maximo 2Q26 Showcase deck surged to 90 visits this week, overtaking the Jul 28 call deck (42 visits) and the homepage (36). This suggests members are actively referencing it for research or presentations. Keep it easily accessible and consider linking it from the Slack channel."
         />
         <InsightCard
           tone="warning"
-          title="Only 38 unique viewers all time across 2,862 visits"
-          summary="High repeat visit rate — the same 38 people are driving almost all traffic."
-          explanation="With 2,862 total visits and only 38 unique viewers all time, each viewer averages ~75 visits. This signals the site is useful to its existing audience but has very low discovery. Only 38 of 804 Slack members have ever visited. Adding the SharePoint link to the Slack channel header and new member welcome message is the highest-impact action to expand reach."
+          title="Only 55 unique viewers all time across 3,603 visits"
+          summary="High repeat visit rate — the same 55 people are driving almost all traffic."
+          explanation="With 3,603 all-time visits and only 55 unique viewers, each viewer averages ~65 visits. The site is very useful to its existing audience but has almost no new discovery. Only 55 of 804 Slack members have ever visited. Adding the SharePoint link to the Slack channel header and new member welcome message is the highest-impact action to expand reach."
         />
         <InsightCard
-          tone="info"
-          title="94% of visits come from desktop"
-          summary="2,704 of 2,862 total visits were from desktop — mobile and tablet usage is negligible."
-          explanation="The SharePoint site is essentially desktop-only. This is typical for an internal knowledge site, but worth noting if content is ever shared in mobile-heavy contexts like Slack on mobile. No action needed unless mobile engagement becomes a goal."
+          tone="positive"
+          title="Strong week — 618 visits from 30 unique viewers in last 7 days"
+          summary="Jul 29–Aug 4 was the most active week yet, with 613 site visits and 45 unique viewers."
+          explanation="The Jul 29–Aug 4 week edged out the previous two high weeks (601 each). 30 unique viewers in the last 7 days shows the audience is actively engaged. The Jul 28 call recording and the Maximo showcase deck are likely driving the traffic spike."
         />
       </div>
     </div>

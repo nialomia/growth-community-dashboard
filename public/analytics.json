@@ -1,8 +1,8 @@
 {
   "_meta": {
     "lastUpdated": "2026-08-04",
-    "updatedBy": "Growth Community team — Growth_Community_New_Members (1).csv",
-    "note": "Member count updated to 804 (+3 since Jul 28: Jaideep Advani Jul 30, Yurii Plakhtii Aug 3, Mariana Chiabotto Aug 3)."
+    "updatedBy": "Growth Community team — SiteAnalyticsData_4-Aug,2026.xlsx",
+    "note": "SharePoint updated from Aug 4 export. All-time: 3,603 visits, 55 unique. Last 7 days: 618 visits, 30 unique. Desktop 93%."
   },
   "growthTrend": [
     {
@@ -209,107 +209,77 @@
       "title": "Home.aspx",
       "type": "Site Page",
       "owner": "Growth Community",
-      "views": 26,
+      "views": 36,
       "downloads": 0,
       "freshness": "Fresh",
-      "month": "Jul"
+      "month": "Aug"
     },
     {
       "id": "r2",
-      "title": "Growth Community - 2Q26 Showcase - Guardium Data Protection + Compliance Express.pptx",
+      "title": "Growth Community - 2026 July 28.pptx",
       "type": "Document",
       "owner": "Growth Community",
-      "views": 23,
+      "views": 42,
       "downloads": 0,
       "freshness": "Fresh",
       "month": "Jul"
     },
     {
       "id": "r3",
-      "title": "Growth Community - Themed Conversation Leader Kit - 2026 July 28.pptx",
+      "title": "Growth Community Call - Recording 7-28-26.mp4",
       "type": "Document",
       "owner": "Growth Community",
-      "views": 69,
+      "views": 8,
       "downloads": 0,
       "freshness": "Fresh",
       "month": "Jul"
     },
     {
       "id": "r4",
-      "title": "Growth Community Call-Meeting Recording - July 21 2026.mp4",
+      "title": "Growth Community - 2Q26 Showcase - Maximo.pptx",
       "type": "Document",
       "owner": "Growth Community",
-      "views": 5,
+      "views": 90,
       "downloads": 0,
       "freshness": "Fresh",
       "month": "Jul"
     },
     {
       "id": "r5",
-      "title": "Growth Community - 2Q26 Showcase - Maximo.pptx",
+      "title": "Growth Community - 2Q26 Showcase - Guardium Data Protection + Compliance Express.pptx",
       "type": "Document",
       "owner": "Growth Community",
-      "views": 32,
+      "views": 55,
       "downloads": 0,
       "freshness": "Fresh",
       "month": "Jul"
     },
     {
       "id": "r6",
-      "title": "Growth Community - 2Q26 Showcase - Trial Registration Form Redesign.pptx",
+      "title": "Growth Community Call - 2026 July 21.pptx",
       "type": "Document",
       "owner": "Growth Community",
-      "views": 14,
+      "views": 15,
       "downloads": 0,
       "freshness": "Fresh",
       "month": "Jul"
     },
     {
       "id": "r7",
-      "title": "Growth Community - Themed Conversation Leader Kit - TEMPLATE.pptx",
+      "title": "Growth Community - Themed Conversation Leader Kit - 2026 July 28.pptx",
       "type": "Document",
       "owner": "Growth Community",
-      "views": 20,
+      "views": 21,
       "downloads": 0,
       "freshness": "Fresh",
       "month": "Jul"
     },
     {
       "id": "r8",
-      "title": "Growth Community - Themed Conversation Leader Kit - 2026 Aug 11.pptx",
+      "title": "Growth Community - 2Q26 Showcase - Trial Registration Form Redesign.pptx",
       "type": "Document",
       "owner": "Growth Community",
-      "views": 11,
-      "downloads": 0,
-      "freshness": "Fresh",
-      "month": "Aug"
-    },
-    {
-      "id": "r9",
-      "title": "Growth Community Call - 2026 July 21.pptx",
-      "type": "Document",
-      "owner": "Growth Community",
-      "views": 9,
-      "downloads": 0,
-      "freshness": "Fresh",
-      "month": "Jul"
-    },
-    {
-      "id": "r10",
-      "title": "Growth Community - Quarterly Showcase - TEMPLATE.pptx",
-      "type": "Document",
-      "owner": "Growth Community",
-      "views": 14,
-      "downloads": 0,
-      "freshness": "Fresh",
-      "month": "Jul"
-    },
-    {
-      "id": "r11",
-      "title": "Growth Community - 2026 July 28.pptx",
-      "type": "Document",
-      "owner": "Growth Community",
-      "views": 11,
+      "views": 13,
       "downloads": 0,
       "freshness": "Fresh",
       "month": "Jul"
@@ -330,6 +300,11 @@
       "month": "Jul 22–28",
       "views": 601,
       "unique": 33
+    },
+    {
+      "month": "Jul 29–Aug 4",
+      "views": 613,
+      "unique": 45
     }
   ],
   "icaTopics": [
@@ -520,12 +495,12 @@
         "delta": "16 of 111 new mbrs"
       },
       "sharepointViews": {
-        "value": "2,862",
+        "value": "3,603",
         "trend": "up",
-        "delta": "+496% vs Jun"
+        "delta": "All time"
       },
       "icaAgentUsage": {
-        "value": "38",
+        "value": "55",
         "trend": "up",
         "delta": "All time"
       },
@@ -564,17 +539,17 @@
     },
     "sharepoint": {
       "pageViews": {
-        "value": "2,862",
+        "value": "3,603",
         "trend": "up",
         "delta": "All time"
       },
       "uniqueViewers": {
-        "value": "38",
+        "value": "55",
         "trend": "up",
         "delta": "All time"
       },
       "avgEngagement": {
-        "value": "94%",
+        "value": "93%",
         "trend": "up",
         "delta": "Desktop visits"
       },
