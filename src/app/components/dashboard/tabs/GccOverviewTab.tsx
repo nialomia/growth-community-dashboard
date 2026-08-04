@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Users, Clock, CalendarDays, Star, Search } from "lucide-react";
+import { Users, Clock, Timer, CalendarDays, Star, Search } from "lucide-react";
+// CalendarDays kept for the empty-state fallback below
 import { Card } from "../../ui/card";
 import { Input } from "../../ui/input";
 import { KpiCard, SectionHeading, InsightCard } from "../primitives";
@@ -10,10 +11,10 @@ import { cn } from "../../ui/utils";
 type CallFilter = "all" | "jul14" | "jul21" | "jul28";
 
 const CALL_FILTERS: { key: CallFilter; label: string }[] = [
-  { key: "all",   label: "All calls" },
-  { key: "jul14", label: "July 14"   },
-  { key: "jul21", label: "July 21"   },
-  { key: "jul28", label: "July 28"   },
+  { key: "all",   label: "Core members" },
+  { key: "jul14", label: "July 14"      },
+  { key: "jul21", label: "July 21"      },
+  { key: "jul28", label: "July 28"      },
 ];
 
 export function GccOverviewTab() {
@@ -59,10 +60,6 @@ export function GccOverviewTab() {
 
   return (
     <div className="space-y-5">
-      <SectionHeading
-        title="July GCC calls — overview"
-        description="Attendance and retention across all 3 July Growth Community Calls"
-      />
 
       {/* ── KPI row ─────────────────────────────────────────────── */}
       <div className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-5">
@@ -72,6 +69,7 @@ export function GccOverviewTab() {
           trend="up"
           delta="Across all 3 calls"
           accent="blue"
+          definition="Distinct individuals who attended at least one of the 3 July GCC calls (Jul 14, 21, 28). Deduplicated by name across all 3 Teams attendance reports."
         />
         <KpiCard
           label="Avg. per call"
@@ -79,6 +77,7 @@ export function GccOverviewTab() {
           trend="flat"
           delta="Jul 14 / 21 / 28"
           accent="grey"
+          definition="Simple average of the 3 call attendee counts (62 + 56 + 44) ÷ 3. Source: Teams attendance report — Participants section."
         />
         <KpiCard
           label="Core members (all 3)"
@@ -86,6 +85,7 @@ export function GccOverviewTab() {
           trend="up"
           delta={`${retentionPct}% of unique attendees`}
           accent="green"
+          definition="Attendees who appeared in all 3 July Teams attendance reports (Jul 14, 21, and 28). Cross-referenced by exact name match. These are your most engaged community members."
         />
         <KpiCard
           label="Attended 2+ calls"
@@ -93,6 +93,7 @@ export function GccOverviewTab() {
           trend="up"
           delta={`${repeatPct}% repeat attendance`}
           accent="purple"
+          definition="Count of attendees who appeared in 2 or all 3 July GCC attendance reports. Includes core members (all 3) plus those who attended exactly 2 calls."
         />
         <KpiCard
           label="Single-call attendees"
@@ -100,6 +101,7 @@ export function GccOverviewTab() {
           trend="down"
           delta={`${100 - repeatPct}% attended once`}
           accent="grey"
+          definition="Attendees who appeared in exactly one of the 3 July attendance reports. These one-time visitors represent the largest re-engagement opportunity."
         />
       </div>
 
@@ -113,9 +115,9 @@ export function GccOverviewTab() {
               <span className="ml-1 text-[14px] font-normal text-[var(--gc-grey)]">attendees</span>
             </p>
             <div className="mt-1 space-y-1 text-[12px] text-[var(--gc-grey)]">
-              <span className="flex items-center gap-1.5"><CalendarDays size={12} /> {c.duration}</span>
-              <span className="flex items-center gap-1.5"><Clock size={12} /> Avg. {c.avgAttendanceTime}</span>
-            </div>
+                <span className="flex items-center gap-1.5"><Timer size={12} /> {c.duration}</span>
+                <span className="flex items-center gap-1.5"><Clock size={12} /> Avg. {c.avgAttendanceTime}</span>
+              </div>
           </Card>
         ))}
       </div>
@@ -166,7 +168,11 @@ export function GccOverviewTab() {
       <Card className="gap-3 rounded-md border-[var(--border)] p-4 shadow-none">
         <SectionHeading
           title="Attendee list"
-          description={callFilter === "all" ? "Core members who attended all 3 calls" : `Attendees — ${CALL_FILTERS.find(f=>f.key===callFilter)?.label}`}
+          description={
+            callFilter === "all"
+              ? `Core members only — attended all 3 July calls (${summary.attendedAll3} people)`
+              : `All attendees — ${CALL_FILTERS.find(f => f.key === callFilter)?.label}`
+          }
           action={
             <div className="relative hidden sm:block">
               <Search size={13} className="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 text-[var(--gc-grey)]" />
@@ -203,7 +209,7 @@ export function GccOverviewTab() {
                    `(${jul28Attendees.length})`}
                 </span>
               )}
-              {f.key === "all" && <span className="ml-1.5 tabular-nums text-[11px]">({summary.attendedAll3} core)</span>}
+              {f.key === "all" && <span className="ml-1.5 tabular-nums text-[11px]">({summary.attendedAll3})</span>}
             </button>
           ))}
         </div>

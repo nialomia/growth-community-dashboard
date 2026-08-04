@@ -64,10 +64,18 @@ export function MeetingTab({
 
   return (
     <div className="space-y-5">
-      <SectionHeading
-        title="GCC call attendance by new members"
-        description={`Jul 10 – Aug 4, 2026 · ${ma.newMemberCount} new members tracked`}
-      />
+      {/* Dynamic heading per sub-tab */}
+      {gccSub === "july-meetings" ? (
+        <SectionHeading
+          title="July GCC calls — overview"
+          description="Attendance and retention across all 3 July Growth Community Calls"
+        />
+      ) : (
+        <SectionHeading
+          title="GCC call attendance by new members"
+          description={`Jul 10 – Aug 4, 2026 · ${ma.newMemberCount} new members tracked`}
+        />
+      )}
 
       {/* Mobile-only sub-tab pills (desktop uses SideNav) */}
       <div className="flex gap-1.5 md:hidden" role="tablist" aria-label="GCC overview sub-tabs">
