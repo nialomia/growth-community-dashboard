@@ -176,7 +176,6 @@ export function KpiCard({
       {trend && delta && (
         <div className="mt-1 flex items-center gap-1 text-[13px]">
           <TrendArrow trend={trend} value={delta} />
-          <span className="text-[var(--gc-grey)]">vs last period</span>
         </div>
       )}
       {onDrill && (

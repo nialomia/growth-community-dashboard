@@ -17,9 +17,9 @@ const efficiencySignals = [
 ];
 
 const actions = [
-  "Share the Jul 28 call doc link in Slack — it's the #1 viewed resource and drives repeat visits.",
-  "Send a welcome message to the 31 new members who joined but missed the GCC call, with the next call date and recording link.",
-  "Promote the SharePoint site in the Slack channel description — only 38 of 801 members have visited.",
+  "Send a welcome message to the 31 new members who missed the Jul 28 GCC call — include the next call date, calendar invite, and recording link.",
+  "Promote the SharePoint site in the Slack channel description — only 38 of 801 members have visited it.",
+  "Recognise the 13 core GCC members who attended all 3 July calls — speaker spotlights or a shout-out post builds community momentum.",
 ];
 
 export function OverviewTab({ onDrill }: { onDrill: (t: any) => void }) {
@@ -40,7 +40,7 @@ export function OverviewTab({ onDrill }: { onDrill: (t: any) => void }) {
         <KpiCard label="GCC call attendance"   value="11%"   trend="down" delta="4 of 35 new mbrs" accent="grey"   onDrill={() => onDrill("meeting")}     definition="% of new Slack members (Jul 10–28) who attended the Jul 28 GCC call. 4 of 35 = 11%. Source: Teams attendance report cross-referenced with Slack export." />
         <KpiCard label="SharePoint views"      value="2,862" trend="up"   delta="All time"          accent="blue"   onDrill={() => onDrill("sharepoint")}  definition="Total all-time site visits on the Growth Community SharePoint site. Source: Overall Traffic sheet, SiteAnalyticsData_28-Jul,2026.xlsx." />
         <KpiCard label="Unique SP viewers"     value="38"    trend="up"   delta="All time"          accent="purple" onDrill={() => onDrill("sharepoint")}  definition="Distinct authenticated users who have ever visited the SharePoint site. Source: Overall Traffic sheet — all-time unique viewers row." />
-        <KpiCard label="Resource freshness"    value="90%"   trend="up"   delta="18 of 20 fresh"   accent="green"  onDrill={() => onDrill("sharepoint")}  definition="% of tracked SharePoint documents updated within the last 30 days. 18 of 20 resources classified as Fresh. Source: Popular Content sheet." />
+        <KpiCard label="GCC core members"      value="13"    trend="up"   delta="Attended all 3 July calls" accent="green"  onDrill={() => onDrill("meeting")}     definition="Members who attended every July GCC call (Jul 14, 21 & 28). These are the highest-engagement community members. Source: cross-reference of all 3 Teams attendance reports." />
       </div>
 
       <div className="grid gap-4 lg:grid-cols-3">
