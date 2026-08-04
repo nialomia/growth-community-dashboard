@@ -124,7 +124,7 @@ export function SharePointTab() {
           tone="warning"
           title="Only 55 unique viewers all time across 3,603 visits"
           summary="High repeat visit rate — the same 55 people are driving almost all traffic."
-          explanation="With 3,603 all-time visits and only 55 unique viewers, each viewer averages ~65 visits. The site is very useful to its existing audience but has almost no new discovery. Only 55 of 804 Slack members have ever visited. Adding the SharePoint link to the Slack channel header and new member welcome message is the highest-impact action to expand reach."
+          explanation="With 3,603 all-time visits and only 55 unique viewers, each viewer averages ~65 visits. The site is very useful to its existing audience but has almost no new discovery. Only 55 of 805 Slack members have ever visited. Adding the SharePoint link to the Slack channel header and new member welcome message is the highest-impact action to expand reach."
         />
         <InsightCard
           tone="positive"

@@ -17,8 +17,8 @@ const efficiencySignals = [
 ];
 
 const actions = [
-  "Send a welcome message to the 31 new members who missed the Jul 28 GCC call — include the next call date, calendar invite, and recording link.",
-  "Promote the SharePoint site in the Slack channel description — only 38 of 801 members have visited it.",
+  "Send a welcome message to the 95 new members who haven't attended any GCC call — include the next call date, calendar invite, and recording link.",
+  "Promote the SharePoint site in the Slack channel description — only 55 of 805 members have visited it.",
   "Recognise the 13 core GCC members who attended all 3 July calls — speaker spotlights or a shout-out post builds community momentum.",
 ];
 

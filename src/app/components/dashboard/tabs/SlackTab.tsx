@@ -144,7 +144,7 @@ export function SlackTab() {
           <Users size={16} className="text-[var(--gc-ibm-blue)]" />
           <h3 className="text-[var(--gc-graphite)]">Region breakdown</h3>
         </div>
-          <p className="text-[12px] text-[var(--gc-grey)]">Verified via W3 BluePages · Jul 28 · 801 members</p>
+          <p className="text-[12px] text-[var(--gc-grey)]">Verified via W3 BluePages · Aug 4 · 805 members</p>
           <div className="space-y-3 mt-2">
             {REGION_DATA.map((r) => (
               <div key={r.region}>
@@ -197,7 +197,7 @@ export function SlackTab() {
         <InsightCard
           tone="info"
           title="Global but AMER-led community"
-          summary="AMER 54% · APAC 26% · EMEA 20% — verified via W3 BluePages for all 801 members."
+          summary="AMER 54% · APAC 26% · EMEA 20% — verified via W3 BluePages for all 805 members."
           explanation="Top countries: United States (222), India (169), Ireland (47), Canada (27), UK (8), Germany (7), Romania (7). APAC is stronger than the email domain alone suggested — India accounts for most of that. EMEA is well represented with Ireland as the #3 country overall."
         />
       </div>
