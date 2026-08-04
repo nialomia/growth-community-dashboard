@@ -7,11 +7,10 @@ import { useDashboard } from "../../../dashboard-context";
 import { cn } from "../../ui/utils";
 
 // ── Real snapshots from member download files ─────────────────────────────
-// Jun 11 (697) · Jul 13 (778) · Jul 28 (801) · Aug 4 (805)
+// Jun 11 (697) · Jul 13 (778) · Aug 4 (805)
 const SNAPSHOT = [
   { date: "Jun 11", total: 697 },
   { date: "Jul 13", total: 778 },
-  { date: "Jul 28", total: 801 },
   { date: "Aug 4",  total: 805 },
 ];
 
@@ -53,7 +52,7 @@ export function SlackTab() {
     <div className="space-y-5">
       <SectionHeading
         title="Slack member growth"
-        description="Member download snapshots: Jun 11 (697) · Jul 13 (778) · Jul 28 (801) · Aug 4 (805)"
+        description="Member download snapshots: Jun 11 (697) · Jul 13 (778) · Aug 4 (805)"
       />
 
       {/* KPIs — only what the data supports */}
@@ -96,7 +95,7 @@ export function SlackTab() {
       <Card className="gap-3 rounded-md border-[var(--border)] p-4 shadow-none">
         <SectionHeading
           title="Member count snapshots"
-          description="Jun 11 · Jul 13 · Jul 28 · Aug 4"
+          description="Jun 11 · Jul 13 · Aug 4"
         />
         <SimpleBarChart
           data={SNAPSHOT}
