@@ -1,23 +1,74 @@
-import { Search, Download, Leaf, Calendar, RefreshCw, AlertCircle } from "lucide-react";
-import { Input } from "../ui/input";
+import { Download, Leaf, RefreshCw, AlertCircle } from "lucide-react";
 import { Button } from "../ui/button";
 import { Switch } from "../ui/switch";
 import { Label } from "../ui/label";
 import { Avatar, AvatarFallback } from "../ui/avatar";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../ui/select";
-import { toast } from "sonner";
 import { useDashboard } from "../../dashboard-context";
-import { filterOptions } from "../../data";
 import { Hint } from "./primitives";
 
+/** Build a CSV from whatever real analytics data we have and trigger a download. */
+function exportCsv(analytics: ReturnType<typeof useDashboard>["analytics"]) {
+  const rows: string[] = [];
+
+  // ── Slack member snapshots ─────────────────────────────────────
+  rows.push("# Slack member growth snapshots");
+  rows.push("Date,Total members");
+  const snapshots = analytics.growthTrend;
+  snapshots.forEach((s) => rows.push(`"${s.month}",${s.members}`));
+  rows.push("");
+
+  // ── SharePoint KPIs ────────────────────────────────────────────
+  rows.push("# SharePoint KPIs");
+  rows.push("Metric,Value");
+  const sp = analytics.kpis.sharepoint;
+  Object.entries(sp).forEach(([k, v]) => rows.push(`"${k}","${v.value}"`));
+  rows.push("");
+
+  // ── GCC call overview ──────────────────────────────────────────
+  const gcc = analytics.gccCallOverview;
+  if (gcc) {
+    rows.push("# GCC call overview — July 2026");
+    rows.push("Call date,Attendees,Duration,Avg attendance time");
+    gcc.calls.forEach((c) => rows.push(`"${c.fullDate}",${c.attendees},"${c.duration}","${c.avgAttendanceTime}"`));
+    rows.push("");
+    rows.push("# GCC cross-call breakdown");
+    rows.push("Category,Count");
+    gcc.crossCallBreakdown.forEach((r) => rows.push(`"${r.label}",${r.count}`));
+    rows.push("");
+  }
+
+  // ── New member attendance (Jul 10–Aug 4) ──────────────────────
+  const ma = analytics.meetingAttendance;
+  if (ma) {
+    rows.push("# New member GCC attendance — Jul 10–Aug 4");
+    rows.push("Name,Email,Joined Slack,Attended any call");
+    ma.newMembers.forEach((m) =>
+      rows.push(`"${m.name}","${m.email}","${m.joinedSlack}",${m.attended ? "Yes" : "No"}`)
+    );
+    rows.push("");
+  }
+
+  // ── Member personas ────────────────────────────────────────────
+  const personas = analytics.memberPersonas;
+  if (personas) {
+    rows.push("# Member personas (Aug 4, 2026)");
+    rows.push("Persona,Count,Pct");
+    personas.forEach((p) => rows.push(`"${p.persona}",${p.count},${p.pct}%`));
+    rows.push("");
+  }
+
+  const csv = rows.join("\n");
+  const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "growth-community-analytics.csv";
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
 export function Header() {
-  const { lowData, setLowData, filters, setFilter, analyticsStatus, lastUpdated } = useDashboard();
+  const { lowData, setLowData, analyticsStatus, lastUpdated, analytics } = useDashboard();
 
   return (
     <header className="sticky top-0 z-30 border-b border-[var(--border)] bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
@@ -66,44 +117,14 @@ export function Header() {
 
         <div className="flex-1" />
 
-        {/* Global search */}
-        <div className="relative hidden md:block">
-          <Search
-            size={15}
-            className="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 text-[var(--gc-grey)]"
-            aria-hidden
-          />
-          <Input
-            type="search"
-            aria-label="Search analytics"
-            placeholder="Search metrics, members, resources…"
-            className="h-9 w-56 rounded-md pl-8"
-          />
-        </div>
-
-        {/* Date range */}
-        <Select value={filters.dateRange} onValueChange={(v) => setFilter("dateRange", v)}>
-          <SelectTrigger className="h-9 w-[150px]" aria-label="Date range">
-            <Calendar size={14} className="text-[var(--gc-grey)]" />
-            <SelectValue />
-          </SelectTrigger>
-          <SelectContent>
-            {filterOptions.dateRange.map((o) => (
-              <SelectItem key={o} value={o}>
-                {o}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-
-        {/* Export */}
+        {/* Export — downloads a real CSV of all available data */}
         <Button
           variant="outline"
           className="h-9"
-          onClick={() => toast.success("Export queued", { description: "A lightweight CSV will be emailed to you." })}
+          onClick={() => exportCsv(analytics)}
         >
           <Download size={15} />
-          <span className="hidden sm:inline">Export</span>
+          <span className="hidden sm:inline">Export CSV</span>
         </Button>
 
         {/* Low-data toggle */}

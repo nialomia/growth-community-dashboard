@@ -3,7 +3,6 @@ import { Toaster } from "./components/ui/sonner";
 import { DashboardProvider } from "./dashboard-context";
 import { Header } from "./components/dashboard/Header";
 import { SideNav, TabKey, GccSubKey } from "./components/dashboard/SideNav";
-import { FilterBar } from "./components/dashboard/FilterBar";
 import { OverviewTab } from "./components/dashboard/tabs/OverviewTab";
 import { SlackTab } from "./components/dashboard/tabs/SlackTab";
 import { SharePointTab } from "./components/dashboard/tabs/SharePointTab";
@@ -22,7 +21,6 @@ export default function App() {
         <div className="flex flex-col md:flex-row">
           <SideNav active={tab} onChange={setTab} gccSub={gccSub} onGccSub={setGccSub} />
           <div className="min-w-0 flex-1">
-            <FilterBar />
             <main className="mx-auto max-w-[1400px] p-4 md:p-6">
               {tab === "overview"    && <OverviewTab onDrill={setTab} />}
               {tab === "slack"       && <SlackTab />}
