@@ -37,7 +37,7 @@ export function OverviewTab({ onDrill }: { onDrill: (t: any) => void }) {
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-3 xl:grid-cols-6">
         <KpiCard label="Slack members"         value="804"   trend="up"   delta="+102 since Jul 10" accent="blue"   onDrill={() => onDrill("slack")}       definition="Total active members in the Growth Community Slack workspace as of Aug 4, 2026. Source: Jul 28 Slack export + new members CSV." />
         <KpiCard label="New members (25 days)" value="+102"  trend="up"   delta="+14.5%"            accent="green"  onDrill={() => onDrill("slack")}       definition="Net new members Jul 10–Aug 4: 111 added minus 9 removed = +102 (14.5% growth). Source: diff of Slack exports + new members CSV." />
-        <KpiCard label="GCC call attendance"   value="11%"   trend="down" delta="4 of 35 new mbrs" accent="grey"   onDrill={() => onDrill("meeting")}     definition="% of new Slack members (Jul 10–28) who attended the Jul 28 GCC call. 4 of 35 = 11%. Source: Teams attendance report cross-referenced with Slack export." />
+        <KpiCard label="GCC call attendance"   value="14%"   trend="down" delta="16 of 111 new mbrs" accent="grey"   onDrill={() => onDrill("meeting")}     definition="% of new Slack members (Jul 10–Aug 4) who attended any July GCC call. 16 of 111 = 14%. Source: Teams attendance reports cross-referenced with Slack export." />
         <KpiCard label="SharePoint views"      value="2,862" trend="up"   delta="All time"          accent="blue"   onDrill={() => onDrill("sharepoint")}  definition="Total all-time site visits on the Growth Community SharePoint site. Source: Overall Traffic sheet, SiteAnalyticsData_28-Jul,2026.xlsx." />
         <KpiCard label="Unique SP viewers"     value="38"    trend="up"   delta="All time"          accent="purple" onDrill={() => onDrill("sharepoint")}  definition="Distinct authenticated users who have ever visited the SharePoint site. Source: Overall Traffic sheet — all-time unique viewers row." />
         <KpiCard label="GCC core members"      value="13"    trend="up"   delta="Attended all 3 July calls" accent="green"  onDrill={() => onDrill("meeting")}     definition="Members who attended every July GCC call (Jul 14, 21 & 28). These are the highest-engagement community members. Source: cross-reference of all 3 Teams attendance reports." />
@@ -72,9 +72,9 @@ export function OverviewTab({ onDrill }: { onDrill: (t: any) => void }) {
             />
             <InsightCard
               tone="warning"
-              title="Only 11% of new members attended the GCC call"
-              summary="4 of 35 new Slack members attended the Jul 28 call — 31 missed it."
-              explanation="New members joining Jul 27–28 had no time to learn about the call. A same-day welcome message with the next call date and calendar link would significantly improve first-call attendance."
+              title="14% of new members attended a GCC call"
+              summary="16 of 111 new members (Jul 10–Aug 4) attended at least one July GCC call."
+              explanation="95 new members have not yet attended any GCC call. Many joined close to a call date with no time to learn about it. A same-day welcome message with the next call date and calendar invite would significantly improve first-call attendance."
             />
           </div>
         </Card>

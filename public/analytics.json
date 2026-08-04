@@ -4,287 +4,1924 @@
     "updatedBy": "Growth Community team — Growth_Community_New_Members (1).csv",
     "note": "Member count updated to 804 (+3 since Jul 28: Jaideep Advani Jul 30, Yurii Plakhtii Aug 3, Mariana Chiabotto Aug 3)."
   },
-
   "growthTrend": [
-    { "month": "Jan", "members": 3820, "active": 1180, "sharepoint": 5400 },
-    { "month": "Feb", "members": 4120, "active": 1290, "sharepoint": 5980 },
-    { "month": "Mar", "members": 4510, "active": 1440, "sharepoint": 6720 },
-    { "month": "Apr", "members": 4980, "active": 1610, "sharepoint": 7350 },
-    { "month": "May", "members": 5340, "active": 1720, "sharepoint": 8010 },
-    { "month": "Jun", "members": 5910, "active": 1980, "sharepoint": 8890 },
-    { "month": "Jul", "members": 6480, "active": 2210, "sharepoint": 9620 }
+    {
+      "month": "Jan",
+      "members": 3820,
+      "active": 1180,
+      "sharepoint": 5400
+    },
+    {
+      "month": "Feb",
+      "members": 4120,
+      "active": 1290,
+      "sharepoint": 5980
+    },
+    {
+      "month": "Mar",
+      "members": 4510,
+      "active": 1440,
+      "sharepoint": 6720
+    },
+    {
+      "month": "Apr",
+      "members": 4980,
+      "active": 1610,
+      "sharepoint": 7350
+    },
+    {
+      "month": "May",
+      "members": 5340,
+      "active": 1720,
+      "sharepoint": 8010
+    },
+    {
+      "month": "Jun",
+      "members": 5910,
+      "active": 1980,
+      "sharepoint": 8890
+    },
+    {
+      "month": "Jul",
+      "members": 6480,
+      "active": 2210,
+      "sharepoint": 9620
+    }
   ],
-
   "slackGrowth": [
-    { "month": "Jan", "newMembers": 340, "returning": 220, "inactive": 90 },
-    { "month": "Feb", "newMembers": 300, "returning": 260, "inactive": 110 },
-    { "month": "Mar", "newMembers": 390, "returning": 280, "inactive": 130 },
-    { "month": "Apr", "newMembers": 470, "returning": 320, "inactive": 120 },
-    { "month": "May", "newMembers": 360, "returning": 350, "inactive": 150 },
-    { "month": "Jun", "newMembers": 570, "returning": 410, "inactive": 140 },
-    { "month": "Jul", "newMembers": 570, "returning": 460, "inactive": 160 }
+    {
+      "month": "Jan",
+      "newMembers": 340,
+      "returning": 220,
+      "inactive": 90
+    },
+    {
+      "month": "Feb",
+      "newMembers": 300,
+      "returning": 260,
+      "inactive": 110
+    },
+    {
+      "month": "Mar",
+      "newMembers": 390,
+      "returning": 280,
+      "inactive": 130
+    },
+    {
+      "month": "Apr",
+      "newMembers": 470,
+      "returning": 320,
+      "inactive": 120
+    },
+    {
+      "month": "May",
+      "newMembers": 360,
+      "returning": 350,
+      "inactive": 150
+    },
+    {
+      "month": "Jun",
+      "newMembers": 570,
+      "returning": 410,
+      "inactive": 140
+    },
+    {
+      "month": "Jul",
+      "newMembers": 570,
+      "returning": 460,
+      "inactive": 160
+    }
   ],
-
   "cohorts": [
-    { "cohort": "Joined Jan", "w1": 82, "w2": 61, "w3": 48, "w4": 41 },
-    { "cohort": "Joined Feb", "w1": 79, "w2": 58, "w3": 45, "w4": 39 },
-    { "cohort": "Joined Mar", "w1": 85, "w2": 66, "w3": 52, "w4": 44 },
-    { "cohort": "Joined Apr", "w1": 88, "w2": 70, "w3": 57, "w4": 49 },
-    { "cohort": "Joined May", "w1": 84, "w2": 63, "w3": 50, "w4": 43 }
+    {
+      "cohort": "Joined Jan",
+      "w1": 82,
+      "w2": 61,
+      "w3": 48,
+      "w4": 41
+    },
+    {
+      "cohort": "Joined Feb",
+      "w1": 79,
+      "w2": 58,
+      "w3": 45,
+      "w4": 39
+    },
+    {
+      "cohort": "Joined Mar",
+      "w1": 85,
+      "w2": 66,
+      "w3": 52,
+      "w4": 44
+    },
+    {
+      "cohort": "Joined Apr",
+      "w1": 88,
+      "w2": 70,
+      "w3": 57,
+      "w4": 49
+    },
+    {
+      "cohort": "Joined May",
+      "w1": 84,
+      "w2": 63,
+      "w3": 50,
+      "w4": 43
+    }
   ],
-
   "segments": [
-    { "id": "s1", "name": "Product Builders",   "region": "EMEA", "members": 1240, "engagement": 74, "trend": "up",   "status": "Thriving" },
-    { "id": "s2", "name": "Data & AI Guild",     "region": "AMER", "members": 980,  "engagement": 68, "trend": "up",   "status": "Thriving" },
-    { "id": "s3", "name": "Design Circle",       "region": "APAC", "members": 640,  "engagement": 52, "trend": "flat", "status": "Steady"   },
-    { "id": "s4", "name": "Ops Network",         "region": "EMEA", "members": 520,  "engagement": 41, "trend": "down", "status": "At risk"  },
-    { "id": "s5", "name": "New Grads",           "region": "AMER", "members": 780,  "engagement": 63, "trend": "up",   "status": "Steady"   },
-    { "id": "s6", "name": "Partner Community",   "region": "APAC", "members": 410,  "engagement": 38, "trend": "down", "status": "At risk"  },
-    { "id": "s7", "name": "Leadership Forum",    "region": "AMER", "members": 290,  "engagement": 71, "trend": "up",   "status": "Thriving" },
-    { "id": "s8", "name": "Support Champions",   "region": "EMEA", "members": 350,  "engagement": 55, "trend": "flat", "status": "Steady"   }
+    {
+      "id": "s1",
+      "name": "Product Builders",
+      "region": "EMEA",
+      "members": 1240,
+      "engagement": 74,
+      "trend": "up",
+      "status": "Thriving"
+    },
+    {
+      "id": "s2",
+      "name": "Data & AI Guild",
+      "region": "AMER",
+      "members": 980,
+      "engagement": 68,
+      "trend": "up",
+      "status": "Thriving"
+    },
+    {
+      "id": "s3",
+      "name": "Design Circle",
+      "region": "APAC",
+      "members": 640,
+      "engagement": 52,
+      "trend": "flat",
+      "status": "Steady"
+    },
+    {
+      "id": "s4",
+      "name": "Ops Network",
+      "region": "EMEA",
+      "members": 520,
+      "engagement": 41,
+      "trend": "down",
+      "status": "At risk"
+    },
+    {
+      "id": "s5",
+      "name": "New Grads",
+      "region": "AMER",
+      "members": 780,
+      "engagement": 63,
+      "trend": "up",
+      "status": "Steady"
+    },
+    {
+      "id": "s6",
+      "name": "Partner Community",
+      "region": "APAC",
+      "members": 410,
+      "engagement": 38,
+      "trend": "down",
+      "status": "At risk"
+    },
+    {
+      "id": "s7",
+      "name": "Leadership Forum",
+      "region": "AMER",
+      "members": 290,
+      "engagement": 71,
+      "trend": "up",
+      "status": "Thriving"
+    },
+    {
+      "id": "s8",
+      "name": "Support Champions",
+      "region": "EMEA",
+      "members": 350,
+      "engagement": 55,
+      "trend": "flat",
+      "status": "Steady"
+    }
   ],
-
   "sharepointResources": [
-    { "id": "r1",  "title": "Home.aspx",                                                                            "type": "Site Page", "owner": "Growth Community", "views": 26, "downloads": 0, "freshness": "Fresh", "month": "Jul" },
-    { "id": "r2",  "title": "Growth Community - 2Q26 Showcase - Guardium Data Protection + Compliance Express.pptx","type": "Document",  "owner": "Growth Community", "views": 23, "downloads": 0, "freshness": "Fresh", "month": "Jul" },
-    { "id": "r3",  "title": "Growth Community - Themed Conversation Leader Kit - 2026 July 28.pptx",                "type": "Document",  "owner": "Growth Community", "views": 69, "downloads": 0, "freshness": "Fresh", "month": "Jul" },
-    { "id": "r4",  "title": "Growth Community Call-Meeting Recording - July 21 2026.mp4",                           "type": "Document",  "owner": "Growth Community", "views": 5,  "downloads": 0, "freshness": "Fresh", "month": "Jul" },
-    { "id": "r5",  "title": "Growth Community - 2Q26 Showcase - Maximo.pptx",                                      "type": "Document",  "owner": "Growth Community", "views": 32, "downloads": 0, "freshness": "Fresh", "month": "Jul" },
-    { "id": "r6",  "title": "Growth Community - 2Q26 Showcase - Trial Registration Form Redesign.pptx",            "type": "Document",  "owner": "Growth Community", "views": 14, "downloads": 0, "freshness": "Fresh", "month": "Jul" },
-    { "id": "r7",  "title": "Growth Community - Themed Conversation Leader Kit - TEMPLATE.pptx",                    "type": "Document",  "owner": "Growth Community", "views": 20, "downloads": 0, "freshness": "Fresh", "month": "Jul" },
-    { "id": "r8",  "title": "UserEmailFormat13.07.xlsx",                                                            "type": "Document",  "owner": "Growth Community", "views": 52, "downloads": 0, "freshness": "Fresh", "month": "Jul" },
-    { "id": "r9",  "title": "Growth Community - Themed Conversation Leader Kit - 2026 Aug 11.pptx",                 "type": "Document",  "owner": "Growth Community", "views": 11, "downloads": 0, "freshness": "Fresh", "month": "Aug" },
-    { "id": "r10", "title": "Growth Community Call - 2026 July 21.pptx",                                           "type": "Document",  "owner": "Growth Community", "views": 9,  "downloads": 0, "freshness": "Fresh", "month": "Jul" },
-    { "id": "r11", "title": "Growth Community AI Workflow (Draft).pptx",                                            "type": "Document",  "owner": "Growth Community", "views": 6,  "downloads": 0, "freshness": "Fresh", "month": "Jul" },
-    { "id": "r12", "title": "Growth-Community-Redesign-Pitch.pptx",                                                 "type": "Document",  "owner": "Growth Community", "views": 39, "downloads": 0, "freshness": "Fresh", "month": "Jul" },
-    { "id": "r13", "title": "Growth Community - Quarterly Showcase - TEMPLATE.pptx",                                "type": "Document",  "owner": "Growth Community", "views": 14, "downloads": 0, "freshness": "Fresh", "month": "Jul" },
-    { "id": "r14", "title": "Growth Community - 2026 July 28.pptx",                                                 "type": "Document",  "owner": "Growth Community", "views": 11, "downloads": 0, "freshness": "Fresh", "month": "Jul" },
-    { "id": "r15", "title": "2025-26 Growth Community Call Index.xlsx",                                             "type": "Document",  "owner": "Growth Community", "views": 3,  "downloads": 0, "freshness": "Fresh", "month": "Jul" },
-    { "id": "r16", "title": "validation_report (copilot).csv",                                                      "type": "Document",  "owner": "Growth Community", "views": 1,  "downloads": 0, "freshness": "Fresh", "month": "Jul" },
-    { "id": "r17", "title": "cleaned_community_knowledge_base (copilot).csv",                                       "type": "Document",  "owner": "Growth Community", "views": 1,  "downloads": 0, "freshness": "Fresh", "month": "Jul" },
-    { "id": "r18", "title": "2026 Updated Bob Version.xlsx",                                                        "type": "Document",  "owner": "Growth Community", "views": 1,  "downloads": 0, "freshness": "Fresh", "month": "Jul" },
-    { "id": "r19", "title": "2025 Growth Community Call Index.xlsx",                                                "type": "Document",  "owner": "Growth Community", "views": 1,  "downloads": 0, "freshness": "Aging", "month": "Jun" },
-    { "id": "r20", "title": "1-7-25 PPM Summary Board Update with Product Master (1.17.25).xlsx",                  "type": "Document",  "owner": "Growth Community", "views": 7,  "downloads": 0, "freshness": "Stale", "month": "Jan" }
+    {
+      "id": "r1",
+      "title": "Home.aspx",
+      "type": "Site Page",
+      "owner": "Growth Community",
+      "views": 26,
+      "downloads": 0,
+      "freshness": "Fresh",
+      "month": "Jul"
+    },
+    {
+      "id": "r2",
+      "title": "Growth Community - 2Q26 Showcase - Guardium Data Protection + Compliance Express.pptx",
+      "type": "Document",
+      "owner": "Growth Community",
+      "views": 23,
+      "downloads": 0,
+      "freshness": "Fresh",
+      "month": "Jul"
+    },
+    {
+      "id": "r3",
+      "title": "Growth Community - Themed Conversation Leader Kit - 2026 July 28.pptx",
+      "type": "Document",
+      "owner": "Growth Community",
+      "views": 69,
+      "downloads": 0,
+      "freshness": "Fresh",
+      "month": "Jul"
+    },
+    {
+      "id": "r4",
+      "title": "Growth Community Call-Meeting Recording - July 21 2026.mp4",
+      "type": "Document",
+      "owner": "Growth Community",
+      "views": 5,
+      "downloads": 0,
+      "freshness": "Fresh",
+      "month": "Jul"
+    },
+    {
+      "id": "r5",
+      "title": "Growth Community - 2Q26 Showcase - Maximo.pptx",
+      "type": "Document",
+      "owner": "Growth Community",
+      "views": 32,
+      "downloads": 0,
+      "freshness": "Fresh",
+      "month": "Jul"
+    },
+    {
+      "id": "r6",
+      "title": "Growth Community - 2Q26 Showcase - Trial Registration Form Redesign.pptx",
+      "type": "Document",
+      "owner": "Growth Community",
+      "views": 14,
+      "downloads": 0,
+      "freshness": "Fresh",
+      "month": "Jul"
+    },
+    {
+      "id": "r7",
+      "title": "Growth Community - Themed Conversation Leader Kit - TEMPLATE.pptx",
+      "type": "Document",
+      "owner": "Growth Community",
+      "views": 20,
+      "downloads": 0,
+      "freshness": "Fresh",
+      "month": "Jul"
+    },
+    {
+      "id": "r8",
+      "title": "UserEmailFormat13.07.xlsx",
+      "type": "Document",
+      "owner": "Growth Community",
+      "views": 52,
+      "downloads": 0,
+      "freshness": "Fresh",
+      "month": "Jul"
+    },
+    {
+      "id": "r9",
+      "title": "Growth Community - Themed Conversation Leader Kit - 2026 Aug 11.pptx",
+      "type": "Document",
+      "owner": "Growth Community",
+      "views": 11,
+      "downloads": 0,
+      "freshness": "Fresh",
+      "month": "Aug"
+    },
+    {
+      "id": "r10",
+      "title": "Growth Community Call - 2026 July 21.pptx",
+      "type": "Document",
+      "owner": "Growth Community",
+      "views": 9,
+      "downloads": 0,
+      "freshness": "Fresh",
+      "month": "Jul"
+    },
+    {
+      "id": "r11",
+      "title": "Growth Community AI Workflow (Draft).pptx",
+      "type": "Document",
+      "owner": "Growth Community",
+      "views": 6,
+      "downloads": 0,
+      "freshness": "Fresh",
+      "month": "Jul"
+    },
+    {
+      "id": "r12",
+      "title": "Growth-Community-Redesign-Pitch.pptx",
+      "type": "Document",
+      "owner": "Growth Community",
+      "views": 39,
+      "downloads": 0,
+      "freshness": "Fresh",
+      "month": "Jul"
+    },
+    {
+      "id": "r13",
+      "title": "Growth Community - Quarterly Showcase - TEMPLATE.pptx",
+      "type": "Document",
+      "owner": "Growth Community",
+      "views": 14,
+      "downloads": 0,
+      "freshness": "Fresh",
+      "month": "Jul"
+    },
+    {
+      "id": "r14",
+      "title": "Growth Community - 2026 July 28.pptx",
+      "type": "Document",
+      "owner": "Growth Community",
+      "views": 11,
+      "downloads": 0,
+      "freshness": "Fresh",
+      "month": "Jul"
+    },
+    {
+      "id": "r15",
+      "title": "2025-26 Growth Community Call Index.xlsx",
+      "type": "Document",
+      "owner": "Growth Community",
+      "views": 3,
+      "downloads": 0,
+      "freshness": "Fresh",
+      "month": "Jul"
+    },
+    {
+      "id": "r16",
+      "title": "validation_report (copilot).csv",
+      "type": "Document",
+      "owner": "Growth Community",
+      "views": 1,
+      "downloads": 0,
+      "freshness": "Fresh",
+      "month": "Jul"
+    },
+    {
+      "id": "r17",
+      "title": "cleaned_community_knowledge_base (copilot).csv",
+      "type": "Document",
+      "owner": "Growth Community",
+      "views": 1,
+      "downloads": 0,
+      "freshness": "Fresh",
+      "month": "Jul"
+    },
+    {
+      "id": "r18",
+      "title": "2026 Updated Bob Version.xlsx",
+      "type": "Document",
+      "owner": "Growth Community",
+      "views": 1,
+      "downloads": 0,
+      "freshness": "Fresh",
+      "month": "Jul"
+    },
+    {
+      "id": "r19",
+      "title": "2025 Growth Community Call Index.xlsx",
+      "type": "Document",
+      "owner": "Growth Community",
+      "views": 1,
+      "downloads": 0,
+      "freshness": "Aging",
+      "month": "Jun"
+    },
+    {
+      "id": "r20",
+      "title": "1-7-25 PPM Summary Board Update with Product Master (1.17.25).xlsx",
+      "type": "Document",
+      "owner": "Growth Community",
+      "views": 7,
+      "downloads": 0,
+      "freshness": "Stale",
+      "month": "Jan"
+    }
   ],
-
   "sharepointTrend": [
-    { "month": "Jul 8–14",  "views": 218, "unique": 13 },
-    { "month": "Jul 15–21", "views": 601, "unique": 36 },
-    { "month": "Jul 22–28", "views": 601, "unique": 33 }
+    {
+      "month": "Jul 8–14",
+      "views": 218,
+      "unique": 13
+    },
+    {
+      "month": "Jul 15–21",
+      "views": 601,
+      "unique": 36
+    },
+    {
+      "month": "Jul 22–28",
+      "views": 601,
+      "unique": 33
+    }
   ],
-
   "icaTopics": [
-    { "id": "t1", "topic": "Membership & access",    "queries": 1840, "success": 92, "trend": "up",   "status": "Healthy"    },
-    { "id": "t2", "topic": "Event registration",     "queries": 1320, "success": 88, "trend": "up",   "status": "Healthy"    },
-    { "id": "t3", "topic": "SharePoint navigation",  "queries": 980,  "success": 74, "trend": "flat", "status": "Monitor"    },
-    { "id": "t4", "topic": "Billing & invoices",     "queries": 620,  "success": 61, "trend": "down", "status": "Needs work" },
-    { "id": "t5", "topic": "Content submission",     "queries": 540,  "success": 69, "trend": "flat", "status": "Monitor"    }
+    {
+      "id": "t1",
+      "topic": "Membership & access",
+      "queries": 1840,
+      "success": 92,
+      "trend": "up",
+      "status": "Healthy"
+    },
+    {
+      "id": "t2",
+      "topic": "Event registration",
+      "queries": 1320,
+      "success": 88,
+      "trend": "up",
+      "status": "Healthy"
+    },
+    {
+      "id": "t3",
+      "topic": "SharePoint navigation",
+      "queries": 980,
+      "success": 74,
+      "trend": "flat",
+      "status": "Monitor"
+    },
+    {
+      "id": "t4",
+      "topic": "Billing & invoices",
+      "queries": 620,
+      "success": 61,
+      "trend": "down",
+      "status": "Needs work"
+    },
+    {
+      "id": "t5",
+      "topic": "Content submission",
+      "queries": 540,
+      "success": 69,
+      "trend": "flat",
+      "status": "Monitor"
+    }
   ],
-
   "icaUsage": [
-    { "month": "Feb", "queries": 3200, "success": 2560 },
-    { "month": "Mar", "queries": 3600, "success": 2952 },
-    { "month": "Apr", "queries": 4100, "success": 3444 },
-    { "month": "May", "queries": 4400, "success": 3740 },
-    { "month": "Jun", "queries": 5000, "success": 4350 },
-    { "month": "Jul", "queries": 5600, "success": 4984 }
+    {
+      "month": "Feb",
+      "queries": 3200,
+      "success": 2560
+    },
+    {
+      "month": "Mar",
+      "queries": 3600,
+      "success": 2952
+    },
+    {
+      "month": "Apr",
+      "queries": 4100,
+      "success": 3444
+    },
+    {
+      "month": "May",
+      "queries": 4400,
+      "success": 3740
+    },
+    {
+      "month": "Jun",
+      "queries": 5000,
+      "success": 4350
+    },
+    {
+      "month": "Jul",
+      "queries": 5600,
+      "success": 4984
+    }
   ],
-
   "events": [
-    { "id": "e1", "title": "Community Kickoff 2026", "date": "Feb 2026", "attendance": 640,  "feedback": 4.6 },
-    { "id": "e2", "title": "Data & AI Summit",       "date": "Apr 2026", "attendance": 880,  "feedback": 4.8 },
-    { "id": "e3", "title": "Design Systems Jam",     "date": "May 2026", "attendance": 520,  "feedback": 4.4 },
-    { "id": "e4", "title": "Mid-year Town Hall",     "date": "Jun 2026", "attendance": 1240, "feedback": 4.7 },
-    { "id": "e5", "title": "Builder Awards",         "date": "Jul 2026", "attendance": 760,  "feedback": 4.9 }
+    {
+      "id": "e1",
+      "title": "Community Kickoff 2026",
+      "date": "Feb 2026",
+      "attendance": 640,
+      "feedback": 4.6
+    },
+    {
+      "id": "e2",
+      "title": "Data & AI Summit",
+      "date": "Apr 2026",
+      "attendance": 880,
+      "feedback": 4.8
+    },
+    {
+      "id": "e3",
+      "title": "Design Systems Jam",
+      "date": "May 2026",
+      "attendance": 520,
+      "feedback": 4.4
+    },
+    {
+      "id": "e4",
+      "title": "Mid-year Town Hall",
+      "date": "Jun 2026",
+      "attendance": 1240,
+      "feedback": 4.7
+    },
+    {
+      "id": "e5",
+      "title": "Builder Awards",
+      "date": "Jul 2026",
+      "attendance": 760,
+      "feedback": 4.9
+    }
   ],
-
   "eventEngagement": [
-    { "month": "Feb", "pre": 62, "post": 78 },
-    { "month": "Apr", "pre": 70, "post": 88 },
-    { "month": "May", "pre": 58, "post": 74 },
-    { "month": "Jun", "pre": 74, "post": 92 },
-    { "month": "Jul", "pre": 68, "post": 90 }
+    {
+      "month": "Feb",
+      "pre": 62,
+      "post": 78
+    },
+    {
+      "month": "Apr",
+      "pre": 70,
+      "post": 88
+    },
+    {
+      "month": "May",
+      "pre": 58,
+      "post": 74
+    },
+    {
+      "month": "Jun",
+      "pre": 74,
+      "post": 92
+    },
+    {
+      "month": "Jul",
+      "pre": 68,
+      "post": 90
+    }
   ],
-
   "timeline": [
-    { "id": "tl1", "date": "Jan 2026", "label": "Reached 4,000 members",               "kind": "Milestone" },
-    { "id": "tl2", "date": "Feb 2026", "label": "Community Kickoff — 640 attendees",    "kind": "Event"     },
-    { "id": "tl3", "date": "Apr 2026", "label": "Launched ICA Agent v2",                "kind": "Launch"    },
-    { "id": "tl4", "date": "Jun 2026", "label": "Crossed 5,900 members",                "kind": "Milestone" },
-    { "id": "tl5", "date": "Jul 2026", "label": "Builder Awards — record 4.9 feedback", "kind": "Event"     }
+    {
+      "id": "tl1",
+      "date": "Jan 2026",
+      "label": "Reached 4,000 members",
+      "kind": "Milestone"
+    },
+    {
+      "id": "tl2",
+      "date": "Feb 2026",
+      "label": "Community Kickoff — 640 attendees",
+      "kind": "Event"
+    },
+    {
+      "id": "tl3",
+      "date": "Apr 2026",
+      "label": "Launched ICA Agent v2",
+      "kind": "Launch"
+    },
+    {
+      "id": "tl4",
+      "date": "Jun 2026",
+      "label": "Crossed 5,900 members",
+      "kind": "Milestone"
+    },
+    {
+      "id": "tl5",
+      "date": "Jul 2026",
+      "label": "Builder Awards — record 4.9 feedback",
+      "kind": "Event"
+    }
   ],
-
   "kpis": {
     "overview": {
-      "totalMembers":        { "value": "804",     "trend": "up",   "delta": "+102 since Jul 10" },
-      "monthlyGrowth":       { "value": "+102",    "trend": "up",   "delta": "+14.5%"             },
-      "activeContributors":  { "value": "11%",     "trend": "down", "delta": "4 of 35 new mbrs"  },
-      "sharepointViews":     { "value": "2,862",   "trend": "up",   "delta": "+496% vs Jun"       },
-      "icaAgentUsage":       { "value": "38",      "trend": "up",   "delta": "All time"           },
-      "engagementScore":     { "value": "83%",     "trend": "up",   "delta": "5 of 6 fresh"       }
+      "totalMembers": {
+        "value": "804",
+        "trend": "up",
+        "delta": "+102 since Jul 10"
+      },
+      "monthlyGrowth": {
+        "value": "+102",
+        "trend": "up",
+        "delta": "+14.5%"
+      },
+      "activeContributors": {
+        "value": "14%",
+        "trend": "down",
+        "delta": "16 of 111 new mbrs"
+      },
+      "sharepointViews": {
+        "value": "2,862",
+        "trend": "up",
+        "delta": "+496% vs Jun"
+      },
+      "icaAgentUsage": {
+        "value": "38",
+        "trend": "up",
+        "delta": "All time"
+      },
+      "engagementScore": {
+        "value": "83%",
+        "trend": "up",
+        "delta": "5 of 6 fresh"
+      }
     },
     "slack": {
-      "newMembers":          { "value": "570",     "trend": "up",   "delta": "+18%"  },
-      "returningMembers":    { "value": "460",     "trend": "up",   "delta": "+12%"  },
-      "inactiveMembers":     { "value": "160",     "trend": "down", "delta": "-6%"   },
-      "activeContributors":  { "value": "2,210",   "trend": "up",   "delta": "+11%"  },
-      "engagementRate":      { "value": "34%",     "trend": "flat", "delta": "±0"    }
+      "newMembers": {
+        "value": "570",
+        "trend": "up",
+        "delta": "+18%"
+      },
+      "returningMembers": {
+        "value": "460",
+        "trend": "up",
+        "delta": "+12%"
+      },
+      "inactiveMembers": {
+        "value": "160",
+        "trend": "down",
+        "delta": "-6%"
+      },
+      "activeContributors": {
+        "value": "2,210",
+        "trend": "up",
+        "delta": "+11%"
+      },
+      "engagementRate": {
+        "value": "34%",
+        "trend": "flat",
+        "delta": "±0"
+      }
     },
     "sharepoint": {
-      "pageViews":           { "value": "2,862",   "trend": "up",   "delta": "All time"      },
-      "uniqueViewers":       { "value": "38",      "trend": "up",   "delta": "All time"      },
-      "avgEngagement":       { "value": "94%",     "trend": "up",   "delta": "Desktop visits"},
-      "resourceFreshness":   { "value": "90%",     "trend": "up",   "delta": "18 of 20 fresh"},
-      "activeResources":     { "value": "20",      "trend": "up",   "delta": "Last 7 days"   }
+      "pageViews": {
+        "value": "2,862",
+        "trend": "up",
+        "delta": "All time"
+      },
+      "uniqueViewers": {
+        "value": "38",
+        "trend": "up",
+        "delta": "All time"
+      },
+      "avgEngagement": {
+        "value": "94%",
+        "trend": "up",
+        "delta": "Desktop visits"
+      },
+      "resourceFreshness": {
+        "value": "90%",
+        "trend": "up",
+        "delta": "18 of 20 fresh"
+      },
+      "activeResources": {
+        "value": "20",
+        "trend": "up",
+        "delta": "Last 7 days"
+      }
     },
     "ica": {
-      "agentUsage":          { "value": "5,600",   "trend": "up",   "delta": "+12%"  },
-      "queries":             { "value": "5,600",   "trend": "up",   "delta": "+12%"  },
-      "successRate":         { "value": "89%",     "trend": "up",   "delta": "+3%"   },
-      "fallbackRate":        { "value": "11%",     "trend": "down", "delta": "-3%"   },
-      "repeatUsage":         { "value": "46%",     "trend": "up",   "delta": "+5%"   },
-      "commonTopics":        { "value": "12",      "trend": "flat", "delta": "±0"    }
+      "agentUsage": {
+        "value": "5,600",
+        "trend": "up",
+        "delta": "+12%"
+      },
+      "queries": {
+        "value": "5,600",
+        "trend": "up",
+        "delta": "+12%"
+      },
+      "successRate": {
+        "value": "89%",
+        "trend": "up",
+        "delta": "+3%"
+      },
+      "fallbackRate": {
+        "value": "11%",
+        "trend": "down",
+        "delta": "-3%"
+      },
+      "repeatUsage": {
+        "value": "46%",
+        "trend": "up",
+        "delta": "+5%"
+      },
+      "commonTopics": {
+        "value": "12",
+        "trend": "flat",
+        "delta": "±0"
+      }
     },
     "events": {
-      "eventAttendance":     { "value": "4,040",   "trend": "up",   "delta": "+14%"  },
-      "repeatAttendees":     { "value": "1,760",   "trend": "up",   "delta": "+9%"   },
-      "feedbackScore":       { "value": "4.7 / 5", "trend": "up",   "delta": "+0.2"  },
-      "postEventEngagement": { "value": "+31%",    "trend": "up",   "delta": "+6%"   },
-      "topSession":          { "value": "4.9 / 5", "trend": "up",   "delta": "Awards"}
+      "eventAttendance": {
+        "value": "4,040",
+        "trend": "up",
+        "delta": "+14%"
+      },
+      "repeatAttendees": {
+        "value": "1,760",
+        "trend": "up",
+        "delta": "+9%"
+      },
+      "feedbackScore": {
+        "value": "4.7 / 5",
+        "trend": "up",
+        "delta": "+0.2"
+      },
+      "postEventEngagement": {
+        "value": "+31%",
+        "trend": "up",
+        "delta": "+6%"
+      },
+      "topSession": {
+        "value": "4.9 / 5",
+        "trend": "up",
+        "delta": "Awards"
+      }
     }
   },
-
   "communityHealth": {
     "score": "78 / 100",
     "status": "Thriving",
     "signals": [
-      { "label": "Participation",   "value": 82, "status": "Healthy"  },
-      { "label": "Responsiveness",  "value": 74, "status": "Monitor"  },
-      { "label": "Retention",       "value": 69, "status": "Monitor"  }
+      {
+        "label": "Participation",
+        "value": 82,
+        "status": "Healthy"
+      },
+      {
+        "label": "Responsiveness",
+        "value": 74,
+        "status": "Monitor"
+      },
+      {
+        "label": "Retention",
+        "value": 69,
+        "status": "Monitor"
+      }
     ]
   },
-
   "sharepointFreshness": [
-    { "label": "Fresh",  "pct": 90, "status": "Healthy"    },
-    { "label": "Aging",  "pct": 5,  "status": "Monitor"    },
-    { "label": "Stale",  "pct": 5,  "status": "Needs work" }
+    {
+      "label": "Fresh",
+      "pct": 90,
+      "status": "Healthy"
+    },
+    {
+      "label": "Aging",
+      "pct": 5,
+      "status": "Monitor"
+    },
+    {
+      "label": "Stale",
+      "pct": 5,
+      "status": "Needs work"
+    }
   ],
-
   "upcomingEvents": [
-    { "title": "Autumn Builders Meetup", "date": "Sep 2026" },
-    { "title": "Data & AI Summit v2",    "date": "Oct 2026" },
-    { "title": "Year-end Town Hall",     "date": "Dec 2026" }
+    {
+      "title": "Autumn Builders Meetup",
+      "date": "Sep 2026"
+    },
+    {
+      "title": "Data & AI Summit v2",
+      "date": "Oct 2026"
+    },
+    {
+      "title": "Year-end Town Hall",
+      "date": "Dec 2026"
+    }
   ],
-
   "memberPersonas": [
-    { "persona": "Product Manager",         "count": 271, "pct": 33.9 },
-    { "persona": "Product Designer",        "count": 128, "pct": 16.0 },
-    { "persona": "Other",                   "count": 97,  "pct": 12.2 },
-    { "persona": "Product Marketing Mgr",   "count": 96,  "pct": 12.0 },
-    { "persona": "Sales",                   "count": 70,  "pct": 8.8  },
-    { "persona": "Engineer",                "count": 33,  "pct": 4.1  },
-    { "persona": "Content Designer",        "count": 28,  "pct": 3.5  },
-    { "persona": "Data Scientist / Analyst","count": 27,  "pct": 3.4  },
-    { "persona": "UX Researcher",           "count": 17,  "pct": 2.1  },
-    { "persona": "Engineering Manager",     "count": 17,  "pct": 2.1  },
-    { "persona": "Customer Success",        "count": 10,  "pct": 1.3  },
-    { "persona": "System / Non-Member",     "count": 1,   "pct": 0.1  }
+    {
+      "persona": "Product Manager",
+      "count": 271,
+      "pct": 33.9
+    },
+    {
+      "persona": "Product Designer",
+      "count": 128,
+      "pct": 16
+    },
+    {
+      "persona": "Other",
+      "count": 97,
+      "pct": 12.2
+    },
+    {
+      "persona": "Product Marketing Mgr",
+      "count": 96,
+      "pct": 12
+    },
+    {
+      "persona": "Sales",
+      "count": 70,
+      "pct": 8.8
+    },
+    {
+      "persona": "Engineer",
+      "count": 33,
+      "pct": 4.1
+    },
+    {
+      "persona": "Content Designer",
+      "count": 28,
+      "pct": 3.5
+    },
+    {
+      "persona": "Data Scientist / Analyst",
+      "count": 27,
+      "pct": 3.4
+    },
+    {
+      "persona": "UX Researcher",
+      "count": 17,
+      "pct": 2.1
+    },
+    {
+      "persona": "Engineering Manager",
+      "count": 17,
+      "pct": 2.1
+    },
+    {
+      "persona": "Customer Success",
+      "count": 10,
+      "pct": 1.3
+    },
+    {
+      "persona": "System / Non-Member",
+      "count": 1,
+      "pct": 0.1
+    }
   ],
-
   "meetingAttendance": {
     "meetingTitle": "Growth Community Call (GCC)",
     "meetingDate": "Jul 28, 2026",
     "meetingDuration": "1h 33m 57s",
     "totalAttendees": 44,
     "avgAttendanceTime": "31m 38s",
-    "newMemberCount": 35,
-    "newMembersAttended": 4,
-    "newMembersAbsent": 31,
+    "newMemberCount": 111,
+    "newMembersAttended": 16,
+    "newMembersAbsent": 95,
     "allAttendees": [
-      { "name": "Kristen Yerardi",       "joinTime": "11:32 AM", "engagementActions": 12, "isNewMember": false },
-      { "name": "Nicole Keyes",           "joinTime": "11:28 AM", "engagementActions": 6,  "isNewMember": false },
-      { "name": "Dipali Darji",           "joinTime": "11:29 AM", "engagementActions": 2,  "isNewMember": true  },
-      { "name": "Jasmine Westbrooks",     "joinTime": "11:29 AM", "engagementActions": 4,  "isNewMember": false },
-      { "name": "Kyle Alvares",           "joinTime": "11:30 AM", "engagementActions": 0,  "isNewMember": false },
-      { "name": "Brayden Wisniewski",     "joinTime": "11:30 AM", "engagementActions": 4,  "isNewMember": true  },
-      { "name": "Greg Bender",            "joinTime": "11:30 AM", "engagementActions": 8,  "isNewMember": false },
-      { "name": "Grace Lee",              "joinTime": "11:30 AM", "engagementActions": 0,  "isNewMember": false },
-      { "name": "Imad Nasr",              "joinTime": "11:31 AM", "engagementActions": 1,  "isNewMember": false },
-      { "name": "Nolan Vaughan",          "joinTime": "11:31 AM", "engagementActions": 2,  "isNewMember": false },
-      { "name": "Steffi Molzberger",      "joinTime": "11:31 AM", "engagementActions": 2,  "isNewMember": false },
-      { "name": "Otilia Mihai",           "joinTime": "11:31 AM", "engagementActions": 0,  "isNewMember": false },
-      { "name": "Natalia Ladiko",         "joinTime": "11:31 AM", "engagementActions": 0,  "isNewMember": false },
-      { "name": "Soufiane Azizi",         "joinTime": "11:31 AM", "engagementActions": 6,  "isNewMember": false },
-      { "name": "Olusegun Sidiku",        "joinTime": "11:31 AM", "engagementActions": 1,  "isNewMember": false },
-      { "name": "Rithvik Siddam",         "joinTime": "11:31 AM", "engagementActions": 0,  "isNewMember": false },
-      { "name": "Sri Muralidharan",       "joinTime": "11:32 AM", "engagementActions": 0,  "isNewMember": true  },
-      { "name": "Rodrigo Barros",         "joinTime": "11:32 AM", "engagementActions": 0,  "isNewMember": false },
-      { "name": "Anna Neovius",           "joinTime": "11:32 AM", "engagementActions": 1,  "isNewMember": false },
-      { "name": "Suzanne Permanna",       "joinTime": "11:32 AM", "engagementActions": 0,  "isNewMember": false },
-      { "name": "Gina Sandon",            "joinTime": "11:32 AM", "engagementActions": 0,  "isNewMember": false },
-      { "name": "Liam Seston",            "joinTime": "11:32 AM", "engagementActions": 5,  "isNewMember": false },
-      { "name": "John Nielsen",           "joinTime": "11:34 AM", "engagementActions": 0,  "isNewMember": false },
-      { "name": "Ben Lopez",              "joinTime": "11:35 AM", "engagementActions": 3,  "isNewMember": false },
-      { "name": "Jeanne Yuen",            "joinTime": "11:35 AM", "engagementActions": 0,  "isNewMember": false },
-      { "name": "Kuber Saraswat",         "joinTime": "11:36 AM", "engagementActions": 7,  "isNewMember": true  },
-      { "name": "Dorota Meysztowicz",     "joinTime": "11:36 AM", "engagementActions": 0,  "isNewMember": false },
-      { "name": "Daniil Kholin",          "joinTime": "11:38 AM", "engagementActions": 0,  "isNewMember": false },
-      { "name": "Deva Dash",              "joinTime": "11:38 AM", "engagementActions": 0,  "isNewMember": false },
-      { "name": "Arthi Vijayaraghavan",   "joinTime": "11:39 AM", "engagementActions": 2,  "isNewMember": false },
-      { "name": "Alessandra Nercolini",   "joinTime": "11:43 AM", "engagementActions": 1,  "isNewMember": false },
-      { "name": "Monica Ilie",            "joinTime": "11:45 AM", "engagementActions": 0,  "isNewMember": false },
-      { "name": "Anand Sharma",           "joinTime": "11:47 AM", "engagementActions": 0,  "isNewMember": false },
-      { "name": "Nia Lomia",              "joinTime": "11:47 AM", "engagementActions": 0,  "isNewMember": false },
-      { "name": "Jill Lin",               "joinTime": "11:49 AM", "engagementActions": 0,  "isNewMember": false },
-      { "name": "Heidi Christensen",      "joinTime": "11:53 AM", "engagementActions": 1,  "isNewMember": false },
-      { "name": "Courtney Balabanian",    "joinTime": "11:54 AM", "engagementActions": 0,  "isNewMember": false },
-      { "name": "Mike Whitney",           "joinTime": "11:58 AM", "engagementActions": 0,  "isNewMember": false },
-      { "name": "Liz Barker",             "joinTime": "12:00 PM", "engagementActions": 0,  "isNewMember": false },
-      { "name": "Evangelina Rajendran",   "joinTime": "12:06 PM", "engagementActions": 0,  "isNewMember": false },
-      { "name": "Mehak Preet Kaur",       "joinTime": "12:09 PM", "engagementActions": 0,  "isNewMember": false },
-      { "name": "Saurabh Kushwaha",       "joinTime": "12:16 PM", "engagementActions": 0,  "isNewMember": false },
-      { "name": "Brian McGrath",          "joinTime": "12:19 PM", "engagementActions": 0,  "isNewMember": false },
-      { "name": "Josh Horton",            "joinTime": "12:21 PM", "engagementActions": 0,  "isNewMember": false }
+      {
+        "name": "Kristen Yerardi",
+        "joinTime": "11:32 AM",
+        "engagementActions": 12,
+        "isNewMember": false
+      },
+      {
+        "name": "Nicole Keyes",
+        "joinTime": "11:28 AM",
+        "engagementActions": 6,
+        "isNewMember": false
+      },
+      {
+        "name": "Dipali Darji",
+        "joinTime": "11:29 AM",
+        "engagementActions": 2,
+        "isNewMember": true
+      },
+      {
+        "name": "Jasmine Westbrooks",
+        "joinTime": "11:29 AM",
+        "engagementActions": 4,
+        "isNewMember": false
+      },
+      {
+        "name": "Kyle Alvares",
+        "joinTime": "11:30 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Brayden Wisniewski",
+        "joinTime": "11:30 AM",
+        "engagementActions": 4,
+        "isNewMember": true
+      },
+      {
+        "name": "Greg Bender",
+        "joinTime": "11:30 AM",
+        "engagementActions": 8,
+        "isNewMember": false
+      },
+      {
+        "name": "Grace Lee",
+        "joinTime": "11:30 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Imad Nasr",
+        "joinTime": "11:31 AM",
+        "engagementActions": 1,
+        "isNewMember": false
+      },
+      {
+        "name": "Nolan Vaughan",
+        "joinTime": "11:31 AM",
+        "engagementActions": 2,
+        "isNewMember": false
+      },
+      {
+        "name": "Steffi Molzberger",
+        "joinTime": "11:31 AM",
+        "engagementActions": 2,
+        "isNewMember": false
+      },
+      {
+        "name": "Otilia Mihai",
+        "joinTime": "11:31 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Natalia Ladiko",
+        "joinTime": "11:31 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Soufiane Azizi",
+        "joinTime": "11:31 AM",
+        "engagementActions": 6,
+        "isNewMember": false
+      },
+      {
+        "name": "Olusegun Sidiku",
+        "joinTime": "11:31 AM",
+        "engagementActions": 1,
+        "isNewMember": false
+      },
+      {
+        "name": "Rithvik Siddam",
+        "joinTime": "11:31 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Sri Muralidharan",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": true
+      },
+      {
+        "name": "Rodrigo Barros",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Anna Neovius",
+        "joinTime": "11:32 AM",
+        "engagementActions": 1,
+        "isNewMember": false
+      },
+      {
+        "name": "Suzanne Permanna",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Gina Sandon",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Liam Seston",
+        "joinTime": "11:32 AM",
+        "engagementActions": 5,
+        "isNewMember": false
+      },
+      {
+        "name": "John Nielsen",
+        "joinTime": "11:34 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Ben Lopez",
+        "joinTime": "11:35 AM",
+        "engagementActions": 3,
+        "isNewMember": false
+      },
+      {
+        "name": "Jeanne Yuen",
+        "joinTime": "11:35 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Kuber Saraswat",
+        "joinTime": "11:36 AM",
+        "engagementActions": 7,
+        "isNewMember": true
+      },
+      {
+        "name": "Dorota Meysztowicz",
+        "joinTime": "11:36 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Daniil Kholin",
+        "joinTime": "11:38 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Deva Dash",
+        "joinTime": "11:38 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Arthi Vijayaraghavan",
+        "joinTime": "11:39 AM",
+        "engagementActions": 2,
+        "isNewMember": false
+      },
+      {
+        "name": "Alessandra Nercolini",
+        "joinTime": "11:43 AM",
+        "engagementActions": 1,
+        "isNewMember": false
+      },
+      {
+        "name": "Monica Ilie",
+        "joinTime": "11:45 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Anand Sharma",
+        "joinTime": "11:47 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Nia Lomia",
+        "joinTime": "11:47 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Jill Lin",
+        "joinTime": "11:49 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Heidi Christensen",
+        "joinTime": "11:53 AM",
+        "engagementActions": 1,
+        "isNewMember": false
+      },
+      {
+        "name": "Courtney Balabanian",
+        "joinTime": "11:54 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Mike Whitney",
+        "joinTime": "11:58 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Liz Barker",
+        "joinTime": "12:00 PM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Evangelina Rajendran",
+        "joinTime": "12:06 PM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Mehak Preet Kaur",
+        "joinTime": "12:09 PM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Saurabh Kushwaha",
+        "joinTime": "12:16 PM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Brian McGrath",
+        "joinTime": "12:19 PM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Josh Horton",
+        "joinTime": "12:21 PM",
+        "engagementActions": 0,
+        "isNewMember": false
+      }
     ],
     "newMembers": [
-      { "id": "nm1",  "name": "Dipali Darji",          "email": "ddarji@us.ibm.com",                "joinedSlack": "Jul 10", "attended": true,  "joinTime": "11:29 AM", "engagementActions": 2 },
-      { "id": "nm2",  "name": "Brayden Wisniewski",     "email": "brayden@ibm.com",                  "joinedSlack": "Jul 10", "attended": true,  "joinTime": "11:30 AM", "engagementActions": 4 },
-      { "id": "nm3",  "name": "Kuber Saraswat",         "email": "Kuber@ibm.com",                    "joinedSlack": "Jul 10", "attended": true,  "joinTime": "11:36 AM", "engagementActions": 7 },
-      { "id": "nm4",  "name": "Sri Muralidharan",       "email": "smuralid@in.ibm.com",              "joinedSlack": "Jul 10", "attended": true,  "joinTime": "11:32 AM", "engagementActions": 0 },
-      { "id": "nm5",  "name": "Hi Patel",               "email": "hipatel@ibm.com",                  "joinedSlack": "Jul 10", "attended": false },
-      { "id": "nm6",  "name": "Paolo Bocci",            "email": "paolo.bocci@ibm.com",              "joinedSlack": "Jul 10", "attended": false },
-      { "id": "nm7",  "name": "Marjorie (CA)",          "email": "marjorie@ca.ibm.com",              "joinedSlack": "Jul 10", "attended": false },
-      { "id": "nm8",  "name": "Eric Lam",               "email": "Eric.Lam1@ibm.com",                "joinedSlack": "Jul 10", "attended": false },
-      { "id": "nm9",  "name": "Abhilasha Prdnt",        "email": "Abhilasha.Prdnt1@ibm.com",         "joinedSlack": "Jul 10", "attended": false },
-      { "id": "nm10", "name": "Murugesan Karunakaran",  "email": "murugesan.karunakaran@in.ibm.com", "joinedSlack": "Jul 10", "attended": false },
-      { "id": "nm11", "name": "Shalini Bade",           "email": "Shalini.Bade@ibm.com",             "joinedSlack": "Jul 10", "attended": false },
-      { "id": "nm12", "name": "Kelton",                 "email": "kelton@ibm.com",                   "joinedSlack": "Jul 10", "attended": false },
-      { "id": "nm13", "name": "Alista",                 "email": "alista@ibm.com",                   "joinedSlack": "Jul 10", "attended": false },
-      { "id": "nm14", "name": "Joshua Kim",             "email": "Joshua.Kim3@ibm.com",              "joinedSlack": "Jul 10", "attended": false },
-      { "id": "nm15", "name": "Shobhit Gupta",          "email": "Shobhit.Gupta10@ibm.com",          "joinedSlack": "Jul 10", "attended": false },
-      { "id": "nm16", "name": "Jenna Jae Lee",          "email": "jennajaelee@ibm.com",              "joinedSlack": "Jul 13", "attended": false },
-      { "id": "nm17", "name": "Nandini V",              "email": "nandiniv@ibm.com",                 "joinedSlack": "Jul 13", "attended": false },
-      { "id": "nm18", "name": "Kasey Hogan",            "email": "Kasey.L.Hog@ibm.com",              "joinedSlack": "Jul 13", "attended": false },
-      { "id": "nm19", "name": "Andreina Dyer",          "email": "andreina.dyer@ibm.com",            "joinedSlack": "Jul 13", "attended": false },
-      { "id": "nm20", "name": "Sampath Dechu",          "email": "sampath.dechu@ibm.com",            "joinedSlack": "Jul 27", "attended": false },
-      { "id": "nm21", "name": "Ketan Deshmukh",         "email": "Ketan.Deshmukh@ibm.com",           "joinedSlack": "Jul 27", "attended": false },
-      { "id": "nm22", "name": "Thomas Yang",            "email": "thomas.yang@ibm.com",              "joinedSlack": "Jul 27", "attended": false },
-      { "id": "nm23", "name": "Ramona Sartip",          "email": "ramona.sartip@ibm.com",            "joinedSlack": "Jul 27", "attended": false },
-      { "id": "nm24", "name": "JT Thomas",              "email": "JT.Thomas@ibm.com",                "joinedSlack": "Jul 27", "attended": false },
-      { "id": "nm25", "name": "Nate Myer",              "email": "natemyer@ibm.com",                 "joinedSlack": "Jul 27", "attended": false },
-      { "id": "nm26", "name": "Manish Siddamsetty",     "email": "Manish.Siddamsetty@ibm.com",       "joinedSlack": "Jul 27", "attended": false },
-      { "id": "nm27", "name": "Ajay AI",                "email": "Ajay.AI@ibm.com",                  "joinedSlack": "Jul 27", "attended": false },
-      { "id": "nm28", "name": "Brian Cop",              "email": "briancop@uk.ibm.com",              "joinedSlack": "Jul 27", "attended": false },
-      { "id": "nm29", "name": "J Cal",                  "email": "jcal@ibm.com",                     "joinedSlack": "Jul 27", "attended": false },
-      { "id": "nm30", "name": "Avi Karunakaran",        "email": "aviakaruman@ibm.com",              "joinedSlack": "Jul 27", "attended": false },
-      { "id": "nm31", "name": "Gauri Dasgupta",         "email": "gauri.dasgupta1@ibm.com",          "joinedSlack": "Jul 27", "attended": false },
-      { "id": "nm32", "name": "Melita Saville",         "email": "melita_saville@ibm.com",           "joinedSlack": "Jul 27", "attended": false },
-      { "id": "nm33", "name": "Sadhana Rao",            "email": "Sadhana.Rao1@ibm.com",             "joinedSlack": "Jul 27", "attended": false },
-      { "id": "nm34", "name": "Joyce Huang",            "email": "Joyce.Huang2@ibm.com",             "joinedSlack": "Jul 28", "attended": false },
-      { "id": "nm35", "name": "Nicole Ruedge",          "email": "nicole.ruedge@ibm.com",            "joinedSlack": "Jul 28", "attended": false }
+      {
+        "id": "nm1",
+        "name": "Aanchal Kumar",
+        "email": "Aanchal.Kumar@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": true
+      },
+      {
+        "id": "nm2",
+        "name": "Abhilasha Prashant",
+        "email": "Abhilasha.Prashant1@ibm.com",
+        "joinedSlack": "Jul 23",
+        "attended": false
+      },
+      {
+        "id": "nm3",
+        "name": "Abhishek Ks",
+        "email": "Abhishek.Ks@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm4",
+        "name": "Abin Alias",
+        "email": "abin.alias@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm5",
+        "name": "Alista",
+        "email": "alista@ibm.com",
+        "joinedSlack": "Jul 27",
+        "attended": false
+      },
+      {
+        "id": "nm6",
+        "name": "Ajay Ai",
+        "email": "Ajay.AI1@ibm.com",
+        "joinedSlack": "Jul 15",
+        "attended": false
+      },
+      {
+        "id": "nm7",
+        "name": "Ajaysinh Barad",
+        "email": "ajaysinh.barad@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm8",
+        "name": "Akanksha Y",
+        "email": "akanksha.y@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm9",
+        "name": "Akash Thampi",
+        "email": "Akash.Thampi@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm10",
+        "name": "Alecia R M",
+        "email": "aleciarm@us.ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm11",
+        "name": "Amil Shah",
+        "email": "Amil.Shah@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm12",
+        "name": "Andreina Dyer",
+        "email": "andreina.dyer@ibm.com",
+        "joinedSlack": "Jul 15",
+        "attended": false
+      },
+      {
+        "id": "nm13",
+        "name": "Angela Yu",
+        "email": "angela.yu@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm14",
+        "name": "Arpit Kashyap",
+        "email": "Arpit.Kashyap@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm15",
+        "name": "Arya A",
+        "email": "arya.a@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": true
+      },
+      {
+        "id": "nm16",
+        "name": "Aryan Anand",
+        "email": "Aryan.Anand@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm17",
+        "name": "Sinashwi",
+        "email": "sinashwi@in.ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm18",
+        "name": "Avisha Karuman",
+        "email": "Avisha.Karuman@ibm.com",
+        "joinedSlack": "Jul 14",
+        "attended": false
+      },
+      {
+        "id": "nm19",
+        "name": "Beth Williams",
+        "email": "Beth.Williams1@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm20",
+        "name": "Beller",
+        "email": "beller@us.ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm21",
+        "name": "Brayden Wisniewski",
+        "email": "brayden@ibm.com",
+        "joinedSlack": "Jul 17",
+        "attended": true,
+        "joinTime": "11:30 AM",
+        "engagementActions": 4
+      },
+      {
+        "id": "nm22",
+        "name": "Brian Cop",
+        "email": "briancop@uk.ibm.com",
+        "joinedSlack": "Jul 14",
+        "attended": false
+      },
+      {
+        "id": "nm23",
+        "name": "Chikezie Okoli",
+        "email": "Chikezieokoli1@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": true
+      },
+      {
+        "id": "nm24",
+        "name": "Christophe Delaure",
+        "email": "christophe.delaure@us.ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm25",
+        "name": "Debora Teles",
+        "email": "Debora.Teles1@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm26",
+        "name": "Deepak Mani",
+        "email": "Deepak.Mani@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm27",
+        "name": "Deepika CH",
+        "email": "deepikch@in.ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm28",
+        "name": "Dipali Darji",
+        "email": "ddarji@us.ibm.com",
+        "joinedSlack": "Jul 27",
+        "attended": true,
+        "joinTime": "11:29 AM",
+        "engagementActions": 2
+      },
+      {
+        "id": "nm29",
+        "name": "Emma Luo",
+        "email": "Emma.Luo@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm30",
+        "name": "Eric Lam",
+        "email": "Eric.Lam1@ibm.com",
+        "joinedSlack": "Jul 22",
+        "attended": false
+      },
+      {
+        "id": "nm31",
+        "name": "Eva Dage",
+        "email": "eva.dage@uk.ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm32",
+        "name": "Florian Sperber",
+        "email": "florian.sperber@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm33",
+        "name": "Gauri Dasgupta",
+        "email": "gauri.dasgupta1@ibm.com",
+        "joinedSlack": "Jul 15",
+        "attended": false
+      },
+      {
+        "id": "nm34",
+        "name": "Gayatri Biswas",
+        "email": "Gayatri.Biswas@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm35",
+        "name": "Kelton",
+        "email": "kelton@us.ibm.com",
+        "joinedSlack": "Jul 27",
+        "attended": false
+      },
+      {
+        "id": "nm36",
+        "name": "Hari Krishna Mandalapu",
+        "email": "Hari.Krishna.MANDALAPU1@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm37",
+        "name": "Hemapriya Trb",
+        "email": "Hemapriya.TRB@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm38",
+        "name": "Hetal Rathi",
+        "email": "Hetal.Rathi@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm39",
+        "name": "Hi Patel",
+        "email": "hipatel@us.ibm.com",
+        "joinedSlack": "Jul 16",
+        "attended": false
+      },
+      {
+        "id": "nm40",
+        "name": "Imad Nasr",
+        "email": "Imad.Nasr@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": true,
+        "joinTime": "11:31 AM",
+        "engagementActions": 1
+      },
+      {
+        "id": "nm41",
+        "name": "Inna Shevchenko",
+        "email": "Inna.Shevchenko@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": true
+      },
+      {
+        "id": "nm42",
+        "name": "Joyce Huang",
+        "email": "Joyce.Huang2@ibm.com",
+        "joinedSlack": "Jul 15",
+        "attended": false
+      },
+      {
+        "id": "nm43",
+        "name": "Jahnvi Bedia",
+        "email": "jahnvibedia.28@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm44",
+        "name": "J Moravec",
+        "email": "jmoravec@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm45",
+        "name": "Janvi Badlaney",
+        "email": "janvi.badlaney@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm46",
+        "name": "Jean Marc Vanderkolk",
+        "email": "Jean-Marc.vanderKolk@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": true
+      },
+      {
+        "id": "nm47",
+        "name": "J Calandra",
+        "email": "jcalandra@us.ibm.com",
+        "joinedSlack": "Jul 14",
+        "attended": true
+      },
+      {
+        "id": "nm48",
+        "name": "Jijish Thomas",
+        "email": "Jijish.Thomas@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm49",
+        "name": "Jiju John",
+        "email": "jiju.john@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm50",
+        "name": "J Yao",
+        "email": "jyao@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm51",
+        "name": "Jithu Ram",
+        "email": "Jithu.Ram@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm52",
+        "name": "Joshua Kim",
+        "email": "Joshua.Kim3@ibm.com",
+        "joinedSlack": "Jul 27",
+        "attended": false
+      },
+      {
+        "id": "nm53",
+        "name": "Jt Thomas",
+        "email": "JT.Thomas@ibm.com",
+        "joinedSlack": "Jul 13",
+        "attended": true
+      },
+      {
+        "id": "nm54",
+        "name": "Justin Yan",
+        "email": "Justin.Yan@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm55",
+        "name": "Bindumadhavi Krupa",
+        "email": "Bindumadhavi.Krupa@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm56",
+        "name": "Kasey L Hogan",
+        "email": "Kasey.L.Hogan@ibm.com",
+        "joinedSlack": "Jul 16",
+        "attended": false
+      },
+      {
+        "id": "nm57",
+        "name": "Ketan Deshmukh",
+        "email": "Ketan.Deshmukh@ibm.com",
+        "joinedSlack": "Jul 13",
+        "attended": false
+      },
+      {
+        "id": "nm58",
+        "name": "Kiran B Krishnan",
+        "email": "kiranbkrishnan@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm59",
+        "name": "Kseniia Puzyreva",
+        "email": "Kseniia.Puzyreva@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm60",
+        "name": "Kuber Saraswat",
+        "email": "Kuber@ibm.com",
+        "joinedSlack": "Jul 27",
+        "attended": true,
+        "joinTime": "11:36 AM",
+        "engagementActions": 7
+      },
+      {
+        "id": "nm61",
+        "name": "Kusum Kumar",
+        "email": "kusum.kumar@in.ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm62",
+        "name": "Lakshmi Priya",
+        "email": "Lakshmi.Priya9@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm63",
+        "name": "Laura Dohle",
+        "email": "laura.dohle@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm64",
+        "name": "Leslie Waara",
+        "email": "Leslie.Waara@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm65",
+        "name": "Elizabeth Leslie",
+        "email": "Elizabeth.Leslie@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm66",
+        "name": "Luke Bracken",
+        "email": "Luke.Bracken@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm67",
+        "name": "Madhur Vashisht",
+        "email": "Madhur.Vashisht@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": true
+      },
+      {
+        "id": "nm68",
+        "name": "Maichee Vang",
+        "email": "maichee.vang@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm69",
+        "name": "Malika Handa",
+        "email": "malikahanda@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm70",
+        "name": "Manish Siddamsetty",
+        "email": "Manish.Siddamsetty@ibm.com",
+        "joinedSlack": "Jul 14",
+        "attended": true
+      },
+      {
+        "id": "nm71",
+        "name": "Manju Gopalakrishnan",
+        "email": "Manju.Gopalakrishnan@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm72",
+        "name": "Marjorie",
+        "email": "marjorie@ca.ibm.com",
+        "joinedSlack": "Jul 21",
+        "attended": false
+      },
+      {
+        "id": "nm73",
+        "name": "Mehak Kaur",
+        "email": "mehak.kaur@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": true,
+        "joinTime": "12:09 PM",
+        "engagementActions": 0
+      },
+      {
+        "id": "nm74",
+        "name": "Melita Saville",
+        "email": "melita_saville@uk.ibm.com",
+        "joinedSlack": "Jul 15",
+        "attended": false
+      },
+      {
+        "id": "nm75",
+        "name": "Michal Szylar",
+        "email": "Michal.Szylar@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm76",
+        "name": "Mike Lamb",
+        "email": "mllamb@us.ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm77",
+        "name": "Murugesan Karunakaran",
+        "email": "murugesan.karunakaran@in.ibm.com",
+        "joinedSlack": "Jul 27",
+        "attended": false
+      },
+      {
+        "id": "nm78",
+        "name": "Nate Myers",
+        "email": "natemyers@ibm.com",
+        "joinedSlack": "Jul 13",
+        "attended": false
+      },
+      {
+        "id": "nm79",
+        "name": "Nina Mirski Fitton",
+        "email": "Nina.Mirski-Fitton@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm80",
+        "name": "Nolan",
+        "email": "nolan@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": true,
+        "joinTime": "11:31 AM",
+        "engagementActions": 2
+      },
+      {
+        "id": "nm81",
+        "name": "Oksana Vinkarklina",
+        "email": "Oksana.Vinkarklina@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm82",
+        "name": "Paolo Bocci",
+        "email": "paolo.bocci@ibm.com",
+        "joinedSlack": "Jul 20",
+        "attended": false
+      },
+      {
+        "id": "nm83",
+        "name": "Pawel Barket",
+        "email": "pawel.barket@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm84",
+        "name": "Pooja Satish",
+        "email": "Pooja.Satish@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm85",
+        "name": "Ragavie Pirabaharan",
+        "email": "Ragavie.Pirabaharan@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm86",
+        "name": "Raichel Sheeja V Babu",
+        "email": "raichel.sheeja.v.babu@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm87",
+        "name": "Ramona Sartipi",
+        "email": "ramona.sartipi@ibm.com",
+        "joinedSlack": "Jul 13",
+        "attended": false
+      },
+      {
+        "id": "nm88",
+        "name": "Riddhimaa",
+        "email": "Riddhimaa@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm89",
+        "name": "Rithvik Siddam",
+        "email": "Rithvik.Siddam@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": true,
+        "joinTime": "11:31 AM",
+        "engagementActions": 0
+      },
+      {
+        "id": "nm90",
+        "name": "Rodrigo Barros",
+        "email": "rbarros@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm91",
+        "name": "Sadhana Rao",
+        "email": "Sadhana.Rao1@ibm.com",
+        "joinedSlack": "Jul 15",
+        "attended": false
+      },
+      {
+        "id": "nm92",
+        "name": "Sampath Dechu",
+        "email": "sampath.dechu@ibm.com",
+        "joinedSlack": "Jul 14",
+        "attended": false
+      },
+      {
+        "id": "nm93",
+        "name": "Shalini Bade",
+        "email": "Shalini.Bade@ibm.com",
+        "joinedSlack": "Jul 16",
+        "attended": false
+      },
+      {
+        "id": "nm94",
+        "name": "Shalini Thomas",
+        "email": "Shalini.Thomas1@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm95",
+        "name": "Slips",
+        "email": "slips@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm96",
+        "name": "Shobhit Gupta",
+        "email": "Shobhit.Gupta10@ibm.com",
+        "joinedSlack": "Jul 28",
+        "attended": false
+      },
+      {
+        "id": "nm97",
+        "name": "Bajpai S",
+        "email": "bajpais@us.ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm98",
+        "name": "Shweta Vs",
+        "email": "shweta.vs@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm99",
+        "name": "Sowkarthika Kanagarathinam",
+        "email": "Sowkarthika.Kanagarathinam@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm100",
+        "name": "Srimathi R",
+        "email": "Srimathi.R@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm101",
+        "name": "Steven Castellucci",
+        "email": "Steven.Castellucci@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm102",
+        "name": "Sudhir Kumar",
+        "email": "Sudhir.Kumar14@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm103",
+        "name": "Suman Naha",
+        "email": "suman.naha@in.ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm104",
+        "name": "Thamizharasu Soundrapandian",
+        "email": "Thamizharasu.Soundrapandian@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm105",
+        "name": "T Knowles",
+        "email": "tknowles@us.ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm106",
+        "name": "Thomas Yang",
+        "email": "thomas.yang@us.ibm.com",
+        "joinedSlack": "Jul 13",
+        "attended": false
+      },
+      {
+        "id": "nm107",
+        "name": "Vik Jain",
+        "email": "vikjain3@in.ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm108",
+        "name": "Vrishali P Jamdade",
+        "email": "Vrishali.P.Jamdade@ibm.com",
+        "joinedSlack": "Jul 10–28",
+        "attended": false
+      },
+      {
+        "id": "nm109",
+        "name": "Jaideep Advani",
+        "email": "Jaideep.Advani@ibm.com",
+        "joinedSlack": "Jul 30",
+        "attended": false
+      },
+      {
+        "id": "nm110",
+        "name": "Yurii Plakhtii",
+        "email": "Yurii.Plakhtii@ibm.com",
+        "joinedSlack": "Aug 3",
+        "attended": false
+      },
+      {
+        "id": "nm111",
+        "name": "Mariana Chiabotto",
+        "email": "Mariana.Chiabotto@ibm.com",
+        "joinedSlack": "Aug 3",
+        "attended": false
+      }
     ]
   },
-
   "gccCallOverview": {
     "calls": [
       {
@@ -317,29 +1954,185 @@
       "attendedExactly1": 85
     },
     "crossCallBreakdown": [
-      { "label": "All 3 calls",   "count": 13  },
-      { "label": "Jul 14 + 21",   "count": 9   },
-      { "label": "Jul 14 + 28",   "count": 5   },
-      { "label": "Jul 21 + 28",   "count": 5   },
-      { "label": "Jul 14 only",   "count": 35  },
-      { "label": "Jul 21 only",   "count": 29  },
-      { "label": "Jul 28 only",   "count": 21  }
+      {
+        "label": "All 3 calls",
+        "count": 13
+      },
+      {
+        "label": "Jul 14 + 21",
+        "count": 9
+      },
+      {
+        "label": "Jul 14 + 28",
+        "count": 5
+      },
+      {
+        "label": "Jul 21 + 28",
+        "count": 5
+      },
+      {
+        "label": "Jul 14 only",
+        "count": 35
+      },
+      {
+        "label": "Jul 21 only",
+        "count": 29
+      },
+      {
+        "label": "Jul 28 only",
+        "count": 21
+      }
     ],
     "attendanceTrend": [
-      { "date": "Jul 14", "attendees": 62 },
-      { "date": "Jul 21", "attendees": 56 },
-      { "date": "Jul 28", "attendees": 44 }
+      {
+        "date": "Jul 14",
+        "attendees": 62
+      },
+      {
+        "date": "Jul 21",
+        "attendees": 56
+      },
+      {
+        "date": "Jul 28",
+        "attendees": 44
+      }
     ],
     "coreAttendees": [
-      "Kristen Yerardi", "Jasmine Westbrooks", "Nicole Keyes", "Greg Bender",
-      "Liz Barker", "Evangelina Rajendran", "Ben Lopez", "Rithvik Siddam",
-      "Grace Lee", "Arthi Vijayaraghavan", "Imad Nasr", "Olusegun Sidiku", "Otilia Mihai"
+      "Kristen Yerardi",
+      "Jasmine Westbrooks",
+      "Nicole Keyes",
+      "Greg Bender",
+      "Liz Barker",
+      "Evangelina Rajendran",
+      "Ben Lopez",
+      "Rithvik Siddam",
+      "Grace Lee",
+      "Arthi Vijayaraghavan",
+      "Imad Nasr",
+      "Olusegun Sidiku",
+      "Otilia Mihai"
     ],
     "jul14Attendees": [
-      "Kristen Yerardi","Jasmine Westbrooks","Nicole Keyes","WILL CHAMBERS","Arleen Alcaraz-Cano","ALEXANDER INGLE","Madhur Vashisht","Jeanne Yuen","Greg Bender","Nolan Vaughan","Tony Wolfram","Sreelakshmi G","Mike Lamb","Alison Peacock","John Livingston","Rafael Godoi Vasques","Chikezie Okoli","BRIAN MCGRATH","Ana Carolina Peres Pecchia","BRAD ELLER","Swetha R","LIZ BARKER","Evangelina Rajendran","Michael Tracy","Ben Lopez","Rithvik Siddam","Scott Poole","Grace Lee","Rushali Jaiswal","Ravi Barnwal","Jean-Marc van der Kolk","Arthi Vijayaraghavan","Inna Shevchenko","Chris Lautemann","Rodrigo Barros","Arya Ajayakumar","Manish Siddamsetty","Priyanka De","Imad Nasr","Shelby Fink","Shawn Koid","DAVE HUBER","Krystal Lin","Tony Graziano","KAREN GOSCIMINSKI","Eileen Allen","Mark Castle","Emily Lucitt-O'Connor","Aanchal Kumar","JT Thomas","Sasha Fedkevich","Samina Khan","Olusegun Sidiku","Kim Woodbury","Gauri Mathur","Bill Sanders","Chidera Onyia","Deva Dash","Danielle Kar","Otilia Mihai","Ester Monroy Gatell","Sangeetha V"
+      "Kristen Yerardi",
+      "Jasmine Westbrooks",
+      "Nicole Keyes",
+      "WILL CHAMBERS",
+      "Arleen Alcaraz-Cano",
+      "ALEXANDER INGLE",
+      "Madhur Vashisht",
+      "Jeanne Yuen",
+      "Greg Bender",
+      "Nolan Vaughan",
+      "Tony Wolfram",
+      "Sreelakshmi G",
+      "Mike Lamb",
+      "Alison Peacock",
+      "John Livingston",
+      "Rafael Godoi Vasques",
+      "Chikezie Okoli",
+      "BRIAN MCGRATH",
+      "Ana Carolina Peres Pecchia",
+      "BRAD ELLER",
+      "Swetha R",
+      "LIZ BARKER",
+      "Evangelina Rajendran",
+      "Michael Tracy",
+      "Ben Lopez",
+      "Rithvik Siddam",
+      "Scott Poole",
+      "Grace Lee",
+      "Rushali Jaiswal",
+      "Ravi Barnwal",
+      "Jean-Marc van der Kolk",
+      "Arthi Vijayaraghavan",
+      "Inna Shevchenko",
+      "Chris Lautemann",
+      "Rodrigo Barros",
+      "Arya Ajayakumar",
+      "Manish Siddamsetty",
+      "Priyanka De",
+      "Imad Nasr",
+      "Shelby Fink",
+      "Shawn Koid",
+      "DAVE HUBER",
+      "Krystal Lin",
+      "Tony Graziano",
+      "KAREN GOSCIMINSKI",
+      "Eileen Allen",
+      "Mark Castle",
+      "Emily Lucitt-O'Connor",
+      "Aanchal Kumar",
+      "JT Thomas",
+      "Sasha Fedkevich",
+      "Samina Khan",
+      "Olusegun Sidiku",
+      "Kim Woodbury",
+      "Gauri Mathur",
+      "Bill Sanders",
+      "Chidera Onyia",
+      "Deva Dash",
+      "Danielle Kar",
+      "Otilia Mihai",
+      "Ester Monroy Gatell",
+      "Sangeetha V"
     ],
     "jul21Attendees": [
-      "Kristen Yerardi","CHRIS ZALOUMIS","Nicole Keyes","Nia Lomia","Jasmine Westbrooks","Shelby Fink","CAESAR MIERZEJEK","Alison Peacock","Rithvik Siddam","Nick Hillary","Emily Kim","GAVIN REYNOLDS","Greg Bender","JOHN CULLETON","Grace Lee","Amanda Neal","Imad Nasr","Olusegun Sidiku","Ana Camelia Mitrut","Krystal Lin","Jen Strybos","Ben Lopez","JJ Cherian","Manish Siddamsetty","Sreelakshmi G","Otilia Mihai","BRAD ELLER","Robert Slocum","JOHN Lundgren","Synclair Gonzalez-Clark","Corinne Leopold","Sanjay Joshi","Marc Christian Weber","Natthaphol Khantikulanon","Stephen Kenna","Chris Lautemann","Lily Olive","Jillian Quiller","Ansanta Newton","Danielle Kar","Brayden Wisniewski","Arthi Vijayaraghavan","Michael Zhang","Daniil Kholin","Christina Grady","Suzanne Permanna","Shruti Johari","Sudipta Datta","Monica Ilie","LIZ BARKER","Evangelina Rajendran","sridhar Manoharan","Chikezie Okoli","Bridget Ndege","George Foster","Juhi Gupta"
+      "Kristen Yerardi",
+      "CHRIS ZALOUMIS",
+      "Nicole Keyes",
+      "Nia Lomia",
+      "Jasmine Westbrooks",
+      "Shelby Fink",
+      "CAESAR MIERZEJEK",
+      "Alison Peacock",
+      "Rithvik Siddam",
+      "Nick Hillary",
+      "Emily Kim",
+      "GAVIN REYNOLDS",
+      "Greg Bender",
+      "JOHN CULLETON",
+      "Grace Lee",
+      "Amanda Neal",
+      "Imad Nasr",
+      "Olusegun Sidiku",
+      "Ana Camelia Mitrut",
+      "Krystal Lin",
+      "Jen Strybos",
+      "Ben Lopez",
+      "JJ Cherian",
+      "Manish Siddamsetty",
+      "Sreelakshmi G",
+      "Otilia Mihai",
+      "BRAD ELLER",
+      "Robert Slocum",
+      "JOHN Lundgren",
+      "Synclair Gonzalez-Clark",
+      "Corinne Leopold",
+      "Sanjay Joshi",
+      "Marc Christian Weber",
+      "Natthaphol Khantikulanon",
+      "Stephen Kenna",
+      "Chris Lautemann",
+      "Lily Olive",
+      "Jillian Quiller",
+      "Ansanta Newton",
+      "Danielle Kar",
+      "Brayden Wisniewski",
+      "Arthi Vijayaraghavan",
+      "Michael Zhang",
+      "Daniil Kholin",
+      "Christina Grady",
+      "Suzanne Permanna",
+      "Shruti Johari",
+      "Sudipta Datta",
+      "Monica Ilie",
+      "LIZ BARKER",
+      "Evangelina Rajendran",
+      "sridhar Manoharan",
+      "Chikezie Okoli",
+      "Bridget Ndege",
+      "George Foster",
+      "Juhi Gupta"
     ]
   }
 }

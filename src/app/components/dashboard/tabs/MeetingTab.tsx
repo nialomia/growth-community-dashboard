@@ -66,7 +66,7 @@ export function MeetingTab({
     <div className="space-y-5">
       <SectionHeading
         title="GCC call attendance by new members"
-        description={`${ma.meetingTitle} · ${ma.meetingDate} · ${ma.meetingDuration}`}
+        description={`Jul 10 – Aug 4, 2026 · ${ma.newMemberCount} new members tracked`}
       />
 
       {/* Mobile-only sub-tab pills (desktop uses SideNav) */}
@@ -101,17 +101,17 @@ export function MeetingTab({
           label="New Slack members"
           value={String(ma.newMemberCount)}
           trend="up"
-          delta="Jul 10 – Jul 28"
+          delta="Jul 10 – Aug 4"
           accent="blue"
-          definition="Members who joined the Growth Community Slack workspace between Jul 10 and Jul 28. Source: Slack member export CSV, filtered by join date."
+          definition="Members who joined the Growth Community Slack workspace between Jul 10 and Aug 4. Source: Slack member export diff + new members CSV."
         />
         <KpiCard
-          label="Attended GCC call"
+          label="Attended any GCC call"
           value={String(ma.newMembersAttended)}
           trend="flat"
           delta={`${attendancePct}% of new members`}
           accent="green"
-          definition="New members (Jul 10–28) who appeared in the Jul 28 Teams attendance report. Cross-referenced by name match. Source: Teams attendance report + Slack export."
+          definition="New members (Jul 10–Aug 4) who appeared in any of the 3 July GCC Teams attendance reports (Jul 14, 21, 28). Cross-referenced by name. Source: Teams attendance reports + Slack export."
         />
         <KpiCard
           label="Did not attend"
@@ -119,7 +119,7 @@ export function MeetingTab({
           trend="down"
           delta={`${absentPct}% of new members`}
           accent="grey"
-          definition="New members whose name was not found in the Jul 28 Teams attendance report. = Total new members minus those who attended."
+          definition="New members who did not appear in any of the 3 July GCC attendance reports. = Total new members minus those who attended at least one call."
         />
         <div
           role="button"
@@ -152,7 +152,7 @@ export function MeetingTab({
       <Card className="gap-3 rounded-md border-[var(--border)] p-4 shadow-none">
         <SectionHeading
           title="New member call participation"
-          description="How many of the 35 new Slack members joined the Jul 28 GCC call"
+          description={`How many of the ${ma.newMemberCount} new Slack members attended any July GCC call`}
         />
         <div className="flex items-center gap-3">
           <div className="flex h-6 flex-1 overflow-hidden rounded-full">
@@ -189,7 +189,7 @@ export function MeetingTab({
       <Card className="gap-3 rounded-md border-[var(--border)] p-4 shadow-none">
         <SectionHeading
           title="New member list"
-          description="All Slack members who joined between Jul 10 – Jul 28"
+          description="All Slack members who joined between Jul 10 – Aug 4"
           action={
             <div className="relative hidden sm:block">
               <Search size={13} className="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 text-[var(--gc-grey)]" />
@@ -410,27 +410,27 @@ export function MeetingTab({
       <div className="grid gap-3 md:grid-cols-2">
         <InsightCard
           tone="warning"
-          title="Only 11% of new members attended"
-          summary={`4 of 35 new Slack members attended the Jul 28 GCC call.`}
-          explanation="The majority of new members (31) joined the Slack channel but did not attend the Growth Community Call on the same day. This is a high-impact onboarding gap — new members joining on Jul 27–28 may not have had enough notice, and those joining Jul 10 may have forgotten by call day."
-        />
-        <InsightCard
-          tone="info"
-          title="Engaged attendees show strong participation"
-          summary="3 of 4 attending new members took active engagement actions (unmuted, camera, reactions)."
-          explanation="Kuber Saraswat was the most active new member with 7 engagement actions including 3 raised hands and camera on. Brayden Wisniewski had 4 actions. This signals that new members who do attend are highly motivated — the challenge is getting them there in the first place."
+          title="86% of new members haven't attended any GCC call"
+          summary="95 of 111 new members (Jul 10–Aug 4) have not attended any July GCC call."
+          explanation="This is the biggest onboarding gap in the community. Most new members join Slack but never make it to a live call. Many joined close to a call date with no advance notice. A same-day welcome message with the next call date and a calendar invite is the highest-leverage action available."
         />
         <InsightCard
           tone="positive"
-          title="Recommend: welcome email on Slack join day"
-          summary="A same-day nudge with the GCC calendar invite could raise new member call attendance significantly."
-          explanation="Members joining Jul 27–28 had little to no time to learn about the call. Automating a welcome message via the ICA agent or a Slack bot — including the next GCC date and a calendar link — could convert a large portion of the 89% who currently miss the first call."
+          title="16 new members did attend — and they're engaged"
+          summary="Kuber Saraswat (7 actions), Brayden Wisniewski (4), and others showed strong participation."
+          explanation="New members who do attend are highly motivated — Kuber had 7 engagement actions, Brayden 4, Dipali Darji 2. 4 new members attended multiple calls (Rithvik Siddam and Imad Nasr attended all 3). The challenge is discovery, not engagement once they're in."
+        />
+        <InsightCard
+          tone="positive"
+          title="Recommend: welcome message on Slack join day"
+          summary="A same-day nudge with the GCC calendar invite could convert a large share of the 95 who haven't attended."
+          explanation="Automating a welcome message via the ICA agent or a Slack bot — including the next GCC date, recording link, and calendar invite — would give every new member an immediate path to the community call. This single action could move the 14% attendance rate to 30%+ within a month."
         />
         <InsightCard
           tone="info"
-          title="Jul 28 cohort is the largest risk group"
-          summary="2 members joined on the same day as the call (Jul 28) — zero attended."
-          explanation="Joyce Huang and Nicole Ruedge joined Slack on Jul 28 itself, making it nearly impossible for them to have known about the call. These members are strong candidates for a personalised follow-up pointing them to the next GCC session and the recording."
+          title="3 new members joined after Jul 28 — haven't had a chance yet"
+          summary="Jaideep Advani (Jul 30), Yurii Plakhtii and Mariana Chiabotto (Aug 3) are the most recent additions."
+          explanation="These 3 members joined after the last July call. The Aug 11 GCC call will be their first opportunity to attend. They should be the priority targets for the new member welcome message."
         />
       </div>
       </>}
