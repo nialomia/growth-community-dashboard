@@ -276,16 +276,6 @@
     },
     {
       "id": "r8",
-      "title": "UserEmailFormat13.07.xlsx",
-      "type": "Document",
-      "owner": "Growth Community",
-      "views": 52,
-      "downloads": 0,
-      "freshness": "Fresh",
-      "month": "Jul"
-    },
-    {
-      "id": "r9",
       "title": "Growth Community - Themed Conversation Leader Kit - 2026 Aug 11.pptx",
       "type": "Document",
       "owner": "Growth Community",
@@ -295,7 +285,7 @@
       "month": "Aug"
     },
     {
-      "id": "r10",
+      "id": "r9",
       "title": "Growth Community Call - 2026 July 21.pptx",
       "type": "Document",
       "owner": "Growth Community",
@@ -305,27 +295,7 @@
       "month": "Jul"
     },
     {
-      "id": "r11",
-      "title": "Growth Community AI Workflow (Draft).pptx",
-      "type": "Document",
-      "owner": "Growth Community",
-      "views": 6,
-      "downloads": 0,
-      "freshness": "Fresh",
-      "month": "Jul"
-    },
-    {
-      "id": "r12",
-      "title": "Growth-Community-Redesign-Pitch.pptx",
-      "type": "Document",
-      "owner": "Growth Community",
-      "views": 39,
-      "downloads": 0,
-      "freshness": "Fresh",
-      "month": "Jul"
-    },
-    {
-      "id": "r13",
+      "id": "r10",
       "title": "Growth Community - Quarterly Showcase - TEMPLATE.pptx",
       "type": "Document",
       "owner": "Growth Community",
@@ -335,7 +305,7 @@
       "month": "Jul"
     },
     {
-      "id": "r14",
+      "id": "r11",
       "title": "Growth Community - 2026 July 28.pptx",
       "type": "Document",
       "owner": "Growth Community",
@@ -343,66 +313,6 @@
       "downloads": 0,
       "freshness": "Fresh",
       "month": "Jul"
-    },
-    {
-      "id": "r15",
-      "title": "2025-26 Growth Community Call Index.xlsx",
-      "type": "Document",
-      "owner": "Growth Community",
-      "views": 3,
-      "downloads": 0,
-      "freshness": "Fresh",
-      "month": "Jul"
-    },
-    {
-      "id": "r16",
-      "title": "validation_report (copilot).csv",
-      "type": "Document",
-      "owner": "Growth Community",
-      "views": 1,
-      "downloads": 0,
-      "freshness": "Fresh",
-      "month": "Jul"
-    },
-    {
-      "id": "r17",
-      "title": "cleaned_community_knowledge_base (copilot).csv",
-      "type": "Document",
-      "owner": "Growth Community",
-      "views": 1,
-      "downloads": 0,
-      "freshness": "Fresh",
-      "month": "Jul"
-    },
-    {
-      "id": "r18",
-      "title": "2026 Updated Bob Version.xlsx",
-      "type": "Document",
-      "owner": "Growth Community",
-      "views": 1,
-      "downloads": 0,
-      "freshness": "Fresh",
-      "month": "Jul"
-    },
-    {
-      "id": "r19",
-      "title": "2025 Growth Community Call Index.xlsx",
-      "type": "Document",
-      "owner": "Growth Community",
-      "views": 1,
-      "downloads": 0,
-      "freshness": "Aging",
-      "month": "Jun"
-    },
-    {
-      "id": "r20",
-      "title": "1-7-25 PPM Summary Board Update with Product Master (1.17.25).xlsx",
-      "type": "Document",
-      "owner": "Growth Community",
-      "views": 7,
-      "downloads": 0,
-      "freshness": "Stale",
-      "month": "Jan"
     }
   ],
   "sharepointTrend": [

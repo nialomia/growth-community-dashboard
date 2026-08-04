@@ -56,7 +56,7 @@ export function SharePointTab() {
       <Card className="gap-3 rounded-md border-[var(--border)] p-4 shadow-none">
         <SectionHeading
           title="Most visited resources"
-          description="Ranked by page views"
+          description="Member-facing content only · ranked by page views"
           action={
             <div className="flex gap-2">
               <Select value={type} onValueChange={setType}>
@@ -86,7 +86,7 @@ export function SharePointTab() {
           <p className="py-6 text-center text-[13px] text-[var(--gc-grey)]">No resources match these filters.</p>
         ) : (
           <div className="grid gap-2.5 md:grid-cols-2">
-            {ranked.slice(0, 5).map((r, i) => {
+            {ranked.map((r, i) => {
               const Icon = typeIcon[r.type] ?? FileText;
               return (
                 <div key={r.id} className="flex items-center gap-3 rounded-md border border-[var(--border)] p-3">
@@ -116,21 +116,21 @@ export function SharePointTab() {
       <div className="grid gap-3 md:grid-cols-2">
         <InsightCard
           tone="positive"
-          title="Themed Conversation Leader Kit is the #1 resource"
-          summary="The Jul 28 Leader Kit logged 69 visits — nearly 3× the next most-visited document."
-          explanation="The Themed Conversation Leader Kit (Jul 28) had 69 visits from 4 unique viewers, far outpacing the homepage (26 visits). This suggests members are returning repeatedly to use this resource actively. Keep it pinned prominently and create future call kits in the same format."
+          title="Themed Conversation Leader Kit is the #1 member resource"
+          summary="The Jul 28 Leader Kit logged 69 visits — the most-viewed member-facing document on the site."
+          explanation="The Themed Conversation Leader Kit (Jul 28) had 69 visits, far outpacing the Maximo Showcase deck (32) and the homepage (26). Members are returning repeatedly to use this resource. Keep it pinned prominently and publish future call kits in the same format."
         />
         <InsightCard
           tone="warning"
           title="Only 38 unique viewers all time across 2,862 visits"
           summary="High repeat visit rate — the same 38 people are driving almost all traffic."
-          explanation="With 2,862 total visits and only 38 unique viewers all time, each viewer averages ~75 visits. This signals the site is useful to its existing audience but has very low discovery. Adding the SharePoint link to the Slack channel header and new member welcome message is the highest-impact action to expand reach."
+          explanation="With 2,862 total visits and only 38 unique viewers all time, each viewer averages ~75 visits. This signals the site is useful to its existing audience but has very low discovery. Only 38 of 804 Slack members have ever visited. Adding the SharePoint link to the Slack channel header and new member welcome message is the highest-impact action to expand reach."
         />
         <InsightCard
           tone="info"
           title="94% of visits come from desktop"
           summary="2,704 of 2,862 total visits were from desktop — mobile and tablet usage is negligible."
-          explanation="The SharePoint site is essentially desktop-only right now. This is typical for an internal knowledge site, but worth noting if content is ever shared during mobile-heavy contexts like Slack on mobile. No action needed unless mobile engagement becomes a goal."
+          explanation="The SharePoint site is essentially desktop-only. This is typical for an internal knowledge site, but worth noting if content is ever shared in mobile-heavy contexts like Slack on mobile. No action needed unless mobile engagement becomes a goal."
         />
       </div>
     </div>
