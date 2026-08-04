@@ -107,10 +107,10 @@ const METRICS: Metric[] = [
     name: "Region breakdown (AMER / EMEA / APAC)",
     section: "slack",
     definition: "Geographic distribution of 805 Slack members by IBM region.",
-    calculation: "AMER 54% (430), APAC 26% (209), EMEA 20% (160). Verified via W3 BluePages country field as of Aug 4.",
+    calculation: "AMER 53% (425), APAC 25% (198), EMEA 23% (182) = 805. Top countries: US (362), IN (189), IE (64), CA (50), GB (18), RO (18), DE (14). 24 members have no BluePages country set.",
     source: "IBM W3 BluePages member download export — W3country column",
     files: ["8.04 - Member Download (805).xlsx → W3country column"],
-    notes: "Country mapping to region: US + CA + LATAM = AMER; Europe + MEA = EMEA; Asia Pacific = APAC.",
+    notes: "Country mapping to region: US + CA + LATAM = AMER; Europe + MEA = EMEA; Asia Pacific = APAC. 24 members have numeric '0' in W3country field — BluePages data gap.",
   },
 
   // ── SharePoint ─────────────────────────────────────────────────────────────

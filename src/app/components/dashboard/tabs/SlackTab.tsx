@@ -14,10 +14,12 @@ const SNAPSHOT = [
   { date: "Aug 4",  total: 805 },
 ];
 
+// Real counts from 8.04 Member Download (805) — W3country field
+// 24 members have no country in BluePages (numeric "0" artifact)
 const REGION_DATA = [
-  { region: "AMER", members: 430, pct: 54 },
-  { region: "APAC", members: 209, pct: 26 },
-  { region: "EMEA", members: 160, pct: 20 },
+  { region: "AMER", members: 425, pct: 53 },
+  { region: "APAC", members: 198, pct: 25 },
+  { region: "EMEA", members: 182, pct: 23 },
 ];
 
 const JUN11      = 697;
@@ -171,11 +173,11 @@ export function SlackTab() {
           </div>
           <div className="mt-3 space-y-0.5">
             {[
-              { flag: "🇺🇸", country: "United States", n: 222 },
-              { flag: "🇮🇳", country: "India",          n: 169 },
-              { flag: "🇮🇪", country: "Ireland",        n: 47  },
-              { flag: "🇨🇦", country: "Canada",         n: 27  },
-              { flag: "🇬🇧", country: "UK",             n: 8   },
+              { flag: "🇺🇸", country: "United States", n: 362 },
+                { flag: "🇮🇳", country: "India",          n: 189 },
+                { flag: "🇮🇪", country: "Ireland",        n: 64  },
+                { flag: "🇨🇦", country: "Canada",         n: 50  },
+                { flag: "🇬🇧", country: "UK",             n: 18  },
             ].map(c => (
               <div key={c.country} className="flex items-center justify-between text-[12px] text-[var(--gc-grey)]">
                 <span>{c.flag} {c.country}</span>
@@ -197,8 +199,8 @@ export function SlackTab() {
         <InsightCard
           tone="info"
           title="Global but AMER-led community"
-          summary="AMER 54% · APAC 26% · EMEA 20% — verified via W3 BluePages for all 805 members."
-          explanation="Top countries: United States (222), India (169), Ireland (47), Canada (27), UK (8), Germany (7), Romania (7). APAC is stronger than the email domain alone suggested — India accounts for most of that. EMEA is well represented with Ireland as the #3 country overall."
+          summary="AMER 53% · APAC 25% · EMEA 23% — verified via W3 BluePages for all 805 members."
+          explanation="Top countries: United States (362), India (189), Ireland (64), Canada (50), UK (18), Romania (18), Germany (14). 24 members have no country set in BluePages. EMEA is larger than previously estimated at 23%, with Ireland as the #3 country overall."
         />
       </div>
 
