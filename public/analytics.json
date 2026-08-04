@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "lastUpdated": "2026-07-28",
-    "updatedBy": "Growth Community team — SiteAnalyticsData_28-Jul,2026.xlsx",
-    "note": "SharePoint section sourced from real site analytics export. Edit this file daily to push fresh data."
+    "lastUpdated": "2026-08-04",
+    "updatedBy": "Growth Community team — Growth_Community_New_Members (1).csv",
+    "note": "Member count updated to 804 (+3 since Jul 28: Jaideep Advani Jul 30, Yurii Plakhtii Aug 3, Mariana Chiabotto Aug 3)."
   },
 
   "growthTrend": [
@@ -116,8 +116,8 @@
 
   "kpis": {
     "overview": {
-      "totalMembers":        { "value": "801",     "trend": "up",   "delta": "+99 since Jul 10" },
-      "monthlyGrowth":       { "value": "+99",     "trend": "up",   "delta": "+14.1%"            },
+      "totalMembers":        { "value": "804",     "trend": "up",   "delta": "+102 since Jul 10" },
+      "monthlyGrowth":       { "value": "+102",    "trend": "up",   "delta": "+14.5%"             },
       "activeContributors":  { "value": "11%",     "trend": "down", "delta": "4 of 35 new mbrs"  },
       "sharepointViews":     { "value": "2,862",   "trend": "up",   "delta": "+496% vs Jun"       },
       "icaAgentUsage":       { "value": "38",      "trend": "up",   "delta": "All time"           },

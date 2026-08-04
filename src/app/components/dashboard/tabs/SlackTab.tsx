@@ -6,10 +6,11 @@ import { SimpleBarChart } from "../charts";
 import { useDashboard } from "../../../dashboard-context";
 import { cn } from "../../ui/utils";
 
-// ── Real data from list 1.xlsx (Jul 10, 702 members) and list 2.xlsx (Jul 28, 801 members) ──
+// ── Real data from list 1.xlsx (Jul 10, 702), list 2.xlsx (Jul 28, 801), new members CSV (Aug 4, 804) ──
 const SNAPSHOT = [
   { date: "Jul 10", total: 702 },
   { date: "Jul 28", total: 801 },
+  { date: "Aug 4",  total: 804 },
 ];
 
 const REGION_DATA = [
@@ -18,12 +19,13 @@ const REGION_DATA = [
   { region: "EMEA", members: 160, pct: 20 },
 ];
 
-const JUL10     = 702;
-const JUL28     = 801;
-const NET       = 99;
-const NEW       = 108;
-const REMOVED   = 9;
-const GROWTH_PCT = "14.1";
+const JUL10      = 702;
+const JUL28      = 801;
+const AUG4       = 804;
+const NET        = 102;   // 702 → 804
+const NEW        = 111;   // 108 Jul + 3 post-Jul28
+const REMOVED    = 9;
+const GROWTH_PCT = "14.5";
 
 const PERSONA_COLORS = [
   "var(--gc-ibm-blue)",
@@ -50,26 +52,26 @@ export function SlackTab() {
     <div className="space-y-5">
       <SectionHeading
         title="Slack member growth"
-        description="Based on member list snapshots: Jul 10 (702 members) and Jul 28 (801 members)."
+        description="Member list snapshots: Jul 10 (702) · Jul 28 (801) · Aug 4 (804)"
       />
 
       {/* KPIs — only what the data supports */}
       <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
         <KpiCard
-          label="Total members (Jul 28)"
-          value={JUL28.toLocaleString()}
+          label="Total members (Aug 4)"
+          value={AUG4.toLocaleString()}
           trend="up"
           delta={`+${GROWTH_PCT}%`}
           accent="blue"
-          definition="Current headcount of the Growth Community Slack workspace as of Jul 28, 2026. Source: Slack member export CSV."
+          definition="Current headcount of the Growth Community Slack workspace as of Aug 4, 2026. Source: Growth_Community_New_Members CSV + Jul 28 Slack export."
         />
         <KpiCard
-          label="Net growth (18 days)"
+          label="Net growth (25 days)"
           value={`+${NET}`}
           trend="up"
-          delta="Jul 10 → Jul 28"
+          delta="Jul 10 → Aug 4"
           accent="green"
-          definition="Net new members added Jul 10–Jul 28: 108 gross adds minus 9 removed/deactivated = +99. Source: diff of two Slack CSV exports."
+          definition="Net new members added Jul 10–Aug 4: 111 gross adds minus 9 removed/deactivated = +102. Source: diff of Slack exports + new members CSV."
         />
         <KpiCard
           label="New members added"
@@ -77,7 +79,7 @@ export function SlackTab() {
           trend="up"
           delta="since Jul 10"
           accent="purple"
-          definition="Gross number of new members who joined Jul 10–Jul 28. Calculated as members in the Jul 28 export who were absent from the Jul 10 export."
+          definition="Gross new members Jul 10–Aug 4: 108 joined by Jul 28 + 3 post-Jul 28 (Jaideep Advani Jul 30, Yurii Plakhtii Aug 3, Mariana Chiabotto Aug 3)."
         />
         <KpiCard
           label="Members removed"
@@ -93,7 +95,7 @@ export function SlackTab() {
       <Card className="gap-3 rounded-md border-[var(--border)] p-4 shadow-none">
         <SectionHeading
           title="Member count snapshots"
-          description="Two data points: Jul 10 and Jul 28"
+          description="Jul 10 · Jul 28 · Aug 4"
         />
         <SimpleBarChart
           data={SNAPSHOT}
@@ -188,9 +190,9 @@ export function SlackTab() {
       <div className="grid gap-4 lg:grid-cols-2">
         <InsightCard
           tone="positive"
-          title="Strong growth over 18 days"
-          summary={`+${NET} net members (+${GROWTH_PCT}%) between Jul 10 and Jul 28.`}
-          explanation={`108 new members joined while 9 were removed (likely a list cleanup). At this pace (~5.5 new members/day) the community would reach ~900 members by end of August.`}
+          title="804 members as of Aug 4 — 14.5% growth since Jul 10"
+          summary={`+${NET} net members over 25 days: 111 added, 9 removed.`}
+          explanation={`108 members joined by Jul 28, plus 3 more since: Jaideep Advani (Jul 30), Yurii Plakhtii (Aug 3), and Mariana Chiabotto (Aug 3). At ~4 new members/day the community is on track to reach ~850 by end of August.`}
         />
         <InsightCard
           tone="info"
