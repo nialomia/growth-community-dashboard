@@ -111,7 +111,7 @@ export function SlackTab() {
             <UserCircle2 size={16} className="text-[var(--gc-ibm-blue)]" />
             <div>
               <h2 className="text-[var(--gc-graphite)]">Member personas</h2>
-              <p className="text-[13px] text-[var(--gc-grey)]">805 members · source: 7.23 Member Download + new members list</p>
+              <p className="text-[13px] text-[var(--gc-grey)]">791 of 804 members matched · 14 new members pending persona lookup</p>
             </div>
           </div>
           <div className="grid gap-2.5 sm:grid-cols-2 xl:grid-cols-3">
@@ -133,7 +133,7 @@ export function SlackTab() {
             ))}
           </div>
           <p className="mt-1 text-[11px] text-[var(--gc-grey)]">
-            Personas sourced from IBM W3 BluePages via member download export.
+            Percentages based on 791 members with confirmed personas. Source: 7.23 Member Download (795) cross-referenced with current member list.
           </p>
         </Card>
       )}

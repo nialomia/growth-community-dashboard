@@ -639,33 +639,33 @@
   "memberPersonas": [
     {
       "persona": "Product Manager",
-      "count": 271,
-      "pct": 33.9
+      "count": 270,
+      "pct": 34.1
     },
     {
       "persona": "Product Designer",
-      "count": 128,
-      "pct": 16
+      "count": 127,
+      "pct": 16.1
     },
     {
       "persona": "Other",
       "count": 97,
-      "pct": 12.2
+      "pct": 12.3
     },
     {
-      "persona": "Product Marketing Mgr",
+      "persona": "Product Marketing Manager",
       "count": 96,
-      "pct": 12
+      "pct": 12.1
     },
     {
       "persona": "Sales",
-      "count": 70,
-      "pct": 8.8
+      "count": 69,
+      "pct": 8.7
     },
     {
       "persona": "Engineer",
       "count": 33,
-      "pct": 4.1
+      "pct": 4.2
     },
     {
       "persona": "Content Designer",
@@ -689,8 +689,8 @@
     },
     {
       "persona": "Customer Success",
-      "count": 10,
-      "pct": 1.3
+      "count": 9,
+      "pct": 1.1
     },
     {
       "persona": "System / Non-Member",
