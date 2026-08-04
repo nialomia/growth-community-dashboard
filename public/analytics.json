@@ -1,8 +1,8 @@
 {
   "_meta": {
     "lastUpdated": "2026-08-04",
-    "updatedBy": "Growth Community team — SiteAnalyticsData_4-Aug,2026.xlsx",
-    "note": "SharePoint updated from Aug 4 export. All-time: 3,603 visits, 55 unique. Last 7 days: 618 visits, 30 unique. Desktop 93%."
+    "updatedBy": "Growth Community team — 8.04 Member Download (805).xlsx",
+    "note": "Personas updated from Aug 4 member download (805 members, all matched). Bar chart snapshots: Jun 11, Jul 13, Jul 28, Aug 4."
   },
   "growthTrend": [
     {
@@ -639,33 +639,33 @@
   "memberPersonas": [
     {
       "persona": "Product Manager",
-      "count": 270,
-      "pct": 34.1
+      "count": 280,
+      "pct": 34.8
     },
     {
       "persona": "Product Designer",
-      "count": 127,
-      "pct": 16.1
+      "count": 128,
+      "pct": 15.9
     },
     {
       "persona": "Other",
-      "count": 97,
-      "pct": 12.3
+      "count": 98,
+      "pct": 12.2
     },
     {
       "persona": "Product Marketing Manager",
       "count": 96,
-      "pct": 12.1
+      "pct": 11.9
     },
     {
       "persona": "Sales",
       "count": 69,
-      "pct": 8.7
+      "pct": 8.6
     },
     {
       "persona": "Engineer",
       "count": 33,
-      "pct": 4.2
+      "pct": 4.1
     },
     {
       "persona": "Content Designer",
@@ -674,16 +674,16 @@
     },
     {
       "persona": "Data Scientist / Analyst",
-      "count": 27,
-      "pct": 3.4
-    },
-    {
-      "persona": "UX Researcher",
-      "count": 17,
-      "pct": 2.1
+      "count": 28,
+      "pct": 3.5
     },
     {
       "persona": "Engineering Manager",
+      "count": 18,
+      "pct": 2.2
+    },
+    {
+      "persona": "UX Researcher",
       "count": 17,
       "pct": 2.1
     },

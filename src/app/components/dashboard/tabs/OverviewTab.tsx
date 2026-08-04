@@ -35,8 +35,8 @@ export function OverviewTab({ onDrill }: { onDrill: (t: any) => void }) {
 
       {/* KPI grid */}
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-3 xl:grid-cols-6">
-        <KpiCard label="Slack members"         value="804"   trend="up"   delta="+102 since Jul 10" accent="blue"   onDrill={() => onDrill("slack")}       definition="Total active members in the Growth Community Slack workspace as of Aug 4, 2026. Source: Jul 28 Slack export + new members CSV." />
-        <KpiCard label="New members (25 days)" value="+102"  trend="up"   delta="+14.5%"            accent="green"  onDrill={() => onDrill("slack")}       definition="Net new members Jul 10–Aug 4: 111 added minus 9 removed = +102 (14.5% growth). Source: diff of Slack exports + new members CSV." />
+        <KpiCard label="Slack members"         value="805"   trend="up"   delta="+108 since Jun 11" accent="blue"   onDrill={() => onDrill("slack")}       definition="Total active members in the Growth Community Slack workspace as of Aug 4, 2026. Source: 8.04 Member Download (805).xlsx." />
+        <KpiCard label="New members (54 days)" value="+108"  trend="up"   delta="+15.5%"            accent="green"  onDrill={() => onDrill("slack")}       definition="Net new members Jun 11–Aug 4: 697 → 805 = +108 net (15.5% growth). Source: member download snapshots." />
         <KpiCard label="GCC call attendance"   value="14%"   trend="down" delta="16 of 111 new mbrs" accent="grey"   onDrill={() => onDrill("meeting")}     definition="% of new Slack members (Jul 10–Aug 4) who attended any July GCC call. 16 of 111 = 14%. Source: Teams attendance reports cross-referenced with Slack export." />
         <KpiCard label="SharePoint views"      value="3,603" trend="up"   delta="All time"          accent="blue"   onDrill={() => onDrill("sharepoint")}  definition="Total all-time site visits on the Growth Community SharePoint. Source: Overall Traffic sheet — SiteAnalyticsData_4-Aug,2026.xlsx." />
         <KpiCard label="Unique SP viewers"     value="55"    trend="up"   delta="All time"          accent="purple" onDrill={() => onDrill("sharepoint")}  definition="Distinct authenticated users who have ever visited the SharePoint site (55). Source: Overall Traffic sheet — SiteAnalyticsData_4-Aug,2026.xlsx." />
@@ -66,9 +66,9 @@ export function OverviewTab({ onDrill }: { onDrill: (t: any) => void }) {
           <div className="space-y-2.5">
             <InsightCard
               tone="positive"
-              title="Slack growth — 14.5% in 25 days, 804 members"
-              summary="804 members as of Aug 4, up from 702 on Jul 10. +3 new since Jul 28."
-              explanation="102 net new members over 25 days (111 added, 9 removed). Latest additions: Jaideep Advani (Jul 30), Yurii Plakhtii and Mariana Chiabotto (Aug 3). Top countries: US (222), India (169), Ireland (47)."
+              title="Slack growth — 15.5% in 54 days, 805 members"
+              summary="805 members as of Aug 4, up from 697 on Jun 11."
+              explanation="+108 net over 54 days: Jun 11→Jul 13 (+81), Jul 13→Jul 28 (+23), Jul 28→Aug 4 (+4). Top countries: US (222), India (169), Ireland (47)."
             />
             <InsightCard
               tone="warning"

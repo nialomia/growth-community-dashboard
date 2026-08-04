@@ -6,11 +6,13 @@ import { SimpleBarChart } from "../charts";
 import { useDashboard } from "../../../dashboard-context";
 import { cn } from "../../ui/utils";
 
-// ── Real data from list 1.xlsx (Jul 10, 702), list 2.xlsx (Jul 28, 801), new members CSV (Aug 4, 804) ──
+// ── Real snapshots from member download files ─────────────────────────────
+// Jun 11 (697) · Jul 13 (778) · Jul 28 (801) · Aug 4 (805)
 const SNAPSHOT = [
-  { date: "Jul 10", total: 702 },
+  { date: "Jun 11", total: 697 },
+  { date: "Jul 13", total: 778 },
   { date: "Jul 28", total: 801 },
-  { date: "Aug 4",  total: 804 },
+  { date: "Aug 4",  total: 805 },
 ];
 
 const REGION_DATA = [
@@ -19,13 +21,12 @@ const REGION_DATA = [
   { region: "EMEA", members: 160, pct: 20 },
 ];
 
-const JUL10      = 702;
-const JUL28      = 801;
-const AUG4       = 804;
-const NET        = 102;   // 702 → 804
-const NEW        = 111;   // 108 Jul + 3 post-Jul28
-const REMOVED    = 9;
-const GROWTH_PCT = "14.5";
+const JUN11      = 697;
+const AUG4       = 805;
+const NET        = 108;   // 697 → 805
+const NEW        = 116;   // gross adds Jun 11 → Aug 4
+const REMOVED    = 8;     // 116 added - 108 net = 8 removed
+const GROWTH_PCT = "15.5"; // (805-697)/697
 
 const PERSONA_COLORS = [
   "var(--gc-ibm-blue)",
@@ -52,7 +53,7 @@ export function SlackTab() {
     <div className="space-y-5">
       <SectionHeading
         title="Slack member growth"
-        description="Member list snapshots: Jul 10 (702) · Jul 28 (801) · Aug 4 (804)"
+        description="Member download snapshots: Jun 11 (697) · Jul 13 (778) · Jul 28 (801) · Aug 4 (805)"
       />
 
       {/* KPIs — only what the data supports */}
@@ -63,23 +64,23 @@ export function SlackTab() {
           trend="up"
           delta={`+${GROWTH_PCT}%`}
           accent="blue"
-          definition="Current headcount of the Growth Community Slack workspace as of Aug 4, 2026. Source: Growth_Community_New_Members CSV + Jul 28 Slack export."
+          definition="Current headcount of the Growth Community Slack workspace as of Aug 4, 2026. Source: 8.04 Member Download (805).xlsx."
         />
         <KpiCard
-          label="Net growth (25 days)"
+          label="Net growth (54 days)"
           value={`+${NET}`}
           trend="up"
-          delta="Jul 10 → Aug 4"
+          delta="Jun 11 → Aug 4"
           accent="green"
-          definition="Net new members added Jul 10–Aug 4: 111 gross adds minus 9 removed/deactivated = +102. Source: diff of Slack exports + new members CSV."
+          definition="Net new members Jun 11–Aug 4: 697 → 805 = +108 net. Source: diff of member download files."
         />
         <KpiCard
           label="New members added"
           value={NEW.toLocaleString()}
           trend="up"
-          delta="since Jul 10"
+          delta="since Jun 11"
           accent="purple"
-          definition="Gross new members Jul 10–Aug 4: 108 joined by Jul 28 + 3 post-Jul 28 (Jaideep Advani Jul 30, Yurii Plakhtii Aug 3, Mariana Chiabotto Aug 3)."
+          definition="Gross new members Jun 11–Aug 4: ~116 added, ~8 removed/deactivated = +108 net. Source: member download snapshots."
         />
         <KpiCard
           label="Members removed"
@@ -87,7 +88,7 @@ export function SlackTab() {
           trend="down"
           delta="list cleanup"
           accent="grey"
-          definition="Members who left or were deactivated between Jul 10 and Jul 28. Net growth = new added minus removed."
+          definition="Estimated members who left or were deactivated Jun 11–Aug 4. Gross adds minus net growth."
         />
       </div>
 
@@ -95,7 +96,7 @@ export function SlackTab() {
       <Card className="gap-3 rounded-md border-[var(--border)] p-4 shadow-none">
         <SectionHeading
           title="Member count snapshots"
-          description="Jul 10 · Jul 28 · Aug 4"
+          description="Jun 11 · Jul 13 · Jul 28 · Aug 4"
         />
         <SimpleBarChart
           data={SNAPSHOT}
@@ -111,7 +112,7 @@ export function SlackTab() {
             <UserCircle2 size={16} className="text-[var(--gc-ibm-blue)]" />
             <div>
               <h2 className="text-[var(--gc-graphite)]">Member personas</h2>
-              <p className="text-[13px] text-[var(--gc-grey)]">791 of 804 members matched · 14 new members pending persona lookup</p>
+              <p className="text-[13px] text-[var(--gc-grey)]">805 members · source: 8.04 Member Download (805).xlsx</p>
             </div>
           </div>
           <div className="grid gap-2.5 sm:grid-cols-2 xl:grid-cols-3">
@@ -133,7 +134,7 @@ export function SlackTab() {
             ))}
           </div>
           <p className="mt-1 text-[11px] text-[var(--gc-grey)]">
-            Percentages based on 791 members with confirmed personas. Source: 7.23 Member Download (795) cross-referenced with current member list.
+            All 805 members matched. Source: IBM W3 BluePages via 8.04 Member Download (805).xlsx.
           </p>
         </Card>
       )}
@@ -189,11 +190,11 @@ export function SlackTab() {
       {/* Insights */}
       <div className="grid gap-4 lg:grid-cols-2">
         <InsightCard
-          tone="positive"
-          title="804 members as of Aug 4 — 14.5% growth since Jul 10"
-          summary={`+${NET} net members over 25 days: 111 added, 9 removed.`}
-          explanation={`108 members joined by Jul 28, plus 3 more since: Jaideep Advani (Jul 30), Yurii Plakhtii (Aug 3), and Mariana Chiabotto (Aug 3). At ~4 new members/day the community is on track to reach ~850 by end of August.`}
-        />
+            tone="positive"
+            title="805 members as of Aug 4 — 15.5% growth since Jun 11"
+            summary={`+${NET} net members over 54 days: Jun 11 (697) → Aug 4 (805).`}
+            explanation={`Growth across 3 periods: Jun 11→Jul 13 (+81), Jul 13→Jul 28 (+23), Jul 28→Aug 4 (+4). The fastest growth was in the Jul 13 window. At the current pace the community is on track to reach ~850 by end of August.`}
+          />
         <InsightCard
           tone="info"
           title="Global but AMER-led community"
