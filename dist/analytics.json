@@ -2,7 +2,7 @@
   "_meta": {
     "lastUpdated": "2026-08-05",
     "updatedBy": "Growth Dashboard folder — Aug 5, 2026 (attendance report + SharePoint export + member list)",
-    "note": "Aug 4 GCC call added (4th call, 63 attendees). SharePoint updated to Aug 5 export (3,990 all-time views, 62 unique). 805 members confirmed."
+    "note": "Aug 4 GCC call added (4th call, 63 attendees). SharePoint updated to Aug 5 export (3,990 all-time views, 62 unique). 803 members confirmed (verified from Names-emails list)."
   },
   "growthTrend": [
     {
@@ -19,7 +19,7 @@
     },
     {
       "month": "Aug 4",
-      "members": 805,
+      "members": 803,
       "active": 0,
       "sharepoint": 0
     }
@@ -243,24 +243,34 @@
   ],
   "sharepointTrend": [
     {
-      "month": "Jul 8–14",
-      "views": 327,
-      "unique": 18
+      "month": "Jun 29–Jul 5",
+      "views": 462,
+      "unique": 10
     },
     {
-      "month": "Jul 15–21",
-      "views": 700,
-      "unique": 41
+      "month": "Jul 6–12",
+      "views": 384,
+      "unique": 19
     },
     {
-      "month": "Jul 22–28",
-      "views": 728,
-      "unique": 43
+      "month": "Jul 13–19",
+      "views": 603,
+      "unique": 37
     },
     {
-      "month": "Jul 29–Aug 4",
-      "views": 923,
-      "unique": 64
+      "month": "Jul 20–26",
+      "views": 711,
+      "unique": 37
+    },
+    {
+      "month": "Jul 27–Aug 2",
+      "views": 747,
+      "unique": 55
+    },
+    {
+      "month": "Aug 3–5",
+      "views": 508,
+      "unique": 36
     }
   ],
   "icaTopics": [
@@ -436,14 +446,14 @@
   "kpis": {
     "overview": {
       "totalMembers": {
-        "value": "805",
+        "value": "803",
         "trend": "up",
-        "delta": "+108 since Jun 11"
+        "delta": "+106 since Jun 11"
       },
       "monthlyGrowth": {
-        "value": "+102",
+        "value": "+25",
         "trend": "up",
-        "delta": "+14.5%"
+        "delta": "+3.2% since Jul 13"
       },
       "activeContributors": {
         "value": "14%",

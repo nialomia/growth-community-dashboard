@@ -230,8 +230,8 @@ export const FALLBACK: AnalyticsData = {
   ],
   kpis: {
     overview: {
-      totalMembers:       { value: "6,480",    trend: "up",   delta: "+8.9%" },
-      monthlyGrowth:      { value: "+570",     trend: "up",   delta: "+3.2%" },
+      totalMembers:       { value: "803",      trend: "up",   delta: "+106 since Jun 11" },
+      monthlyGrowth:      { value: "+25",      trend: "up",   delta: "+3.2% since Jul 13" },
       activeContributors: { value: "2,210",    trend: "up",   delta: "+11%"  },
       sharepointViews:    { value: "9,620",    trend: "up",   delta: "+8.2%" },
       icaAgentUsage:      { value: "5,600",    trend: "up",   delta: "+12%"  },
@@ -348,9 +348,9 @@ export function useAnalytics(): { data: AnalyticsData; status: AnalyticsStatus; 
 
   useEffect(() => {
     // Cache-bust with today's date so the browser always fetches the latest file.
-    // Use a relative URL so it works under any base path (GitHub Pages subpath, IBM Pages, etc.)
+    // Use import.meta.env.BASE_URL so it works under any base path (GitHub Pages subpath, IBM Pages, etc.)
     const today = new Date().toISOString().slice(0, 10);
-    fetch(`analytics.json?v=${today}`)
+    fetch(`${import.meta.env.BASE_URL}analytics.json?v=${today}`)
       .then((r) => {
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
         return r.json() as Promise<AnalyticsData>;
