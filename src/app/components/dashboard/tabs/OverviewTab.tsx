@@ -12,21 +12,21 @@ const actions = [
   {
     icon: Users,
     title: "Welcome new members",
-    body: "Send a same-day welcome message to the 95 new members who haven't attended any GCC call — include the next call date, calendar invite, and recording link.",
+    body: "Send a same-day welcome message to the 89 new members who haven't attended any GCC call — include the next call date, calendar invite, and recording link.",
     color: "text-[var(--gc-ibm-blue)]",
     bg: "bg-[var(--gc-ibm-blue-soft)]",
   },
   {
     icon: Globe,
     title: "Promote SharePoint",
-    body: "Promote the SharePoint site in the Slack channel description — only 55 of 805 members have visited it.",
+    body: "Promote the SharePoint site in the Slack channel description — only 62 of 805 members have visited it.",
     color: "text-[var(--gc-purple)]",
     bg: "bg-[var(--gc-purple-soft)]",
   },
   {
     icon: CalendarCheck,
     title: "Recognise core members",
-    body: "Recognise the 13 core GCC members who attended all 3 July calls — speaker spotlights or a shout-out post builds community momentum.",
+    body: "Recognise the 7 core GCC members who attended all 4 calls — speaker spotlights or a shout-out post builds community momentum.",
     color: "text-[var(--gc-green)]",
     bg: "bg-[var(--gc-green-soft)]",
   },
@@ -76,39 +76,39 @@ export function OverviewTab({ onDrill }: { onDrill: (t: any) => void }) {
         />
         <KpiCard
           label="GCC attendance"
-          value="14%"
-          trend="down"
-          delta="16 of 111 new mbrs"
+          value="20%"
+          trend="up"
+          delta="22 of 111 new mbrs"
           accent="grey"
           onDrill={() => onDrill("meeting")}
-          definition="% of new Slack members (Jul 10–Aug 4) who attended any July GCC call."
+          definition="% of new Slack members (Jul 10–Aug 4) who attended any of the 4 GCC calls (Jul 14, 21, 28, Aug 4)."
         />
         <KpiCard
           label="SharePoint views"
-          value="3,603"
+          value="3,990"
           trend="up"
-          delta="All time"
+          delta="All time · Aug 5"
           accent="blue"
           onDrill={() => onDrill("sharepoint")}
-          definition="Total all-time site visits on the Growth Community SharePoint."
+          definition="Total all-time site visits on the Growth Community SharePoint as of Aug 5, 2026."
         />
         <KpiCard
           label="Unique SP viewers"
-          value="55"
+          value="62"
           trend="up"
-          delta="All time"
+          delta="All time · Aug 5"
           accent="purple"
           onDrill={() => onDrill("sharepoint")}
-          definition="Distinct authenticated users who have ever visited the SharePoint site."
+          definition="Distinct authenticated users who have ever visited the SharePoint site as of Aug 5, 2026."
         />
         <KpiCard
           label="GCC core members"
-          value="13"
+          value="7"
           trend="up"
-          delta="All 3 July calls"
+          delta="All 4 calls"
           accent="green"
           onDrill={() => onDrill("meeting")}
-          definition="Members who attended every July GCC call (Jul 14, 21 & 28)."
+          definition="Members who attended every GCC call — Jul 14, 21, 28 & Aug 4."
         />
       </div>
 

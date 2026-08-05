@@ -136,7 +136,7 @@ export function GccOverviewTab() {
       {/* ── Attendance trend bar + cross-call breakdown ──────────── */}
       <div className="grid gap-4 lg:grid-cols-2">
         <Card className="gap-3 rounded-md border-[var(--border)] p-4 shadow-none">
-          <SectionHeading title="Attendance per call" description="Jul 14 → Jul 21 → Jul 28" />
+          <SectionHeading title="Attendance per call" description="Jul 14 → Jul 21 → Jul 28 → Aug 4" />
           <SimpleBarChart
             data={barData}
             series={[{ key: "value", name: "Attendees", color: "blue" }]}
@@ -148,7 +148,7 @@ export function GccOverviewTab() {
           <div className="space-y-2">
             {crossCallBreakdown.map((row) => {
               const pct = Math.round((row.count / summary.totalUnique) * 100);
-              const isCore = row.label === "All 3 calls";
+              const isCore = row.label === "All 4 calls";
               return (
                 <div key={row.label}>
                   <div className="flex items-center justify-between text-[13px]">

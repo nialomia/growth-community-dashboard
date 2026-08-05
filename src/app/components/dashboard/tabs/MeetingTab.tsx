@@ -119,7 +119,7 @@ export function MeetingTab({
           trend="flat"
           delta={`${attendancePct}% of new members`}
           accent="green"
-          definition="New members (Jul 10–Aug 4) who appeared in any of the 3 July GCC Teams attendance reports (Jul 14, 21, 28). Cross-referenced by name. Source: Teams attendance reports + Slack export."
+          definition="New members (Jul 10–Aug 4) who appeared in any of the 4 GCC Teams attendance reports (Jul 14, 21, 28, Aug 4). Cross-referenced by name. Source: Teams attendance reports + Slack export."
         />
         <KpiCard
           label="Did not attend"
@@ -127,7 +127,7 @@ export function MeetingTab({
           trend="down"
           delta={`${absentPct}% of new members`}
           accent="grey"
-          definition="New members who did not appear in any of the 3 July GCC attendance reports. = Total new members minus those who attended at least one call."
+          definition="New members who did not appear in any of the 4 GCC attendance reports. = Total new members minus those who attended at least one call."
         />
         <div
           role="button"
@@ -160,7 +160,7 @@ export function MeetingTab({
       <Card className="gap-3 rounded-md border-[var(--border)] p-4 shadow-none">
         <SectionHeading
           title="New member call participation"
-          description={`How many of the ${ma.newMemberCount} new Slack members attended any July GCC call`}
+          description={`How many of the ${ma.newMemberCount} new Slack members attended any GCC call (Jul 14, 21, 28, Aug 4)`}
         />
         <div className="flex items-center gap-3">
           <div className="flex h-6 flex-1 overflow-hidden rounded-full">
