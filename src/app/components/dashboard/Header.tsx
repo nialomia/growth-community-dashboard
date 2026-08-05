@@ -9,22 +9,14 @@ import { Hint } from "./primitives";
 /** Build a CSV from whatever real analytics data we have and trigger a download. */
 function exportCsv(analytics: ReturnType<typeof useDashboard>["analytics"]) {
   const rows: string[] = [];
-
-  // ── Slack member snapshots ─────────────────────────────────────
   rows.push("# Slack member growth snapshots");
   rows.push("Date,Total members");
-  const snapshots = analytics.growthTrend;
-  snapshots.forEach((s) => rows.push(`"${s.month}",${s.members}`));
+  analytics.growthTrend.forEach((s) => rows.push(`"${s.month}",${s.members}`));
   rows.push("");
-
-  // ── SharePoint KPIs ────────────────────────────────────────────
   rows.push("# SharePoint KPIs");
   rows.push("Metric,Value");
-  const sp = analytics.kpis.sharepoint;
-  Object.entries(sp).forEach(([k, v]) => rows.push(`"${k}","${v.value}"`));
+  Object.entries(analytics.kpis.sharepoint).forEach(([k, v]) => rows.push(`"${k}","${v.value}"`));
   rows.push("");
-
-  // ── GCC call overview ──────────────────────────────────────────
   const gcc = analytics.gccCallOverview;
   if (gcc) {
     rows.push("# GCC call overview — July 2026");
@@ -36,8 +28,6 @@ function exportCsv(analytics: ReturnType<typeof useDashboard>["analytics"]) {
     gcc.crossCallBreakdown.forEach((r) => rows.push(`"${r.label}",${r.count}`));
     rows.push("");
   }
-
-  // ── New member attendance (Jul 10–Aug 4) ──────────────────────
   const ma = analytics.meetingAttendance;
   if (ma) {
     rows.push("# New member GCC attendance — Jul 10–Aug 4");
@@ -47,8 +37,6 @@ function exportCsv(analytics: ReturnType<typeof useDashboard>["analytics"]) {
     );
     rows.push("");
   }
-
-  // ── Member personas ────────────────────────────────────────────
   const personas = analytics.memberPersonas;
   if (personas) {
     rows.push("# Member personas (Aug 4, 2026)");
@@ -56,7 +44,6 @@ function exportCsv(analytics: ReturnType<typeof useDashboard>["analytics"]) {
     personas.forEach((p) => rows.push(`"${p.persona}",${p.count},${p.pct}%`));
     rows.push("");
   }
-
   const csv = rows.join("\n");
   const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
   const url = URL.createObjectURL(blob);
@@ -71,74 +58,83 @@ export function Header() {
   const { lowData, setLowData, analyticsStatus, lastUpdated, analytics } = useDashboard();
 
   return (
-    <header className="sticky top-0 z-30 border-b border-[var(--border)] bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
-      <div className="flex flex-wrap items-center gap-3 px-4 py-2.5 md:px-6">
-        {/* Identity mark */}
-        <div className="flex items-center gap-2.5">
+    <header
+      className="sticky top-0 z-30 border-b border-[var(--border)] bg-white px-5 py-0 md:px-7"
+      style={{ boxShadow: "var(--shadow-header)" }}
+    >
+      <div className="flex h-14 items-center gap-4">
+
+        {/* Logo mark + name */}
+        <div className="flex items-center gap-2.5 shrink-0">
           <div
-            className="flex h-8 w-8 items-center justify-center rounded-md bg-[var(--gc-ibm-blue)] text-white"
+            className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--gc-ibm-blue)] text-white text-[13px]"
+            style={{ fontWeight: 700, letterSpacing: "-.5px" }}
             aria-hidden
           >
-            <span style={{ fontWeight: 600 }}>G</span>
+            GC
           </div>
-          <div className="leading-tight">
-            <p className="text-[var(--gc-graphite)]" style={{ fontWeight: 600 }}>
-              Growth Community Analytics
+          <div className="leading-tight hidden sm:block">
+            <p className="text-[14px] text-[var(--gc-graphite)]" style={{ fontWeight: 650 }}>
+              Growth Community
             </p>
-            <p className="hidden text-[12px] text-[var(--gc-grey)] sm:block">
-              Internal community intelligence
-            </p>
+            <p className="text-[11px] text-[var(--gc-grey)]">Analytics</p>
           </div>
         </div>
 
         {/* Data freshness badge */}
-        {analyticsStatus === "loading" && (
-          <span className="ml-1 hidden items-center gap-1.5 rounded-full border border-[var(--gc-grey-light)] bg-[var(--gc-offwhite)] px-2.5 py-1 text-[12px] text-[var(--gc-grey)] lg:inline-flex">
-            <RefreshCw size={12} className="animate-spin" aria-hidden />
-            Loading data…
-          </span>
-        )}
-        {analyticsStatus === "ready" && (
-          <Hint text="Charts, media and payload are optimised to reduce energy use.">
-            <span className="ml-1 hidden items-center gap-1.5 rounded-full border border-[var(--gc-green-soft)] bg-[var(--gc-green-soft)] px-2.5 py-1 text-[12px] text-[var(--gc-green)] lg:inline-flex">
-              <Leaf size={13} aria-hidden />
-              {lowData ? "Low-data mode active" : `Data as of ${lastUpdated}`}
+        <div className="hidden lg:flex items-center">
+          {analyticsStatus === "loading" && (
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--gc-grey-light)] bg-[var(--gc-offwhite)] px-3 py-1 text-[11px] text-[var(--gc-grey)]">
+              <RefreshCw size={11} className="animate-spin" aria-hidden />
+              Loading data…
             </span>
-          </Hint>
-        )}
-        {analyticsStatus === "error" && (
-          <Hint text="Could not load analytics.json — showing last known data.">
-            <span className="ml-1 hidden items-center gap-1.5 rounded-full border border-[#ffecd2] bg-[#ffecd2] px-2.5 py-1 text-[12px] text-[var(--gc-amber)] lg:inline-flex">
-              <AlertCircle size={13} aria-hidden />
-              Data unavailable — using cached values
-            </span>
-          </Hint>
-        )}
+          )}
+          {analyticsStatus === "ready" && (
+            <Hint text="Charts and payload are optimised to reduce energy use.">
+              <span className="inline-flex cursor-default items-center gap-1.5 rounded-full border border-[var(--gc-green-soft)] bg-[var(--gc-green-soft)] px-3 py-1 text-[11px] text-[var(--gc-green)]">
+                <Leaf size={11} aria-hidden />
+                {lowData ? "Low-data mode" : `Updated ${lastUpdated}`}
+              </span>
+            </Hint>
+          )}
+          {analyticsStatus === "error" && (
+            <Hint text="Could not load analytics.json — showing last known data.">
+              <span className="inline-flex cursor-default items-center gap-1.5 rounded-full border border-[var(--gc-amber-soft)] bg-[var(--gc-amber-soft)] px-3 py-1 text-[11px] text-[var(--gc-amber)]">
+                <AlertCircle size={11} aria-hidden />
+                Cached data
+              </span>
+            </Hint>
+          )}
+        </div>
 
         <div className="flex-1" />
 
-        {/* Export — downloads a real CSV of all available data */}
+        {/* Export */}
         <Button
           variant="outline"
-          className="h-9"
+          size="sm"
+          className="h-8 gap-1.5 rounded-lg border-[var(--border)] text-[12px] text-[var(--gc-graphite-soft)] hover:bg-[var(--gc-offwhite)] hover:text-[var(--gc-graphite)]"
           onClick={() => exportCsv(analytics)}
         >
-          <Download size={15} />
+          <Download size={13} />
           <span className="hidden sm:inline">Export CSV</span>
         </Button>
 
         {/* Low-data toggle */}
-        <div className="flex items-center gap-2 rounded-md border border-[var(--border)] px-2.5 py-1.5">
+        <div className="flex items-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--gc-offwhite)] px-3 py-1.5">
           <Switch id="low-data" checked={lowData} onCheckedChange={setLowData} aria-label="Toggle low-data mode" />
-          <Label htmlFor="low-data" className="cursor-pointer text-[13px] text-[var(--gc-graphite)]">
-            Low-data mode
+          <Label htmlFor="low-data" className="cursor-pointer text-[12px] text-[var(--gc-graphite-soft)] hidden sm:block">
+            Low-data
           </Label>
         </div>
 
         {/* Avatar */}
-        <Avatar className="h-8 w-8">
-          <AvatarFallback className="bg-[var(--gc-purple-soft)] text-[var(--gc-purple)]" style={{ fontWeight: 600 }}>
-            CM
+        <Avatar className="h-8 w-8 ring-2 ring-[var(--gc-ibm-blue-soft)]">
+          <AvatarFallback
+            className="bg-[var(--gc-ibm-blue)] text-white text-[12px]"
+            style={{ fontWeight: 650 }}
+          >
+            NL
           </AvatarFallback>
         </Avatar>
       </div>

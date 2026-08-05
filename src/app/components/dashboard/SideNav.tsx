@@ -20,17 +20,17 @@ export type TabKey =
 export type GccSubKey = "july-meetings" | "july-new-members";
 
 export const TABS: { key: TabKey; label: string; icon: LucideIcon }[] = [
-  { key: "overview",    label: "Overview",              icon: LayoutDashboard },
-  { key: "slack",       label: "Slack Member Growth",   icon: Users },
-  { key: "sharepoint",  label: "SharePoint Analytics",  icon: FileText },
-  { key: "ica",         label: "ICA Agent Analytics",   icon: Bot },
-  { key: "meeting",     label: "GCC Call Attendance",   icon: Video },
-  { key: "dictionary",  label: "Data Dictionary",       icon: BookOpen },
+  { key: "overview",   label: "Overview",             icon: LayoutDashboard },
+  { key: "slack",      label: "Slack Members",        icon: Users },
+  { key: "sharepoint", label: "SharePoint",           icon: FileText },
+  { key: "ica",        label: "ICA Agent",            icon: Bot },
+  { key: "meeting",    label: "GCC Attendance",       icon: Video },
+  { key: "dictionary", label: "Data Dictionary",      icon: BookOpen },
 ];
 
 const GCC_SUB_TABS: { key: GccSubKey; label: string }[] = [
-  { key: "july-meetings",    label: "July (3 meetings)"  },
-  { key: "july-new-members", label: "July New Members"   },
+  { key: "july-meetings",    label: "July (3 meetings)" },
+  { key: "july-new-members", label: "July New Members"  },
 ];
 
 export function SideNav({
@@ -47,8 +47,13 @@ export function SideNav({
   return (
     <nav
       aria-label="Dashboard sections"
-      className="flex shrink-0 gap-1 overflow-x-auto border-b border-[var(--border)] bg-white px-2 md:h-[calc(100vh-53px)] md:w-60 md:flex-col md:overflow-visible md:border-b-0 md:border-r md:px-3 md:py-4"
+      className="flex shrink-0 gap-0.5 overflow-x-auto border-b border-[var(--border)] bg-white px-2 md:h-[calc(100vh-56px)] md:w-56 md:flex-col md:overflow-visible md:border-b-0 md:border-r md:px-3 md:py-5"
     >
+      {/* Section label — desktop only */}
+      <p className="hidden md:block mb-2 px-3 text-[10px] font-semibold uppercase tracking-widest text-[var(--gc-grey)]">
+        Navigation
+      </p>
+
       {TABS.map(({ key, label, icon: Icon }) => {
         const isActive = active === key;
         return (
@@ -57,23 +62,35 @@ export function SideNav({
               onClick={() => onChange(key)}
               aria-current={isActive ? "page" : undefined}
               className={cn(
-                "group flex w-full shrink-0 items-center gap-2.5 rounded-md px-3 py-2 text-left text-[14px] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)]",
+                "group relative flex w-full shrink-0 items-center gap-3 rounded-lg px-3 py-2.5 text-left text-[13px] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)]",
                 isActive
                   ? "bg-[var(--gc-ibm-blue-soft)] text-[var(--gc-ibm-blue)]"
-                  : "text-[var(--gc-graphite-soft)] hover:bg-[var(--gc-offwhite)]",
+                  : "text-[var(--gc-grey)] hover:bg-[var(--gc-offwhite)] hover:text-[var(--gc-graphite-soft)]",
               )}
-              style={isActive ? { fontWeight: 500 } : undefined}
+              style={isActive ? { fontWeight: 600 } : undefined}
             >
-              <Icon size={17} className={cn(isActive ? "text-[var(--gc-ibm-blue)]" : "text-[var(--gc-grey)]")} />
+              {/* Active left indicator — desktop only */}
+              {isActive && (
+                <span
+                  className="absolute left-0 top-1/2 -translate-y-1/2 hidden md:block h-5 w-[3px] rounded-r-full bg-[var(--gc-ibm-blue)]"
+                  aria-hidden
+                />
+              )}
+              <Icon
+                size={16}
+                className={cn(
+                  "shrink-0 transition-colors",
+                  isActive ? "text-[var(--gc-ibm-blue)]" : "text-[var(--gc-grey)] group-hover:text-[var(--gc-graphite-soft)]"
+                )}
+              />
               <span className="whitespace-nowrap">{label}</span>
             </button>
 
-            {/* GCC Call Overview sub-nav — only visible on desktop when meeting tab is active */}
+            {/* GCC sub-nav */}
             {key === "meeting" && isActive && (
-              <div className="mt-1 hidden md:block">
-                {/* Group label */}
-                <p className="mb-1 px-3 text-[11px] font-semibold uppercase tracking-wider text-[var(--gc-grey)]">
-                  GCC Call Overview
+              <div className="mt-1 mb-1 hidden md:block">
+                <p className="mb-1 px-3 text-[10px] font-semibold uppercase tracking-widest text-[var(--gc-grey)]">
+                  Sub-views
                 </p>
                 {GCC_SUB_TABS.map((sub) => (
                   <button
@@ -81,12 +98,12 @@ export function SideNav({
                     onClick={() => onGccSub(sub.key)}
                     aria-current={gccSub === sub.key ? "page" : undefined}
                     className={cn(
-                      "flex w-full items-center rounded-md py-1.5 pl-8 pr-3 text-left text-[13px] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)]",
+                      "flex w-full items-center rounded-lg py-2 pl-9 pr-3 text-left text-[12px] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)]",
                       gccSub === sub.key
                         ? "bg-[var(--gc-ibm-blue-soft)] text-[var(--gc-ibm-blue)]"
-                        : "text-[var(--gc-graphite-soft)] hover:bg-[var(--gc-offwhite)]",
+                        : "text-[var(--gc-grey)] hover:bg-[var(--gc-offwhite)] hover:text-[var(--gc-graphite-soft)]",
                     )}
-                    style={gccSub === sub.key ? { fontWeight: 500 } : undefined}
+                    style={gccSub === sub.key ? { fontWeight: 600 } : undefined}
                   >
                     {sub.label}
                   </button>
@@ -96,10 +113,14 @@ export function SideNav({
           </div>
         );
       })}
-      <div className="mt-auto hidden rounded-md bg-[var(--gc-offwhite)] p-3 md:block">
-        <p className="text-[12px] text-[var(--gc-grey)]">
-          Built with reusable components and efficient charts to keep this dashboard
-          lightweight.
+
+      {/* Bottom tag */}
+      <div className="mt-auto hidden md:block rounded-xl bg-[var(--gc-ibm-blue-soft)] p-3.5">
+        <p className="text-[11px] text-[var(--gc-ibm-blue)]" style={{ fontWeight: 600 }}>
+          Growth Community
+        </p>
+        <p className="text-[11px] text-[var(--gc-ibm-blue)] opacity-70 mt-0.5">
+          Analytics dashboard · Aug 2026
         </p>
       </div>
     </nav>
