@@ -37,9 +37,9 @@ export function SharePointTab() {
       <SectionHeading title="SharePoint analytics" description="How resources are discovered and used across the Growth Community" />
 
       <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
-        <KpiCard label="Page views"      {...kpi.pageViews}     accent="blue"  definition="Total all-time site visits on the Growth Community SharePoint. Source: Overall Traffic sheet — SiteAnalyticsData_4-Aug,2026.xlsx." />
-        <KpiCard label="Unique viewers"  {...kpi.uniqueViewers} accent="green" definition="Distinct authenticated users who visited at least once, all time (55). Source: Overall Traffic sheet — all-time row." />
-        <KpiCard label="Avg. engagement" {...kpi.avgEngagement} accent="grey"  definition="Share of total all-time visits from desktop devices. 3,366 of 3,603 visits (93%) were desktop. Source: Usage by Device sheet." />
+        <KpiCard label="Page views"      {...kpi.pageViews}     accent="blue"  definition="Total all-time site visits on the Growth Community SharePoint. Source: Overall Traffic sheet — SiteAnalyticsData_5-Aug,2026.xlsx." />
+        <KpiCard label="Unique viewers"  {...kpi.uniqueViewers} accent="green" definition="Distinct authenticated users who visited at least once, all time (62). Source: Overall Traffic sheet — all-time row." />
+        <KpiCard label="Avg. engagement" {...kpi.avgEngagement} accent="grey"  definition="Share of total all-time visits from desktop devices. 100% desktop. Source: Usage by Device sheet — SiteAnalyticsData_5-Aug,2026.xlsx." />
       </div>
 
       <Card className="gap-3 rounded-md border-[var(--border)] p-4 shadow-none">
@@ -116,21 +116,21 @@ export function SharePointTab() {
       <div className="grid gap-3 md:grid-cols-2">
         <InsightCard
           tone="positive"
-          title="Jul 28 call deck is the #1 member resource"
-          summary="The Growth Community Jul 28 deck logged 42 visits from 8 unique viewers — the most-viewed document this week."
-          explanation="The Jul 28 call deck (42 visits) and the homepage (36 visits) are the two most-used member-facing resources. The call recording also has 7 unique viewers — members are actively going back to review call content. Consider linking both from the Slack channel description."
+          title="Jul 29–Aug 4 was the strongest week yet — 923 views"
+          summary="The last week hit 923 page views and 64 unique viewers — both all-time highs."
+          explanation="Week-over-week growth has been consistent: Jul 8–14 (327) → Jul 15–21 (700) → Jul 22–28 (728) → Jul 29–Aug 4 (923). The Aug 4 GCC call drove a spike in views as members accessed call decks and recordings. Linking resources in the Slack call recap will sustain this momentum."
         />
         <InsightCard
           tone="warning"
-          title="Only 55 unique viewers all time across 3,603 visits"
-          summary="High repeat visit rate — the same 55 people are driving almost all traffic."
-          explanation="With 3,603 all-time visits and only 55 unique viewers, each viewer averages ~65 visits. The site is very useful to its existing audience but has almost no new discovery. Only 55 of 805 Slack members have ever visited. Adding the SharePoint link to the Slack channel header and new member welcome message is the highest-impact action to expand reach."
+          title="Only 62 unique viewers all time across 3,990 visits"
+          summary="High repeat visit rate — the same 62 people are driving almost all traffic."
+          explanation="With 3,990 all-time visits and only 62 unique viewers, each viewer averages ~64 visits. The site is highly useful to its existing audience but has almost no new discovery. Only 62 of 805 Slack members have ever visited (7.7%). Adding the SharePoint link to the Slack channel header and the new member welcome message is the highest-impact action to expand reach."
         />
         <InsightCard
           tone="positive"
-          title="Strong week — 618 visits from 30 unique viewers in last 7 days"
-          summary="Jul 29–Aug 4 was the most active week yet, with 613 site visits and 45 unique viewers."
-          explanation="The Jul 29–Aug 4 week edged out the previous two high weeks (601 each). 30 unique viewers in the last 7 days shows the audience is actively engaged. The Jul 28 call recording and the Maximo showcase deck are likely driving the traffic spike."
+          title="Viewer base grew — 62 unique viewers vs 55 the week before"
+          summary="7 new unique visitors joined the site in the most recent week — the largest weekly increase yet."
+          explanation="The jump from 55 to 62 unique viewers in a single week shows that the Aug 4 GCC call successfully drove new people to the SharePoint site. Replicating this pattern — linking resources in every call recap message — is the most reliable way to keep expanding the viewer base."
         />
       </div>
     </div>

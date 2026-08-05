@@ -29,8 +29,8 @@ export const TABS: { key: TabKey; label: string; icon: LucideIcon }[] = [
 ];
 
 const GCC_SUB_TABS: { key: GccSubKey; label: string }[] = [
-  { key: "july-meetings",    label: "July (3 meetings)" },
-  { key: "july-new-members", label: "July New Members"  },
+  { key: "july-meetings",    label: "Jul–Aug (4 calls)" },
+  { key: "july-new-members", label: "New Member Tracking"  },
 ];
 
 export function SideNav({

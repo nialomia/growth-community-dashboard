@@ -137,18 +137,18 @@ export function OverviewTab({ onDrill }: { onDrill: (t: any) => void }) {
         >
           <SectionHeading title="Key insights" />
           <div className="mt-4 space-y-3">
-            <InsightCard
-              tone="positive"
-              title="15.5% growth in 54 days"
-              summary="805 members as of Aug 4, up from 697 on Jun 11."
-              explanation="+108 net over 54 days: Jun 11→Jul 13 (+81), Jul 13→Aug 4 (+27). Top countries: US, India, Ireland."
-            />
-            <InsightCard
-              tone="warning"
-              title="Only 14% of new members attended a GCC call"
-              summary="16 of 111 new members attended at least one July GCC call."
-              explanation="95 new members have not attended any GCC call. A same-day welcome message with the next call date and calendar invite would significantly improve first-call attendance."
-            />
+              <InsightCard
+                tone="positive"
+                title="15.5% growth · 805 members · Aug 4 call hit record 63 attendees"
+                summary="Community is growing and calls are gaining momentum — biggest call yet on Aug 4."
+                explanation="+108 net members Jun 11→Aug 4. Aug 4 GCC call had 63 attendees — up from 44 on Jul 28. SharePoint views hit 923 in the week of Jul 29–Aug 4, with 310 views on Aug 4 alone."
+              />
+              <InsightCard
+                tone="warning"
+                title="22 of 111 new members attended a GCC call (20%)"
+                summary="Up from 14% last week — 6 more new members attended the Aug 4 call."
+                explanation="22 of 111 new members (Jul 10–Aug 4) have now attended at least one GCC call. 89 still haven't. The Aug 4 call brought in Mariana Chiabotto, Jaideep Advani, and others who hadn't attended before. A same-day welcome message with the calendar invite remains the highest-leverage action."
+              />
           </div>
         </div>
       </div>

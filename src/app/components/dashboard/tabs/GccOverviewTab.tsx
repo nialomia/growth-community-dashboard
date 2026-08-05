@@ -8,13 +8,14 @@ import { SimpleBarChart } from "../charts";
 import { useDashboard } from "../../../dashboard-context";
 import { cn } from "../../ui/utils";
 
-type CallFilter = "all" | "jul14" | "jul21" | "jul28";
+type CallFilter = "all" | "jul14" | "jul21" | "jul28" | "aug4";
 
 const CALL_FILTERS: { key: CallFilter; label: string }[] = [
   { key: "all",   label: "Core members" },
   { key: "jul14", label: "July 14"      },
   { key: "jul21", label: "July 21"      },
   { key: "jul28", label: "July 28"      },
+  { key: "aug4",  label: "Aug 4"        },
 ];
 
 export function GccOverviewTab() {
@@ -39,24 +40,34 @@ export function GccOverviewTab() {
   }
 
   const { calls, summary, crossCallBreakdown, attendanceTrend, coreAttendees, jul14Attendees, jul21Attendees } = gcc;
-  const jul28Attendees = ma?.allAttendees?.map(a => a.name) ?? [];
+  const jul28Attendees = (ma?.allAttendees ?? []).map(a => a.name);
+  const aug4Attendees  = (gcc as any).aug4Attendees as string[] ?? [];
 
   // Which attendee list to show
   const listToShow: string[] =
     callFilter === "jul14" ? jul14Attendees :
     callFilter === "jul21" ? jul21Attendees :
     callFilter === "jul28" ? jul28Attendees :
-    coreAttendees; // "all" → show core (all 3 calls)
+    callFilter === "aug4"  ? aug4Attendees  :
+    coreAttendees; // "all" → core members
 
   const filteredList = listToShow.filter(n =>
     !coreSearch || n.toLowerCase().includes(coreSearch.toLowerCase())
   );
 
-  const retentionPct = Math.round((summary.attendedAll3 / summary.totalUnique) * 100);
-  const repeatPct    = Math.round(((summary.attendedAll3 + summary.attendedExactly2) / summary.totalUnique) * 100);
+  // Use attendedAll4 if present, fall back to attendedAll3
+  const coreCount = (summary as any).attendedAll4 ?? (summary as any).attendedAll3 ?? 0;
+  const retentionPct = Math.round((coreCount / summary.totalUnique) * 100);
+  const repeatPct    = Math.round(((coreCount + summary.attendedExactly2) / summary.totalUnique) * 100);
 
-  // Bar chart data — attendance per call
-  const barData = attendanceTrend.map(d => ({ label: d.date, value: d.attendees }));
+  // Bar chart — label nicely
+  const barData = attendanceTrend.map(d => ({
+    label: d.date === "jul14" ? "Jul 14" :
+           d.date === "jul21" ? "Jul 21" :
+           d.date === "jul28" ? "Jul 28" :
+           d.date === "aug4"  ? "Aug 4"  : d.date,
+    value: d.attendees
+  }));
 
   return (
     <div className="space-y-5">
@@ -67,33 +78,33 @@ export function GccOverviewTab() {
           label="Total unique attendees"
           value={String(summary.totalUnique)}
           trend="up"
-          delta="Across all 3 calls"
+          delta={`Across all ${calls.length} calls`}
           accent="blue"
-          definition="Distinct individuals who attended at least one of the 3 July GCC calls (Jul 14, 21, 28). Deduplicated by name across all 3 Teams attendance reports."
+          definition={`Distinct individuals who attended at least one of the ${calls.length} GCC calls. Deduplicated by name across all Teams attendance reports.`}
         />
         <KpiCard
           label="Avg. per call"
           value={String(summary.avgAttendees)}
-          trend="flat"
-          delta="Jul 14 / 21 / 28"
+          trend="up"
+          delta={calls.map(c => c.attendees).join(" / ")}
           accent="grey"
-          definition="Simple average of the 3 call attendee counts (62 + 56 + 44) ÷ 3. Source: Teams attendance report — Participants section."
+          definition={`Simple average of all ${calls.length} call attendee counts. Source: Teams attendance reports.`}
         />
         <KpiCard
-          label="Core members (all 3)"
-          value={String(summary.attendedAll3)}
+          label={`Core members (all ${calls.length})`}
+          value={String(coreCount)}
           trend="up"
           delta={`${retentionPct}% of unique attendees`}
           accent="green"
-          definition="Attendees who appeared in all 3 July Teams attendance reports (Jul 14, 21, and 28). Cross-referenced by exact name match. These are your most engaged community members."
+          definition={`Attendees who appeared in all ${calls.length} GCC attendance reports. These are your most engaged community members.`}
         />
         <KpiCard
           label="Attended 2+ calls"
-          value={String(summary.attendedAll3 + summary.attendedExactly2)}
+          value={String(coreCount + summary.attendedExactly2)}
           trend="up"
           delta={`${repeatPct}% repeat attendance`}
           accent="purple"
-          definition="Count of attendees who appeared in 2 or all 3 July GCC attendance reports. Includes core members (all 3) plus those who attended exactly 2 calls."
+          definition="Count of attendees who appeared in 2 or more GCC attendance reports."
         />
         <KpiCard
           label="Single-call attendees"
@@ -101,7 +112,7 @@ export function GccOverviewTab() {
           trend="down"
           delta={`${100 - repeatPct}% attended once`}
           accent="grey"
-          definition="Attendees who appeared in exactly one of the 3 July attendance reports. These one-time visitors represent the largest re-engagement opportunity."
+          definition="Attendees who appeared in exactly one attendance report. These one-time visitors are the largest re-engagement opportunity."
         />
       </div>
 
@@ -170,7 +181,7 @@ export function GccOverviewTab() {
           title="Attendee list"
           description={
             callFilter === "all"
-              ? `Core members only — attended all 3 July calls (${summary.attendedAll3} people)`
+              ? `Core members only — attended all ${calls.length} calls (${coreCount} people)`
               : `All attendees — ${CALL_FILTERS.find(f => f.key === callFilter)?.label}`
           }
           action={
@@ -206,10 +217,11 @@ export function GccOverviewTab() {
                 <span className="ml-1.5 tabular-nums text-[11px]">
                   {f.key === "jul14" ? `(${gcc.jul14Attendees.length})` :
                    f.key === "jul21" ? `(${gcc.jul21Attendees.length})` :
+                   f.key === "aug4"  ? `(${aug4Attendees.length})` :
                    `(${jul28Attendees.length})`}
                 </span>
               )}
-              {f.key === "all" && <span className="ml-1.5 tabular-nums text-[11px]">({summary.attendedAll3})</span>}
+              {f.key === "all" && <span className="ml-1.5 tabular-nums text-[11px]">({coreCount})</span>}
             </button>
           ))}
         </div>
@@ -245,27 +257,27 @@ export function GccOverviewTab() {
       <div className="grid gap-3 md:grid-cols-2">
         <InsightCard
           tone="positive"
-          title="13 core members attended all 3 July calls"
-          summary="11% of unique attendees showed up to every single July GCC call — a strong engaged core."
-          explanation="Kristen Yerardi, Jasmine Westbrooks, Nicole Keyes, Greg Bender, and 9 others were present at all three July calls. These are your highest-value community members and ideal candidates for speaker spotlights, feedback sessions, or community ambassador roles."
-        />
-        <InsightCard
-          tone="warning"
-          title="Attendance declined each week — 62 → 56 → 44"
-          summary="Total call attendance dropped 29% from July 14 to July 28 despite the community growing."
-          explanation="The July 14 call had the highest attendance at 62, while July 28 had just 44 — a 29% drop over 3 weeks. This could reflect calendar conflicts, summer schedules, or a need to re-promote the calls. Cross-referencing with new Slack member join dates shows the July 28 dip coincides with a large influx of members who hadn't yet engaged."
-        />
-        <InsightCard
-          tone="info"
-          title="85 attendees (73%) only showed up once"
-          summary="Most attendees came to exactly one call — a large re-engagement opportunity exists."
-          explanation="73% of the 117 unique attendees in July attended only one call. These single-visit attendees are warm leads — they've shown initial interest but haven't returned. A targeted Slack message or personalised follow-up after their first call could significantly improve repeat attendance."
+          title="Aug 4 was the biggest call yet — 63 attendees"
+          summary="Aug 4 had the highest attendance of all 4 calls, recovering strongly from the Jul 28 dip (44)."
+          explanation="After dipping to 44 on Jul 28, the Aug 4 call rebounded to 63 — the highest of the series. SharePoint also spiked to 310 visits on Aug 4 alone, suggesting strong content interest. The Retrospective doc received 95 views in the last 7 days."
         />
         <InsightCard
           tone="positive"
-          title="Call duration is growing — community is staying longer"
-          summary="Average call length grew from 46m (Jul 14) to 1h 34m (Jul 28), a 2× increase in depth."
-          explanation="The GCC calls are getting substantially longer as content becomes richer. The July 28 call was over 3× longer than July 14. This signals increasing content value and presenter confidence. Keep tracking whether longer calls correlate with higher or lower repeat attendance."
+          title="7 core members attended all 4 calls"
+          summary="Kristen Yerardi, Jasmine Westbrooks, Nicole Keyes, Greg Bender, Liz Barker, Rithvik Siddam, Otilia Mihai attended every single GCC call."
+          explanation="These 7 members have been present at every GCC call — Jul 14, 21, 28, and Aug 4. They are your highest-value community members and ideal candidates for speaker spotlights or ambassador roles. 10 more attended 3 of the 4 calls."
+        />
+        <InsightCard
+          tone="info"
+          title="111 of 146 unique attendees (76%) came to only one call"
+          summary="Most people tried one call but haven't returned — a large re-engagement opportunity."
+          explanation="With 146 unique attendees across 4 calls, 76% attended only once. These warm leads have shown interest but need a reason to return. A personalised follow-up after their first call — recording link, next call date, calendar invite — could significantly lift repeat attendance."
+        />
+        <InsightCard
+          tone="positive"
+          title="Call duration holding strong — 1h 40m on Aug 4"
+          summary="The Aug 4 call ran for 1h 40m with an average attendance time of 43m 47s."
+          explanation="Participants are staying engaged throughout. The Aug 4 call duration (1h 40m) is consistent with the Jul 28 call length. Nicole Keyes had 18 engagement actions, Mariana Chiabotto 10, Jasmine Westbrooks 9 — the content is generating active participation."
         />
       </div>
     </div>

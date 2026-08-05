@@ -58,8 +58,8 @@ export function MeetingTab({
   ];
 
   const GCC_SUB_LABELS: Record<GccSubKey, string> = {
-    "july-meetings":    "July (3 meetings)",
-    "july-new-members": "July New Members",
+    "july-meetings":    "Jul–Aug (4 calls)",
+    "july-new-members": "New Member Tracking",
   };
 
   return (
@@ -67,12 +67,12 @@ export function MeetingTab({
       {/* Dynamic heading per sub-tab */}
       {gccSub === "july-meetings" ? (
         <SectionHeading
-          title="July GCC calls — overview"
-          description="Attendance and retention across all 3 July Growth Community Calls"
+          title="GCC calls — overview"
+          description="Attendance and retention across all 4 Growth Community Calls (Jul 14, 21, 28 · Aug 4)"
         />
       ) : (
         <SectionHeading
-          title="GCC call attendance by new members"
+          title="New member call attendance"
           description={`Jul 10 – Aug 4, 2026 · ${ma.newMemberCount} new members tracked`}
         />
       )}
@@ -418,27 +418,27 @@ export function MeetingTab({
       <div className="grid gap-3 md:grid-cols-2">
         <InsightCard
           tone="warning"
-          title="86% of new members haven't attended any GCC call"
-          summary="95 of 111 new members (Jul 10–Aug 4) have not attended any July GCC call."
+          title="80% of new members haven't attended any GCC call"
+          summary="89 of 111 new members (Jul 10–Aug 4) have not attended any of the 4 GCC calls."
           explanation="This is the biggest onboarding gap in the community. Most new members join Slack but never make it to a live call. Many joined close to a call date with no advance notice. A same-day welcome message with the next call date and a calendar invite is the highest-leverage action available."
         />
         <InsightCard
           tone="positive"
-          title="16 new members did attend — and they're engaged"
-          summary="Kuber Saraswat (7 actions), Brayden Wisniewski (4), and others showed strong participation."
-          explanation="New members who do attend are highly motivated — Kuber had 7 engagement actions, Brayden 4, Dipali Darji 2. 4 new members attended multiple calls (Rithvik Siddam and Imad Nasr attended all 3). The challenge is discovery, not engagement once they're in."
+          title="22 new members did attend — improving trend"
+          summary="Attendance rate improved from 14% (after July calls) to 20% after Aug 4 — 22 of 111 new members."
+          explanation="New members who do attend are highly motivated. The 6 additional new member attendees on Aug 4 show the community is getting better at on-ramping newcomers. The challenge remains discovery — most new members still never hear about the call after joining Slack."
         />
         <InsightCard
           tone="positive"
           title="Recommend: welcome message on Slack join day"
-          summary="A same-day nudge with the GCC calendar invite could convert a large share of the 95 who haven't attended."
-          explanation="Automating a welcome message via the ICA agent or a Slack bot — including the next GCC date, recording link, and calendar invite — would give every new member an immediate path to the community call. This single action could move the 14% attendance rate to 30%+ within a month."
+          summary="A same-day nudge with the GCC calendar invite could convert a large share of the 89 who haven't attended."
+          explanation="Automating a welcome message via the ICA agent or a Slack bot — including the next GCC date, recording link, and calendar invite — would give every new member an immediate path to the community call. This single action could move the 20% attendance rate to 35%+ within a month."
         />
         <InsightCard
           tone="info"
-          title="3 new members joined after Jul 28 — haven't had a chance yet"
-          summary="Jaideep Advani (Jul 30), Yurii Plakhtii and Mariana Chiabotto (Aug 3) are the most recent additions."
-          explanation="These 3 members joined after the last July call. The Aug 11 GCC call will be their first opportunity to attend. They should be the priority targets for the new member welcome message."
+          title="Aug 4 was a record call — 63 attendees, 1h 40m"
+          summary="The Aug 4 GCC call hit a new attendance record with 63 participants and the longest run time yet."
+          explanation="63 attendees (up from 52 on Jul 28) makes Aug 4 the highest-attended call of the series. The longer duration (1h 40m vs 1h 24m) reflects high engagement. Core members who attended all 4 calls: Kristen Yerardi, Jasmine Westbrooks, Nicole Keyes, Greg Bender, Liz Barker, Rithvik Siddam, Otilia Mihai."
         />
       </div>
       </>}

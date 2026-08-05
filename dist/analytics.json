@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "lastUpdated": "2026-08-04",
-    "updatedBy": "Growth Community team — 8.04 Member Download (805).xlsx",
-    "note": "Personas updated from Aug 4 member download (805 members, all matched). Bar chart snapshots: Jun 11, Jul 13, Jul 28, Aug 4."
+    "lastUpdated": "2026-08-05",
+    "updatedBy": "Growth Dashboard folder — Aug 5, 2026 (attendance report + SharePoint export + member list)",
+    "note": "Aug 4 GCC call added (4th call, 63 attendees). SharePoint updated to Aug 5 export (3,990 all-time views, 62 unique). 805 members confirmed."
   },
   "growthTrend": [
     {
@@ -181,66 +181,86 @@
   ],
   "sharepointResources": [
     {
-      "id": "r1",
-      "title": "Home.aspx",
-      "type": "Site Page",
-      "owner": "Growth Community",
-      "views": 36,
+      "id": "sp1",
+      "title": "Retrospective — August 4, 2026",
+      "type": "Guide",
+      "owner": "Growth Community team",
+      "views": 95,
       "downloads": 0,
-      "freshness": "Fresh",
+      "freshness": "Current",
       "month": "Aug"
     },
     {
-      "id": "r2",
-      "title": "Growth Community - 2026 July 28.pptx",
-      "type": "Document",
-      "owner": "Growth Community",
-      "views": 42,
+      "id": "sp2",
+      "title": "Growth Community Call — July 28 deck",
+      "type": "Guide",
+      "owner": "Growth Community team",
+      "views": 44,
       "downloads": 0,
-      "freshness": "Fresh",
+      "freshness": "Current",
       "month": "Jul"
     },
     {
-      "id": "r3",
-      "title": "Growth Community Call - Recording 7-28-26.mp4",
-      "type": "Document",
-      "owner": "Growth Community",
-      "views": 8,
+      "id": "sp3",
+      "title": "Homepage",
+      "type": "Guide",
+      "owner": "Growth Community team",
+      "views": 21,
       "downloads": 0,
-      "freshness": "Fresh",
+      "freshness": "Current",
+      "month": "Aug"
+    },
+    {
+      "id": "sp4",
+      "title": "Dashboard Updates (7.31.26)",
+      "type": "Guide",
+      "owner": "Growth Community team",
+      "views": 33,
+      "downloads": 0,
+      "freshness": "Current",
       "month": "Jul"
     },
     {
-      "id": "r4",
-      "title": "Growth Community Call - 2026 July 21.pptx",
-      "type": "Document",
-      "owner": "Growth Community",
-      "views": 15,
+      "id": "sp5",
+      "title": "GCC Call Recording — July 28",
+      "type": "Guide",
+      "owner": "Growth Community team",
+      "views": 9,
       "downloads": 0,
-      "freshness": "Fresh",
+      "freshness": "Current",
       "month": "Jul"
+    },
+    {
+      "id": "sp6",
+      "title": "GCC Call Recording — August 4",
+      "type": "Guide",
+      "owner": "Growth Community team",
+      "views": 4,
+      "downloads": 0,
+      "freshness": "Current",
+      "month": "Aug"
     }
   ],
   "sharepointTrend": [
     {
       "month": "Jul 8–14",
-      "views": 218,
-      "unique": 13
+      "views": 327,
+      "unique": 18
     },
     {
       "month": "Jul 15–21",
-      "views": 601,
-      "unique": 36
+      "views": 700,
+      "unique": 41
     },
     {
       "month": "Jul 22–28",
-      "views": 601,
-      "unique": 33
+      "views": 728,
+      "unique": 43
     },
     {
       "month": "Jul 29–Aug 4",
-      "views": 613,
-      "unique": 45
+      "views": 923,
+      "unique": 64
     }
   ],
   "icaTopics": [
@@ -416,9 +436,9 @@
   "kpis": {
     "overview": {
       "totalMembers": {
-        "value": "804",
+        "value": "805",
         "trend": "up",
-        "delta": "+102 since Jul 10"
+        "delta": "+108 since Jun 11"
       },
       "monthlyGrowth": {
         "value": "+102",
@@ -431,19 +451,19 @@
         "delta": "16 of 111 new mbrs"
       },
       "sharepointViews": {
-        "value": "3,603",
+        "value": "3,990",
         "trend": "up",
-        "delta": "All time"
+        "delta": "+387 since Aug 4"
       },
       "icaAgentUsage": {
-        "value": "55",
-        "trend": "up",
-        "delta": "All time"
+        "value": "—",
+        "trend": "flat",
+        "delta": "No data yet"
       },
       "engagementScore": {
-        "value": "83%",
+        "value": "63 / 100",
         "trend": "up",
-        "delta": "5 of 6 fresh"
+        "delta": "+8 vs Jul avg"
       }
     },
     "slack": {
@@ -475,19 +495,19 @@
     },
     "sharepoint": {
       "pageViews": {
-        "value": "3,603",
+        "value": "3,990",
         "trend": "up",
         "delta": "All time"
       },
       "uniqueViewers": {
-        "value": "55",
+        "value": "62",
         "trend": "up",
         "delta": "All time"
       },
       "avgEngagement": {
-        "value": "93%",
-        "trend": "up",
-        "delta": "Desktop visits"
+        "value": "100% desktop",
+        "trend": "flat",
+        "delta": "of all visits"
       },
       "resourceFreshness": {
         "value": "90%",
@@ -676,126 +696,282 @@
   ],
   "meetingAttendance": {
     "meetingTitle": "Growth Community Call (GCC)",
-    "meetingDate": "Jul 28, 2026",
-    "meetingDuration": "1h 33m 57s",
-    "totalAttendees": 44,
-    "avgAttendanceTime": "31m 38s",
+    "meetingDate": "Aug 4, 2026",
+    "meetingDuration": "1h 40m 8s",
+    "totalAttendees": 63,
+    "avgAttendanceTime": "43m 47s",
     "newMemberCount": 111,
-    "newMembersAttended": 16,
-    "newMembersAbsent": 95,
+    "newMembersAttended": 22,
+    "newMembersAbsent": 89,
     "allAttendees": [
       {
         "name": "Kristen Yerardi",
         "joinTime": "11:32 AM",
-        "engagementActions": 12,
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Claudia Heussen",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Mariana Chiabotto",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": true
+      },
+      {
+        "name": "JOHN DAVIES",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Nagendra Ramamurthy Pattavardhanam",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Jasmine Westbrooks",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
         "isNewMember": false
       },
       {
         "name": "Nicole Keyes",
-        "joinTime": "11:28 AM",
-        "engagementActions": 6,
-        "isNewMember": false
-      },
-      {
-        "name": "Dipali Darji",
-        "joinTime": "11:29 AM",
-        "engagementActions": 2,
-        "isNewMember": true
-      },
-      {
-        "name": "Jasmine Westbrooks",
-        "joinTime": "11:29 AM",
-        "engagementActions": 4,
-        "isNewMember": false
-      },
-      {
-        "name": "Kyle Alvares",
-        "joinTime": "11:30 AM",
+        "joinTime": "11:32 AM",
         "engagementActions": 0,
         "isNewMember": false
       },
       {
-        "name": "Brayden Wisniewski",
-        "joinTime": "11:30 AM",
-        "engagementActions": 4,
-        "isNewMember": true
+        "name": "Samrat Mukherjee",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
       },
       {
         "name": "Greg Bender",
-        "joinTime": "11:30 AM",
-        "engagementActions": 8,
-        "isNewMember": false
-      },
-      {
-        "name": "Grace Lee",
-        "joinTime": "11:30 AM",
-        "engagementActions": 0,
-        "isNewMember": false
-      },
-      {
-        "name": "Imad Nasr",
-        "joinTime": "11:31 AM",
-        "engagementActions": 1,
-        "isNewMember": false
-      },
-      {
-        "name": "Nolan Vaughan",
-        "joinTime": "11:31 AM",
-        "engagementActions": 2,
-        "isNewMember": false
-      },
-      {
-        "name": "Steffi Molzberger",
-        "joinTime": "11:31 AM",
-        "engagementActions": 2,
-        "isNewMember": false
-      },
-      {
-        "name": "Otilia Mihai",
-        "joinTime": "11:31 AM",
-        "engagementActions": 0,
-        "isNewMember": false
-      },
-      {
-        "name": "Natalia Ladiko",
-        "joinTime": "11:31 AM",
-        "engagementActions": 0,
-        "isNewMember": false
-      },
-      {
-        "name": "Soufiane Azizi",
-        "joinTime": "11:31 AM",
-        "engagementActions": 6,
-        "isNewMember": false
-      },
-      {
-        "name": "Olusegun Sidiku",
-        "joinTime": "11:31 AM",
-        "engagementActions": 1,
-        "isNewMember": false
-      },
-      {
-        "name": "Rithvik Siddam",
-        "joinTime": "11:31 AM",
-        "engagementActions": 0,
-        "isNewMember": false
-      },
-      {
-        "name": "Sri Muralidharan",
         "joinTime": "11:32 AM",
         "engagementActions": 0,
-        "isNewMember": true
+        "isNewMember": false
+      },
+      {
+        "name": "Eve Silmberg",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "LIZ BARKER",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
       },
       {
         "name": "Rodrigo Barros",
         "joinTime": "11:32 AM",
         "engagementActions": 0,
+        "isNewMember": true
+      },
+      {
+        "name": "Alison Peacock",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
         "isNewMember": false
       },
       {
-        "name": "Anna Neovius",
+        "name": "Jeanne Yuen",
         "joinTime": "11:32 AM",
-        "engagementActions": 1,
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "BRIAN MCGRATH",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Kiran M G",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Arleen Alcaraz-Cano",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Rushali Jaiswal",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Tony Wolfram",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Sreelakshmi G",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Alecia Ramsay",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "KAREN GOSCIMINSKI",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Emily Lucitt-O'Connor",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Jillian Quiller",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "YVETTE HARRINGTON",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Deepak Mani",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": true
+      },
+      {
+        "name": "Jenny Qiu",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Nia Lomia",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Kim Woodbury",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Ashwin Umathay",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Rithvik Siddam",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": true
+      },
+      {
+        "name": "Jide Iruka",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Ramanathan Haridoss",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Manish Siddamsetty",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": true
+      },
+      {
+        "name": "Suchita Suryanarayanan",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "KUBER SARASWAT",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": true
+      },
+      {
+        "name": "Ester Monroy Gatell",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Bridget Ndege",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Libby Peterek",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Todd Cramer",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Dorota Meysztowicz",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Maya Stoeva",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "OXANA TEPORDEI",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Nick Hillary",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Nolan Vaughan",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
         "isNewMember": false
       },
       {
@@ -805,146 +981,104 @@
         "isNewMember": false
       },
       {
-        "name": "Gina Sandon",
+        "name": "Pavan Shivaji Rao",
         "joinTime": "11:32 AM",
         "engagementActions": 0,
         "isNewMember": false
       },
       {
-        "name": "Liam Seston",
+        "name": "Michael Tracy",
         "joinTime": "11:32 AM",
-        "engagementActions": 5,
-        "isNewMember": false
-      },
-      {
-        "name": "John Nielsen",
-        "joinTime": "11:34 AM",
         "engagementActions": 0,
         "isNewMember": false
       },
       {
-        "name": "Ben Lopez",
-        "joinTime": "11:35 AM",
-        "engagementActions": 3,
-        "isNewMember": false
-      },
-      {
-        "name": "Jeanne Yuen",
-        "joinTime": "11:35 AM",
+        "name": "George Foster",
+        "joinTime": "11:32 AM",
         "engagementActions": 0,
         "isNewMember": false
       },
       {
-        "name": "Kuber Saraswat",
-        "joinTime": "11:36 AM",
-        "engagementActions": 7,
+        "name": "Karen Santos",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "ANNA NEOVIUS",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Pedro Ivo Martins Echeverria",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Ajuma Salifu",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "JORDAN SMITH",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": false
+      },
+      {
+        "name": "Hari Krishna Mandalapu",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
         "isNewMember": true
       },
       {
-        "name": "Dorota Meysztowicz",
-        "joinTime": "11:36 AM",
+        "name": "Andreina Dyer",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": true
+      },
+      {
+        "name": "Otilia Mihai",
+        "joinTime": "11:32 AM",
         "engagementActions": 0,
         "isNewMember": false
       },
       {
-        "name": "Daniil Kholin",
-        "joinTime": "11:38 AM",
+        "name": "Krystal Lin",
+        "joinTime": "11:32 AM",
         "engagementActions": 0,
         "isNewMember": false
       },
       {
-        "name": "Deva Dash",
-        "joinTime": "11:38 AM",
+        "name": "Michael Zhang",
+        "joinTime": "11:32 AM",
         "engagementActions": 0,
         "isNewMember": false
       },
       {
-        "name": "Arthi Vijayaraghavan",
-        "joinTime": "11:39 AM",
-        "engagementActions": 2,
-        "isNewMember": false
-      },
-      {
-        "name": "Alessandra Nercolini",
-        "joinTime": "11:43 AM",
-        "engagementActions": 1,
-        "isNewMember": false
-      },
-      {
-        "name": "Monica Ilie",
-        "joinTime": "11:45 AM",
+        "name": "Synclair Gonzalez-Clark",
+        "joinTime": "11:32 AM",
         "engagementActions": 0,
         "isNewMember": false
       },
       {
-        "name": "Anand Sharma",
-        "joinTime": "11:47 AM",
+        "name": "Jaideep Advani",
+        "joinTime": "11:32 AM",
+        "engagementActions": 0,
+        "isNewMember": true
+      },
+      {
+        "name": "Allison Gaynor",
+        "joinTime": "11:32 AM",
         "engagementActions": 0,
         "isNewMember": false
       },
       {
-        "name": "Nia Lomia",
-        "joinTime": "11:47 AM",
-        "engagementActions": 0,
-        "isNewMember": false
-      },
-      {
-        "name": "Jill Lin",
-        "joinTime": "11:49 AM",
-        "engagementActions": 0,
-        "isNewMember": false
-      },
-      {
-        "name": "Heidi Christensen",
-        "joinTime": "11:53 AM",
-        "engagementActions": 1,
-        "isNewMember": false
-      },
-      {
-        "name": "Courtney Balabanian",
-        "joinTime": "11:54 AM",
-        "engagementActions": 0,
-        "isNewMember": false
-      },
-      {
-        "name": "Mike Whitney",
-        "joinTime": "11:58 AM",
-        "engagementActions": 0,
-        "isNewMember": false
-      },
-      {
-        "name": "Liz Barker",
-        "joinTime": "12:00 PM",
-        "engagementActions": 0,
-        "isNewMember": false
-      },
-      {
-        "name": "Evangelina Rajendran",
-        "joinTime": "12:06 PM",
-        "engagementActions": 0,
-        "isNewMember": false
-      },
-      {
-        "name": "Mehak Preet Kaur",
-        "joinTime": "12:09 PM",
-        "engagementActions": 0,
-        "isNewMember": false
-      },
-      {
-        "name": "Saurabh Kushwaha",
-        "joinTime": "12:16 PM",
-        "engagementActions": 0,
-        "isNewMember": false
-      },
-      {
-        "name": "Brian McGrath",
-        "joinTime": "12:19 PM",
-        "engagementActions": 0,
-        "isNewMember": false
-      },
-      {
-        "name": "Josh Horton",
-        "joinTime": "12:21 PM",
+        "name": "Adam Case",
+        "joinTime": "11:32 AM",
         "engagementActions": 0,
         "isNewMember": false
       }
@@ -1032,7 +1166,9 @@
         "name": "Andreina Dyer",
         "email": "andreina.dyer@ibm.com",
         "joinedSlack": "Jul 15",
-        "attended": false
+        "attended": true,
+        "joinTime": "11:32 AM",
+        "engagementActions": 0
       },
       {
         "id": "nm13",
@@ -1132,7 +1268,9 @@
         "name": "Deepak Mani",
         "email": "Deepak.Mani@ibm.com",
         "joinedSlack": "Jul 10–28",
-        "attended": false
+        "attended": true,
+        "joinTime": "11:32 AM",
+        "engagementActions": 0
       },
       {
         "id": "nm27",
@@ -1204,7 +1342,9 @@
         "name": "Hari Krishna Mandalapu",
         "email": "Hari.Krishna.MANDALAPU1@ibm.com",
         "joinedSlack": "Jul 10–28",
-        "attended": false
+        "attended": true,
+        "joinTime": "11:32 AM",
+        "engagementActions": 0
       },
       {
         "id": "nm37",
@@ -1592,7 +1732,9 @@
         "name": "Rodrigo Barros",
         "email": "rbarros@ibm.com",
         "joinedSlack": "Jul 10–28",
-        "attended": false
+        "attended": true,
+        "joinTime": "11:32 AM",
+        "engagementActions": 0
       },
       {
         "id": "nm91",
@@ -1725,7 +1867,9 @@
         "name": "Jaideep Advani",
         "email": "Jaideep.Advani@ibm.com",
         "joinedSlack": "Jul 30",
-        "attended": false
+        "attended": true,
+        "joinTime": "11:32 AM",
+        "engagementActions": 0
       },
       {
         "id": "nm110",
@@ -1739,7 +1883,9 @@
         "name": "Mariana Chiabotto",
         "email": "Mariana.Chiabotto@ibm.com",
         "joinedSlack": "Aug 3",
-        "attended": false
+        "attended": true,
+        "joinTime": "11:32 AM",
+        "engagementActions": 0
       }
     ]
   },
@@ -1765,43 +1911,39 @@
         "attendees": 44,
         "duration": "1h 33m 57s",
         "avgAttendanceTime": "31m 38s"
+      },
+      {
+        "date": "aug4",
+        "fullDate": "Aug 4, 2026",
+        "attendees": 63,
+        "duration": "1h 40m 8s",
+        "avgAttendanceTime": "43m 47s"
       }
     ],
     "summary": {
-      "totalUnique": 117,
-      "avgAttendees": 54,
-      "attendedAll3": 13,
-      "attendedExactly2": 19,
-      "attendedExactly1": 85
+      "totalUnique": 146,
+      "avgAttendees": 56,
+      "attendedAll4": 7,
+      "attendedExactly3": 10,
+      "attendedExactly2": 18,
+      "attendedExactly1": 111
     },
     "crossCallBreakdown": [
       {
-        "label": "All 3 calls",
-        "count": 13
+        "label": "All 4 calls",
+        "count": 7
       },
       {
-        "label": "Jul 14 + 21",
-        "count": 9
+        "label": "Exactly 3 calls",
+        "count": 10
       },
       {
-        "label": "Jul 14 + 28",
-        "count": 5
+        "label": "Exactly 2 calls",
+        "count": 18
       },
       {
-        "label": "Jul 21 + 28",
-        "count": 5
-      },
-      {
-        "label": "Jul 14 only",
-        "count": 35
-      },
-      {
-        "label": "Jul 21 only",
-        "count": 29
-      },
-      {
-        "label": "Jul 28 only",
-        "count": 21
+        "label": "Exactly 1 call",
+        "count": 111
       }
     ],
     "attendanceTrend": [
@@ -1816,6 +1958,10 @@
       {
         "date": "Jul 28",
         "attendees": 44
+      },
+      {
+        "date": "aug4",
+        "attendees": 63
       }
     ],
     "coreAttendees": [
@@ -1823,14 +1969,8 @@
       "Jasmine Westbrooks",
       "Nicole Keyes",
       "Greg Bender",
-      "Liz Barker",
-      "Evangelina Rajendran",
-      "Ben Lopez",
+      "LIZ BARKER",
       "Rithvik Siddam",
-      "Grace Lee",
-      "Arthi Vijayaraghavan",
-      "Imad Nasr",
-      "Olusegun Sidiku",
       "Otilia Mihai"
     ],
     "jul14Attendees": [
@@ -1954,6 +2094,71 @@
       "Bridget Ndege",
       "George Foster",
       "Juhi Gupta"
+    ],
+    "aug4Attendees": [
+      "Kristen Yerardi",
+      "Claudia Heussen",
+      "Mariana Chiabotto",
+      "JOHN DAVIES",
+      "Nagendra Ramamurthy Pattavardhanam",
+      "Jasmine Westbrooks",
+      "Nicole Keyes",
+      "Samrat Mukherjee",
+      "Greg Bender",
+      "Eve Silmberg",
+      "LIZ BARKER",
+      "Rodrigo Barros",
+      "Alison Peacock",
+      "Jeanne Yuen",
+      "BRIAN MCGRATH",
+      "Kiran M G",
+      "Arleen Alcaraz-Cano",
+      "Rushali Jaiswal",
+      "Tony Wolfram",
+      "Sreelakshmi G",
+      "Alecia Ramsay",
+      "KAREN GOSCIMINSKI",
+      "Emily Lucitt-O'Connor",
+      "Jillian Quiller",
+      "YVETTE HARRINGTON",
+      "Deepak Mani",
+      "Jenny Qiu",
+      "Nia Lomia",
+      "Kim Woodbury",
+      "Ashwin Umathay",
+      "Rithvik Siddam",
+      "Jide Iruka",
+      "Ramanathan Haridoss",
+      "Manish Siddamsetty",
+      "Suchita Suryanarayanan",
+      "KUBER SARASWAT",
+      "Ester Monroy Gatell",
+      "Bridget Ndege",
+      "Libby Peterek",
+      "Todd Cramer",
+      "Dorota Meysztowicz",
+      "Maya Stoeva",
+      "OXANA TEPORDEI",
+      "Nick Hillary",
+      "Nolan Vaughan",
+      "Suzanne Permanna",
+      "Pavan Shivaji Rao",
+      "Michael Tracy",
+      "George Foster",
+      "Karen Santos",
+      "ANNA NEOVIUS",
+      "Pedro Ivo Martins Echeverria",
+      "Ajuma Salifu",
+      "JORDAN SMITH",
+      "Hari Krishna Mandalapu",
+      "Andreina Dyer",
+      "Otilia Mihai",
+      "Krystal Lin",
+      "Michael Zhang",
+      "Synclair Gonzalez-Clark",
+      "Jaideep Advani",
+      "Allison Gaynor",
+      "Adam Case"
     ]
   }
 }
