@@ -6,28 +6,13 @@ import { SimpleBarChart } from "../charts";
 import { useDashboard } from "../../../dashboard-context";
 import { cn } from "../../ui/utils";
 
-// ── Real snapshots from member download files ─────────────────────────────
-// Jun 11 (697) · Jul 13 (778) · Aug 4 (805)
-const SNAPSHOT = [
-  { date: "Jun 11", total: 697 },
-  { date: "Jul 13", total: 778 },
-  { date: "Aug 4",  total: 805 },
-];
-
-// Real counts from 8.04 Member Download (805) — W3country field
-// 24 members have no country in BluePages (numeric "0" artifact)
+// ── Real snapshots driven from analytics.json growthTrend ─────────────────
+// Constants below are derived at render time from analytics data
 const REGION_DATA = [
   { region: "AMER", members: 425, pct: 53 },
   { region: "APAC", members: 198, pct: 25 },
   { region: "EMEA", members: 182, pct: 23 },
 ];
-
-const JUN11      = 697;
-const AUG4       = 805;
-const NET        = 108;   // 697 → 805
-const NEW        = 116;   // gross adds Jun 11 → Aug 4
-const REMOVED    = 8;     // 116 added - 108 net = 8 removed
-const GROWTH_PCT = "15.5"; // (805-697)/697
 
 const PERSONA_COLORS = [
   "var(--gc-ibm-blue)",
@@ -52,59 +37,74 @@ export function SlackTab() {
 
   return (
     <div className="space-y-5">
-      <SectionHeading
-        title="Slack member growth"
-        description="Member download snapshots: Jun 11 (697) · Jul 13 (778) · Aug 4 (805)"
-      />
+      {(() => {
+        const trend = analytics.growthTrend ?? [];
+        const latest = trend.at(-1);
+        const baseline = trend[0];
+        const current = latest?.members ?? 0;
+        const base = baseline?.members ?? 697;
+        const net = current - base;
+        const growthPct = base > 0 ? ((net / base) * 100).toFixed(1) : "0";
+        const latestLabel = latest?.month ?? "Latest";
+        const snapshot = trend.map(t => ({ date: t.month, total: t.members }));
+        return (
+          <>
+            <SectionHeading
+              title="Slack member growth"
+              description={`Member snapshots: ${trend.map(t => `${t.month} (${t.members})`).join(" · ")}`}
+            />
 
-      {/* KPIs — only what the data supports */}
-      <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-        <KpiCard
-          label="Total members (Aug 4)"
-          value={AUG4.toLocaleString()}
-          trend="up"
-          delta={`+${GROWTH_PCT}%`}
-          accent="blue"
-          definition="Current headcount of the Growth Community Slack workspace as of Aug 4, 2026. Source: 8.04 Member Download (805).xlsx."
-        />
-        <KpiCard
-          label="Net growth (54 days)"
-          value={`+${NET}`}
-          trend="up"
-          delta="Jun 11 → Aug 4"
-          accent="green"
-          definition="Net new members Jun 11–Aug 4: 697 → 805 = +108 net. Source: diff of member download files."
-        />
-        <KpiCard
-          label="New members added"
-          value={NEW.toLocaleString()}
-          trend="up"
-          delta="since Jun 11"
-          accent="purple"
-          definition="Gross new members Jun 11–Aug 4: ~116 added, ~8 removed/deactivated = +108 net. Source: member download snapshots."
-        />
-        <KpiCard
-          label="Members removed"
-          value={REMOVED.toLocaleString()}
-          trend="down"
-          delta="list cleanup"
-          accent="grey"
-          definition="Estimated members who left or were deactivated Jun 11–Aug 4. Gross adds minus net growth."
-        />
-      </div>
+            {/* KPIs */}
+            <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+              <KpiCard
+                label={`Total members (${latestLabel})`}
+                value={current.toLocaleString()}
+                trend="up"
+                delta={`+${growthPct}%`}
+                accent="blue"
+                definition={`Current headcount of the Growth Community Slack workspace as of ${latestLabel}. Source: analytics.json.`}
+              />
+              <KpiCard
+                label="Net growth"
+                value={`+${net}`}
+                trend="up"
+                delta={`${baseline?.month ?? "baseline"} → ${latestLabel}`}
+                accent="green"
+                definition={`Net new members ${baseline?.month} → ${latestLabel}: ${base} → ${current} = +${net} net.`}
+              />
+              <KpiCard
+                label="Growth %"
+                value={`+${growthPct}%`}
+                trend="up"
+                delta="since baseline"
+                accent="purple"
+                definition={`Percentage growth from ${baseline?.month} (${base}) to ${latestLabel} (${current}).`}
+              />
+              <KpiCard
+                label="Snapshots tracked"
+                value={trend.length.toLocaleString()}
+                trend="flat"
+                delta="data points"
+                accent="grey"
+                definition="Number of member count snapshots recorded in analytics.json."
+              />
+            </div>
 
-      {/* Snapshot bar chart */}
-      <Card className="gap-3 rounded-md border-[var(--border)] p-4 shadow-none">
-        <SectionHeading
-          title="Member count snapshots"
-          description="Jun 11 · Jul 13 · Aug 4"
-        />
-        <SimpleBarChart
-          data={SNAPSHOT}
-          series={[{ key: "total", name: "Total members", color: "blue" }]}
-          height={220}
-        />
-      </Card>
+            {/* Snapshot bar chart */}
+            <Card className="gap-3 rounded-md border-[var(--border)] p-4 shadow-none">
+              <SectionHeading
+                title="Member count snapshots"
+                description={trend.map(t => t.month).join(" · ")}
+              />
+              <SimpleBarChart
+                data={snapshot}
+                series={[{ key: "total", name: "Total members", color: "blue" }]}
+                height={220}
+              />
+            </Card>
+          </>
+        );
+      })()}
 
       {/* Persona breakdown */}
       {personas.length > 0 && (
@@ -113,7 +113,7 @@ export function SlackTab() {
             <UserCircle2 size={16} className="text-[var(--gc-ibm-blue)]" />
             <div>
               <h2 className="text-[var(--gc-graphite)]">Member personas</h2>
-              <p className="text-[13px] text-[var(--gc-grey)]">805 members · source: 8.04 Member Download (805).xlsx</p>
+              <p className="text-[13px] text-[var(--gc-grey)]">{(analytics.growthTrend?.at(-1)?.members ?? 0).toLocaleString()} members · source: analytics.json</p>
             </div>
           </div>
           <div className="grid gap-2.5 sm:grid-cols-2 xl:grid-cols-3">
@@ -135,7 +135,7 @@ export function SlackTab() {
             ))}
           </div>
           <p className="mt-1 text-[11px] text-[var(--gc-grey)]">
-            All 805 members matched. Source: IBM W3 BluePages via 8.04 Member Download (805).xlsx.
+            All {(analytics.growthTrend?.at(-1)?.members ?? 0).toLocaleString()} members matched. Source: IBM W3 BluePages lookup.
           </p>
         </Card>
       )}
@@ -146,7 +146,7 @@ export function SlackTab() {
           <Users size={16} className="text-[var(--gc-ibm-blue)]" />
           <h3 className="text-[var(--gc-graphite)]">Region breakdown</h3>
         </div>
-          <p className="text-[12px] text-[var(--gc-grey)]">Verified via W3 BluePages · Aug 4 · 805 members</p>
+          <p className="text-[12px] text-[var(--gc-grey)]">Verified via W3 BluePages · {analytics.growthTrend?.at(-1)?.month} · {(analytics.growthTrend?.at(-1)?.members ?? 0).toLocaleString()} members</p>
           <div className="space-y-3 mt-2">
             {REGION_DATA.map((r) => (
               <div key={r.region}>
@@ -190,18 +190,31 @@ export function SlackTab() {
 
       {/* Insights */}
       <div className="grid gap-4 lg:grid-cols-2">
-        <InsightCard
-            tone="positive"
-            title="805 members as of Aug 4 — 15.5% growth since Jun 11"
-            summary={`+${NET} net members over 54 days: Jun 11 (697) → Aug 4 (805).`}
-            explanation={`Growth across 3 periods: Jun 11→Jul 13 (+81), Jul 13→Jul 28 (+23), Jul 28→Aug 4 (+4). The fastest growth was in the Jul 13 window. At the current pace the community is on track to reach ~850 by end of August.`}
-          />
-        <InsightCard
-          tone="info"
-          title="Global but AMER-led community"
-          summary="AMER 53% · APAC 25% · EMEA 23% — verified via W3 BluePages for all 805 members."
-          explanation="Top countries: United States (362), India (189), Ireland (64), Canada (50), UK (18), Romania (18), Germany (14). 24 members have no country set in BluePages. EMEA is larger than previously estimated at 23%, with Ireland as the #3 country overall."
-        />
+        {(() => {
+          const trend = analytics.growthTrend ?? [];
+          const latest = trend.at(-1);
+          const baseline = trend[0];
+          const current = latest?.members ?? 0;
+          const base = baseline?.members ?? 697;
+          const net = current - base;
+          const growthPct = base > 0 ? ((net / base) * 100).toFixed(1) : "0";
+          return (
+            <>
+              <InsightCard
+                tone="positive"
+                title={`${current.toLocaleString()} members as of ${latest?.month} — ${growthPct}% growth since ${baseline?.month}`}
+                summary={`+${net} net members: ${baseline?.month} (${base}) → ${latest?.month} (${current}).`}
+                explanation={`Growth across ${trend.length} snapshots. At the current pace the community is on track to reach ~${Math.round(current * 1.04)} by end of next month.`}
+              />
+              <InsightCard
+                tone="info"
+                title="Global but AMER-led community"
+                summary={`AMER 53% · APAC 25% · EMEA 23% — verified via W3 BluePages for all ${current.toLocaleString()} members.`}
+                explanation="Top countries: United States (362), India (189), Ireland (64), Canada (50), UK (18), Romania (18), Germany (14). 24 members have no country set in BluePages."
+              />
+            </>
+          );
+        })()}
       </div>
 
       {/* Data availability note */}

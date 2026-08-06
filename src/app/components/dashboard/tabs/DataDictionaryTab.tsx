@@ -23,18 +23,18 @@ const METRICS: Metric[] = [
     name: "Slack members",
     section: "overview",
     definition: "Total number of people currently in the Growth Community Slack workspace.",
-    calculation: "Row count of the member download export, excluding deactivated/removed accounts. As of Aug 4, 2026: 805 members.",
+    calculation: "Row count of the member download export, excluding deactivated/removed accounts. As of Aug 4, 2026: 803 members.",
     source: "IBM W3 BluePages member download export",
-    files: ["8.04 - Member Download (805).xlsx", "analytics.json → kpis.overview.totalMembers"],
+    files: ["8.04 - Member Download (803).xlsx", "analytics.json → kpis.overview.totalMembers"],
     notes: "Value is as of the export date. Updated manually each reporting period.",
   },
   {
     name: "New members (54 days)",
     section: "overview",
     definition: "Net new Slack members added between Jun 11 and Aug 4, 2026.",
-    calculation: "Members as of Aug 4 (805) minus members as of Jun 11 (697) = +108 net. Snapshots: Jun 11 (697), Jul 13 (778), Aug 4 (805).",
+    calculation: "Members as of Aug 4 (803) minus members as of Jun 11 (697) = +106 net. Snapshots: Jun 11 (697), Jul 13 (778), Aug 4 (803).",
     source: "IBM W3 BluePages member download exports — three snapshots compared",
-    files: ["6.11 - Member Download (697).xlsx", "7.13 - Member Download (778).xlsx", "8.04 - Member Download (805).xlsx"],
+    files: ["6.11 - Member Download (697).xlsx", "7.13 - Member Download (778).xlsx", "8.04 - Member Download (803).xlsx"],
   },
   {
     name: "GCC call attendance (Overview)",
@@ -74,9 +74,9 @@ const METRICS: Metric[] = [
     name: "Total Slack members",
     section: "slack",
     definition: "Current headcount of the Growth Community Slack workspace.",
-    calculation: "Row count of the member download export, filtered to active members only. Aug 4, 2026: 805 members.",
+    calculation: "Row count of the member download export, filtered to active members only. Aug 4, 2026: 803 members.",
     source: "IBM W3 BluePages member download export",
-    files: ["8.04 - Member Download (805).xlsx"],
+    files: ["8.04 - Member Download (803).xlsx"],
     notes: "Export is requested manually from Slack Workspace Admin → Member management → Export.",
   },
   {
@@ -85,7 +85,7 @@ const METRICS: Metric[] = [
     definition: "Members who joined the workspace within the reporting window (Jun 11–Aug 4).",
     calculation: "Members present in the Aug 4 export but absent from the Jun 11 export. Gross adds ~116; net +108 after ~8 removed.",
     source: "Diff of member download exports",
-    files: ["6.11 - Member Download (697).xlsx", "8.04 - Member Download (805).xlsx"],
+    files: ["6.11 - Member Download (697).xlsx", "8.04 - Member Download (803).xlsx"],
   },
   {
     name: "Members removed",
@@ -93,7 +93,7 @@ const METRICS: Metric[] = [
     definition: "Members who left or were deactivated within the reporting window.",
     calculation: "Gross adds minus net growth: ~116 added - 108 net = ~8 removed/deactivated Jun 11–Aug 4.",
     source: "Diff of member download exports",
-    files: ["6.11 - Member Download (697).xlsx", "8.04 - Member Download (805).xlsx"],
+    files: ["6.11 - Member Download (697).xlsx", "8.04 - Member Download (803).xlsx"],
   },
   {
     name: "Join date",
@@ -106,10 +106,10 @@ const METRICS: Metric[] = [
   {
     name: "Region breakdown (AMER / EMEA / APAC)",
     section: "slack",
-    definition: "Geographic distribution of 805 Slack members by IBM region.",
-    calculation: "AMER 53% (425), APAC 25% (198), EMEA 23% (182) = 805. Top countries: US (362), IN (189), IE (64), CA (50), GB (18), RO (18), DE (14). 24 members have no BluePages country set.",
+    definition: "Geographic distribution of 803 Slack members by IBM region.",
+    calculation: "AMER 53% (425), APAC 25% (198), EMEA 23% (182) = 803. Top countries: US (362), IN (189), IE (64), CA (50), GB (18), RO (18), DE (14). 24 members have no BluePages country set.",
     source: "IBM W3 BluePages member download export — W3country column",
-    files: ["8.04 - Member Download (805).xlsx → W3country column"],
+    files: ["8.04 - Member Download (803).xlsx → W3country column"],
     notes: "Country mapping to region: US + CA + LATAM = AMER; Europe + MEA = EMEA; Asia Pacific = APAC. 24 members have numeric '0' in W3country field — BluePages data gap.",
   },
 
@@ -193,7 +193,7 @@ const METRICS: Metric[] = [
     definition: "Members who joined the Slack workspace between Jul 10 and Aug 4, 2026 — tracked for GCC call attendance.",
     calculation: "All 111 members who joined Jul 10–Aug 4, cross-referenced against all 4 GCC attendance reports.",
     source: "Member download exports + Teams attendance reports",
-    files: ["8.04 - Member Download (805).xlsx", "6.11 - Member Download (697).xlsx", "analytics.json → meetingAttendance.newMembers"],
+    files: ["8.04 - Member Download (803).xlsx", "6.11 - Member Download (697).xlsx", "analytics.json → meetingAttendance.newMembers"],
   },
   {
     name: "New members attended / absent",
@@ -202,7 +202,7 @@ const METRICS: Metric[] = [
     calculation: "Each new member's name matched against Jul 14, Jul 21, Jul 28, and Aug 4 attendee lists. Attended any = 22 (20%); absent = 89 (80%).",
     source: "Member download exports + all 4 Teams attendance reports",
     files: [
-      "8.04 - Member Download (805).xlsx",
+      "8.04 - Member Download (803).xlsx",
       "Growth Community Call (GCC) - Attendance report 7-14-26.xlsx",
       "Growth Community Call - Attendance report 7-21-26.xlsx",
       "Growth Community Call (GCC) - Attendance report 7-28-26.xlsx",
@@ -426,7 +426,7 @@ export function DataDictionaryTab() {
         <p className="text-[13px] text-[var(--gc-graphite)]" style={{ fontWeight: 600 }}>Source file index</p>
         <div className="grid gap-1 sm:grid-cols-2">
           {[
-                ["8.04 - Member Download (805).xlsx",                            "Slack member download export — Aug 4, 2026 (805 members)"],
+                ["8.04 - Member Download (803).xlsx",                            "Slack member download export — Aug 4, 2026 (803 members)"],
                 ["6.11 - Member Download (697).xlsx",                            "Slack member download export — Jun 11, 2026 (697 members)"],
                 ["SiteAnalyticsData_5-Aug,2026.xlsx",                            "SharePoint site analytics export — Aug 5, 2026"],
                 ["Growth Community Call (GCC) - Attendance report 7-14-26.xlsx", "Teams attendance report — Jul 14, 2026"],

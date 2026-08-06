@@ -19,7 +19,7 @@ const actions = [
   {
     icon: Globe,
     title: "Promote SharePoint",
-    body: "Promote the SharePoint site in the Slack channel description — only 62 of 805 members have visited it.",
+    body: "Promote the SharePoint site in the Slack channel description — only 62 of 803 members have visited it.",
     color: "text-[var(--gc-purple)]",
     bg: "bg-[var(--gc-purple-soft)]",
   },
@@ -50,7 +50,7 @@ export function OverviewTab({ onDrill }: { onDrill: (t: any) => void }) {
         </div>
         <span className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-[var(--gc-green-soft)] px-3 py-1.5 text-[12px] text-[var(--gc-green)]" style={{ fontWeight: 600 }}>
           <BarChart3 size={13} />
-          805 members
+          803 members
         </span>
       </div>
 
@@ -58,21 +58,21 @@ export function OverviewTab({ onDrill }: { onDrill: (t: any) => void }) {
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-3 xl:grid-cols-6">
         <KpiCard
           label="Slack members"
-          value="805"
-          trend="up"
-          delta="+108 since Jun 11"
+          value={analytics.kpis.overview.totalMembers.value}
+          trend={analytics.kpis.overview.totalMembers.trend}
+          delta={analytics.kpis.overview.totalMembers.delta}
           accent="blue"
           onDrill={() => onDrill("slack")}
-          definition="Total active members in the Growth Community Slack workspace as of Aug 4, 2026."
+          definition="Total active members in the Growth Community Slack workspace. Source: analytics.json."
         />
         <KpiCard
-          label="Growth (54 days)"
-          value="+15.5%"
-          trend="up"
-          delta="697 → 805"
+          label="Monthly growth"
+          value={analytics.kpis.overview.monthlyGrowth.value}
+          trend={analytics.kpis.overview.monthlyGrowth.trend}
+          delta={analytics.kpis.overview.monthlyGrowth.delta}
           accent="green"
           onDrill={() => onDrill("slack")}
-          definition="Net growth Jun 11–Aug 4: 697 → 805 = +108 members (15.5%)."
+          definition="Net new members since last snapshot. Source: analytics.json."
         />
         <KpiCard
           label="GCC attendance"
@@ -139,9 +139,9 @@ export function OverviewTab({ onDrill }: { onDrill: (t: any) => void }) {
           <div className="mt-4 space-y-3">
               <InsightCard
                 tone="positive"
-                title="15.5% growth · 805 members · Aug 4 call hit record 63 attendees"
+                title={`${analytics.kpis.overview.totalMembers.value} members · ${analytics.kpis.overview.totalMembers.delta} · Aug 4 call hit record 63 attendees`}
                 summary="Community is growing and calls are gaining momentum — biggest call yet on Aug 4."
-                explanation="+108 net members Jun 11→Aug 4. Aug 4 GCC call had 63 attendees — up from 44 on Jul 28. SharePoint views hit 923 in the week of Jul 29–Aug 4, with 310 views on Aug 4 alone."
+                explanation="Aug 4 GCC call had 63 attendees — up from 44 on Jul 28. SharePoint views growing week on week."
               />
               <InsightCard
                 tone="warning"
